@@ -1,0 +1,4 @@
+minicrm
+=======
+
+Mini CRM system
