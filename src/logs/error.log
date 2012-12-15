@@ -1,0 +1,387 @@
+[Fri Dec 14 01:35:31 2012] [error] [client 127.0.0.1] The URL /news was not found, referer: http://local.crm.com/
+[Fri Dec 14 01:44:40 2012] [error] [client 127.0.0.1] The URL /profiles was not found, referer: http://local.crm.com/
+[Fri Dec 14 01:44:44 2012] [error] [client 127.0.0.1] Template news.htm cannot be rendered, referer: http://local.crm.com/
+[Fri Dec 14 01:44:44 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:35 Template::serve('news.htm'), referer: http://local.crm.com/
+[Fri Dec 14 01:44:44 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:89 F3::run(), referer: http://local.crm.com/
+[Fri Dec 14 01:44:49 2012] [error] [client 127.0.0.1] Template services.htm cannot be rendered, referer: http://local.crm.com/
+[Fri Dec 14 01:44:49 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:45 Template::serve('services.htm'), referer: http://local.crm.com/
+[Fri Dec 14 01:44:49 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:89 F3::run(), referer: http://local.crm.com/
+[Fri Dec 14 01:44:53 2012] [error] [client 127.0.0.1] Template reports.htm cannot be rendered, referer: http://local.crm.com/
+[Fri Dec 14 01:44:53 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:57 Template::serve('reports.htm'), referer: http://local.crm.com/
+[Fri Dec 14 01:44:53 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:89 F3::run(), referer: http://local.crm.com/
+[Sat Dec 15 15:41:58 2012] [error] [client 127.0.0.1] The URL /profiles was not found, referer: http://searcher.org/
+[Sat Dec 15 15:42:34 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 15:42:34 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 15:42:38 2012] [error] [client 127.0.0.1] The URL /profiles was not found, referer: http://127.0.0.1/
+[Sat Dec 15 15:43:01 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 15:59:14 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 15:59:14 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 15:59:14 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 15:59:15 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:00:30 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 16:00:30 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 16:00:30 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 16:00:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:01:28 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 16:01:28 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 16:01:28 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 16:01:28 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:01:31 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 16:01:31 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 16:01:31 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 16:01:32 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:01:48 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 16:01:48 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 16:01:48 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 16:01:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:01:50 2012] [error] [client 127.0.0.1] Undefined variable: f3
+[Sat Dec 15 16:01:50 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call(Closure::__set_state(),true)
+[Sat Dec 15 16:01:50 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/index.php:90 F3::run()
+[Sat Dec 15 16:01:51 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:02:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:07:56 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:07:57 2012] [error] [client 127.0.0.1] The URL /profiles was not found, referer: http://crm/news
+[Sat Dec 15 16:07:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:00 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:02 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:04 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:28 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:45 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:47 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:08:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:09:02 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:09:04 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:09:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:09:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:09:21 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:10:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:11:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:11:58 2012] [error] [client 127.0.0.1] The URL /profiles/get/10 was not found
+[Sat Dec 15 16:11:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:12:19 2012] [error] [client 127.0.0.1] The URL /profiles/get/10 was not found
+[Sat Dec 15 16:12:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:12:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:12:34 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:21:15 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:21:59 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:22:20 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:08 2012] [error] [client 127.0.0.1] The URL /profiles/manage was not found, referer: http://crm/corespondence
+[Sat Dec 15 16:49:09 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:33 2012] [error] [client 127.0.0.1] The URL /profiles/manage was not found, referer: http://crm/corespondence
+[Sat Dec 15 16:49:35 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:39 2012] [error] [client 127.0.0.1] The URL /profiles/manage/ was not found, referer: http://crm/corespondence
+[Sat Dec 15 16:49:40 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:49:46 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:52:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:52:12 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:52:14 2012] [error] [client 127.0.0.1] The URL /profiles/manage/ was not found
+[Sat Dec 15 16:52:15 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:52:18 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:52:20 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:54:51 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:54:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:54:53 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:54:55 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:54:56 2012] [error] [client 127.0.0.1] The URL /profiles/manage/ was not found, referer: http://crm/corespondence
+[Sat Dec 15 16:54:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:55:01 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:55:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:56:17 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:56:18 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:56:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:56:23 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:57:12 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 16:57:15 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:02:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:02:10 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 17:02:10 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:02:15 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/10
+[Sat Dec 15 17:02:16 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:02:26 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/10
+[Sat Dec 15 17:02:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:02:43 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/10
+[Sat Dec 15 17:02:43 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:26:01 2012] [error] [client 127.0.0.1] The URL /administrator/templates/it4admin/favicon.ico was not found
+[Sat Dec 15 17:26:03 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 17:34:31 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:00:16 2012] [error] [client 127.0.0.1] PHP Fatal error:  Class 'DB\\SQL' not found in /home/saganov/workspace/crm/src/index.php on line 100
+[Sat Dec 15 18:00:16 2012] [error] [client 127.0.0.1] Fatal error: Class 'DB\\SQL' not found
+[Sat Dec 15 18:00:16 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:100 
+[Sat Dec 15 18:00:17 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:01:48 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/10
+[Sat Dec 15 18:01:48 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:05:52 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:05:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:08:18 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:08:18 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:10:19 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:10:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:10:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:11:24 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:11:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:12:30 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:12:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:14:31 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:14:31 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:16:26 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:16:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:16:46 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:16:46 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:24:53 2012] [error] [client 127.0.0.1] Unknown column '$item' in 'where clause'
+[Sat Dec 15 18:24:53 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:110 DB->exec('SELECT * FROM profile WHERE id=$item')
+[Sat Dec 15 18:24:53 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->GET',true)
+[Sat Dec 15 18:24:53 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:138 F3::run()
+[Sat Dec 15 18:24:55 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:24:56 2012] [error] [client 127.0.0.1] Unknown column '$item' in 'where clause'
+[Sat Dec 15 18:24:56 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:110 DB->exec('SELECT * FROM profile WHERE id=$item')
+[Sat Dec 15 18:24:56 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->GET',true)
+[Sat Dec 15 18:24:56 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:138 F3::run()
+[Sat Dec 15 18:24:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] Array to string conversion
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:2317 require('/home/saganov/workspace/crm/src/temp/crm.tpl.1wm3moe')
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/template.php:108 F3instance->sandbox('temp/crm.tpl.1wm3moe',array())
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:112 Template::serve('index.htm')
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] #3 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->GET',true)
+[Sat Dec 15 18:25:10 2012] [error] [client 127.0.0.1] #4 /home/saganov/workspace/crm/src/index.php:138 F3::run()
+[Sat Dec 15 18:25:11 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:25:11 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:25:33 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:25:33 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] Undefined index: id
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/lib/base.php:2317 require('/home/saganov/workspace/crm/src/temp/crm.tpl.1wm3moe')
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/template.php:108 F3instance->sandbox('temp/crm.tpl.1wm3moe',array())
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:112 Template::serve('index.htm')
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] #3 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->GET',true)
+[Sat Dec 15 18:26:10 2012] [error] [client 127.0.0.1] #4 /home/saganov/workspace/crm/src/index.php:138 F3::run()
+[Sat Dec 15 18:26:11 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:26:11 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:30:26 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:30:27 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:30:43 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:30:43 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:31:21 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/1
+[Sat Dec 15 18:31:22 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:31:26 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:31:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:43:21 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:43:21 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:43:59 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:43:59 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:44:48 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:44:48 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:45:00 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:45:00 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:46:52 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:46:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:47:08 2012] [error] [client 127.0.0.1] The URL /profiles/statistic was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:47:09 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:47:13 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:47:49 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:47:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:47:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:50:16 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:50:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:50:21 2012] [error] [client 127.0.0.1] The URL /profiles/add was not found, referer: http://crm/profiles/statistics
+[Sat Dec 15 18:50:22 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:50:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:59:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:59:39 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:59:39 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:59:43 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:59:43 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:59:46 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 18:59:47 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 18:59:49 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 18:59:50 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:15:57 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 19:15:57 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:17:52 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 19:17:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:29:03 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 19:29:03 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:29:19 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 19:29:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:33:40 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/add
+[Sat Dec 15 19:33:40 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:34:19 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:34:20 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:34:28 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:34:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:34:32 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:34:33 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:35:15 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:35:15 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:35:20 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:35:21 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:37:19 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:37:19 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:38:05 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:38:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:39:41 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:39:41 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:40:00 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:40:00 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:40:23 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:40:23 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:40:52 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:40:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:42:24 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:42:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:42:49 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:42:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:43:58 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:43:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:44:05 2012] [error] [client 127.0.0.1] POST request is not allowed for the URL /profiles/manage, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:44:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:44:08 2012] [error] [client 159.224.15.137] The URL  was not found
+[Sat Dec 15 19:44:45 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:44:45 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:44:46 2012] [error] [client 127.0.0.1] Undefined offset: 1, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:44:46 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state()), referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:44:49 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:44:49 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:45:01 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:45:01 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:45:04 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:45:04 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:45:59 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:45:59 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:02 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:02 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:04 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:04 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:07 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:07 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:09 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:09 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:12 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:12 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:17 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:17 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:19 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:46:19 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:59 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:46:32 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:46:35 2012] [error] [client 127.0.0.1] The URL /profiles/manage was not found, referer: http://crm/news
+[Sat Dec 15 19:46:37 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:46:44 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:46:44 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:46:56 2012] [error] [client 127.0.0.1] The URL /profiles/manage was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:46:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:49:40 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:49:40 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:60 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:49:42 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:49:42 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:60 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:49:43 2012] [error] [client 127.0.0.1] Undefined offset: 1
+[Sat Dec 15 19:49:43 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:60 F3::route('/profiles/manage',Closure::__set_state())
+[Sat Dec 15 19:50:41 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:50:44 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:50:44 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:50:46 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:50:47 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:50:51 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:50:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:50:57 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:50:59 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:52:02 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:52:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:52:07 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:52:09 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:53:04 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:53:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:53:08 2012] [error] [client 127.0.0.1] POST request is not allowed for the URL /profiles/manage, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:53:10 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:58:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:58:08 2012] [error] [client 127.0.0.1] The URL /profiles/fonts/qlassik.otf was not found, referer: http://crm/profiles/manage/0
+[Sat Dec 15 19:58:10 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 19:58:14 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 20:36:42 2012] [error] [client 93.73.119.25] request failed: error reading the headers
+[Sat Dec 15 21:08:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:08:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:08:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:09:04 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:22:31 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:22:35 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:22:37 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:23:38 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:25:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:25:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:26:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:26:38 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:26:51 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:27:45 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:28:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:29:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:31:12 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:40:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:43:06 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:44:12 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:45:14 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 21:45:50 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:28:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:28:52 2012] [error] [client 127.0.0.1] The URL /administrator/templates/it4admin/favicon.ico was not found
+[Sat Dec 15 22:39:09 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:39:37 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:40:20 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:41:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:45:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:48:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:49:14 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:53:07 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:53:21 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:53:55 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 22:55:18 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:02:02 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:02:23 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:14:20 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:14:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:15:56 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:15:59 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:16:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:16:29 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:00 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:05 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:08 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:23 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:18:33 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:19:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:19:44 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:19:50 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:20:23 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:20:28 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:20:47 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:23:40 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:23:56 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:24:24 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:24:28 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:24:32 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:24:36 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:29:41 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:29:58 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:34:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:35:39 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:37:35 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:37:40 2012] [error] [client 127.0.0.1] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''description'=>'sdfasdfas dfwqefasdf aewfasf asdf '' at line 1, referer: http://crm/profiles/add
+[Sat Dec 15 23:37:40 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:151 DB->exec('INSERT INTO profile SET name='sdfa asdfqwef wef we', 'description'=>'sdfasdfas dfwqefasdf aewfasf asdf ''), referer: http://crm/profiles/add
+[Sat Dec 15 23:37:40 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->POST',true), referer: http://crm/profiles/add
+[Sat Dec 15 23:37:40 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:171 F3::run(), referer: http://crm/profiles/add
+[Sat Dec 15 23:38:20 2012] [error] [client 127.0.0.1] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''description'='sdfasdfas dfwqefasdf aewfasf asdf '' at line 1, referer: http://crm/profiles/add
+[Sat Dec 15 23:38:20 2012] [error] [client 127.0.0.1] #0 /home/saganov/workspace/crm/src/index.php:151 DB->exec('INSERT INTO profile SET name='sdfa asdfqwef wef we', 'description'='sdfasdfas dfwqefasdf aewfasf asdf ''), referer: http://crm/profiles/add
+[Sat Dec 15 23:38:20 2012] [error] [client 127.0.0.1] #1 /home/saganov/workspace/crm/src/lib/base.php:1421 F3::call('item->POST',true), referer: http://crm/profiles/add
+[Sat Dec 15 23:38:20 2012] [error] [client 127.0.0.1] #2 /home/saganov/workspace/crm/src/index.php:171 F3::run(), referer: http://crm/profiles/add
+[Sat Dec 15 23:47:57 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:49:48 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:50:30 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:52:26 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:53:40 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:53:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:55:14 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:55:55 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sat Dec 15 23:59:34 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sun Dec 16 00:00:02 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sun Dec 16 00:01:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sun Dec 16 00:01:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found

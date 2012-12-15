@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Mini CRM</title>
+	<style type="text/css">
+		<?php echo  Web::minify('ui/',array('style.css'),FALSE) ; ?>
+		<?php echo  Web::minify('ui/',array('app.css'),FALSE) ; ?>
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h4>Description</h4>
+		<h1>The mini CRM</h1>
+                <ul class="menu">
+                  <li><a href="/news">News</a></li>
+                  <li><a href="/profiles">Profiles</a></li>
+                  <li><a href="/corespondence">Correspondence</a></li>
+                  <li><a href="/services">Services</a></li>
+                  <li><a href="/todo">To Do</a></li>
+                  <li><a href="/finance">Finance</a></li>
+                  <li><a href="/reports">Reports</a></li>
+                  <li><a href="/help">Help</a></li>
+                  <li><a href="/settings">Settings</a></li>
+                </ul>
+	</div>
+	<div class="content">
+          <p>Content</p>
+	</div>
+	<div class="footer">
+		<h5>miniCRM is licensed under the terms of the GPL v3. Copyright &copy; 2009-2011</h5>
+	</div>
+</body>
+</html>

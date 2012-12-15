@@ -1,0 +1,11 @@
+ul.menu {text-align:center}
+
+ul.menu li {
+   display: block;
+   float: left;
+   list-style: none outside none;
+   margin: 0.5em;
+}
+
+table.profile {border:0 none}
+table.profile tr {border:0 none}

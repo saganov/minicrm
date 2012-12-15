@@ -1,0 +1,31 @@
+<form id="profile_manage" action="/profiles/manage" method="post"></form>
+<ul class="menu" style="float:right">
+  <li><a href="/profiles/list">List Profiles</a></li>
+  <li><a href="/profiles/add">Add Profile</a></li>
+  <li><a href="/profiles/statistics">Statistics</a></li>
+  <li><a href="/profiles/search">Search</a></li>
+</ul>
+<div style="clear:left"> </div>
+<h4>{{ @profile_page_title }}</h4>
+<include href="{{ @profile_page }}" />
+
+<script type="text/javascript">
+var restfull_elms = Array.filter(
+    document.getElementsByClassName('restfull'),
+    function(elem){
+        return elem.nodeName == 'A';
+    });
+
+for(var max=restfull_elms.length, i=0; i<max; i++){
+    var form = document.createElement("form");
+    form.setAttribute('id', 'profiles_manage_form_'+i);
+    form.setAttribute('name', 'profiles_manage_form_'+i);
+    form.setAttribute('action', restfull_elms[i].getAttribute('href'));
+    form.setAttribute('method', restfull_elms[i].dataset.method);
+    document.body.insertBefore(form, document.getElementById("content"));
+    restfull_elms[i].setAttribute('href', '#');
+    var form_name = 'profiles_manage_form_'+i;
+    restfull_elms[i].onclick = function(e){document.forms[form_name].submit();}
+}
+
+</script>

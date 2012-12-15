@@ -1,0 +1,79 @@
+<div id="profile_massage"></div>
+<form action="/profiles/manage/0" method="POST" name="profile_add">
+  <table class="profile">
+    <tr>
+      <td width="25%"><label>Name</label></td><td><input type="text"
+      name="name" size="50" /></td>
+    </tr>
+    <tr>
+      <td><label>Description</label></td>
+      <td><textarea name="description" cols="57" rows="10"></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="text-align:right"><input type="submit" name="submit" /></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+(function() {
+    var httpRequest, data;
+    var submit = document.forms['profile_add'].submit;
+    submit.onclick = function(e){
+        e.preventDefault();
+        data = new FormData(document.forms['profile_add']);
+        makeRequest('POST', '/profiles/manage/0');
+        return false
+    };
+        
+    function makeRequest(method, url) {
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+            httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+            try {
+                httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+        
+        if (!httpRequest) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open(method, url, true);
+        httpRequest.send(data);
+    }
+    
+    function alertContents() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var response = JSON.parse(httpRequest.responseText);
+                if(response.res == 1)
+                {
+                    var message = 'New profile was succesfully inserted';
+                    var color   = 'green';
+                    document.forms['profile_add'].reset()
+                }
+                else
+                {
+                    var message = 'Error occurs during profile inserting';
+                    var color   = 'red';
+                }
+                
+                var messageElm = document.getElementById('profile_massage');
+                messageElm.setAttribute('style', 'text-align:center;margin:10px;color:'+color);
+                messageElm.appendChild(document.createTextNode(message));
+                console.log(response);
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+    }
+})();
+</script>
