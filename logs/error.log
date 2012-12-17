@@ -385,3 +385,8 @@
 [Sun Dec 16 00:00:02 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
 [Sun Dec 16 00:01:49 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
 [Sun Dec 16 00:01:52 2012] [error] [client 127.0.0.1] The URL /favicon.ico was not found
+[Sun Dec 16 00:11:03 2012] [error] [client 127.0.0.1] The URL /client/index.php was not found, referer: http://local.cerebro-match.com/client/
+[Sun Dec 16 00:11:10 2012] [error] [client 127.0.0.1] The URL /administrator/index.php?option=com_menus&task=view&menutype=mainmenu was not found, referer: http://local.cerebro-match.com/administrator/index.php?option=com_menus&task=edit&type=component&url[option]=com_profiles&url[view]=profiles&menutype=mainmenu
+[Sun Dec 16 01:37:57 2012] [error] [client 109.86.172.239] Invalid URI in request \xae\x13\xb8\xdf \x0f^\xbe\xf7\x9b6S\xa5\xd9\x81\b\xcc\xe5\xa7\x1b\x88\xc4\xf9\xcbpx\xbc1\x923\x8a
+[Sun Dec 16 01:37:58 2012] [error] [client 109.86.172.239] unable to include potential exec "include/top.html" in parsed file /usr/share/httpd/error/HTTP_BAD_REQUEST.html.var
+[Sun Dec 16 01:37:58 2012] [error] [client 109.86.172.239] unable to include potential exec "include/bottom.html" in parsed file /usr/share/httpd/error/HTTP_BAD_REQUEST.html.var

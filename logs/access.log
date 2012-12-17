@@ -654,3 +654,6 @@
 127.0.0.1 - - [16/Dec/2012:00:01:51 +0200] "GET /profiles/list HTTP/1.1" 200 7623 "http://crm/profiles/statistics" "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0"
 127.0.0.1 - - [16/Dec/2012:00:01:51 +0200] "GET /profiles/manage/0 HTTP/1.1" 200 2017 "http://crm/profiles/list" "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0"
 127.0.0.1 - - [16/Dec/2012:00:01:52 +0200] "GET /favicon.ico HTTP/1.1" 404 140 "-" "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0"
+127.0.0.1 - - [16/Dec/2012:00:11:03 +0200] "GET /client/index.php HTTP/1.1" 404 145 "http://local.cerebro-match.com/client/" "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0"
+127.0.0.1 - - [16/Dec/2012:00:11:10 +0200] "GET /administrator/index.php?option=com_menus&task=view&menutype=mainmenu HTTP/1.1" 404 205 "http://local.cerebro-match.com/administrator/index.php?option=com_menus&task=edit&type=component&url[option]=com_profiles&url[view]=profiles&menutype=mainmenu" "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0"
+109.86.172.239 - - [16/Dec/2012:01:37:57 +0200] "\xae\x13\xb8\xdf \x0f^\xbe\xf7\x9b6S\xa5\xd9\x81\b\xcc\xe5\xa7\x1b\x88\xc4\xf9\xcbpx\xbc1\x923\x8a" 400 192 "-" "-"
