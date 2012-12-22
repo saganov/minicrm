@@ -1,0 +1,9 @@
+[globals]
+
+; Database configuration
+DB.host=localhost
+DB.port=3306
+DB.name=crm
+DB.user=root
+DB.password=root
+

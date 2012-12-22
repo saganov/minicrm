@@ -6,6 +6,8 @@ F3::set('CACHE',FALSE);
 F3::set('DEBUG',2);
 F3::set('UI','ui/');
 
+F3::config(__DIR__.'/config/config.ini');
+
 F3::set('modules',
         array(
             'apc'  => 'Cache engine',
@@ -123,9 +125,9 @@ class item
     public function __construct()
     {
         $this->db=new DB(
-            'mysql:host=localhost;port=3306;dbname=crm',
-            'root',
-            'root');
+            'mysql:host='. F3::get('DB.host') .';port='. F3::get('DB.port') .';dbname='. F3::get('DB.name'),
+            F3::get('DB.user'),
+            F3::get('DB.password'));
     }
 
     function get()
