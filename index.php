@@ -148,10 +148,24 @@ class item
 
     function post()
     {
-        $name = F3::get('POST.name');
-        $description = F3::get('POST.description');
-        $res = $this->db->exec("INSERT INTO profile SET name='$name', description='$description'");
-        echo json_encode(array('res' => $res));
+        $form = F3::get('POST.profile');
+        /*
+        foreach($form as $label=>$value)
+        {
+            F3::input(
+                $label,
+                $funcs = NULL,
+                $tags = NULL,
+                $filter = FILTER_UNSAFE_RAW,
+                $opt = array()
+                      )
+                }
+        */
+
+        array_walk($form, function(&$value,$label) {$value = "`". trim($label, "'") ."`='$value'";});
+        $sql = "INSERT INTO profile SET ". implode(" ,", $form);
+        $res = $this->db->exec($sql);
+        echo json_encode(array('res' => $res, 'sql'=>$sql));
     }
 
     function put()

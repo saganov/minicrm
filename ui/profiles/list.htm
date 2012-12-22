@@ -38,12 +38,12 @@
                     var profile = document.createElement('DIV');
                     profile.setAttribute('style', 'width:22%;margin:10px;float:left')
                     var name = document.createElement('H5');
-                    name.appendChild(document.createTextNode(response[i].name));
+                    name.appendChild(document.createTextNode(response[i].first_name +' '+ response[i].last_name));
                     var statistics = document.createElement('P');
                     statistics.setAttribute('style', 'font-size:0.7em;margin:0');
                     statistics.appendChild(document.createTextNode('Shown: '+ response[i].show +'; Clicked: '+ response[i].click));
                     var description = document.createElement('P');
-                    description.appendChild(document.createTextNode(response[i].description));
+                    description.appendChild(document.createTextNode(response[i].about));
                     profile.appendChild(name);
                     profile.appendChild(statistics);
                     profile.appendChild(description);
