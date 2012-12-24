@@ -7,3 +7,37 @@ DB.name=crm
 DB.user=root
 DB.password=root
 
+[routes]
+;GET /=home
+;GET /404=App->page404
+;GET /page/@num=Page->@controller
+
+; F3::route('GET /',      function() { F3::reroute('/news');});
+GET /=NewsController->index
+GET /news=NewsController->index
+; F3::route('GET /profiles',      function() {F3::reroute('/profiles/index');});
+GET /profiles=ProfilesController->index
+GET /profiles/list=ProfilesController->index
+GET /profiles/get=ProfilesController->get
+GET /profiles/add=ProfilesController->add
+GET /profiles/statistics=ProfilesController->statistics
+GET /profiles/search=ProfilesController->search
+GET /profiles/@method=ProfilesController->@method
+
+; RESTFull
+GET /profiles/manage=ProfilesRestController->get
+GET /profiles/manage/@item=ProfilesRestController->get
+POST /profiles/manage=ProfilesRestController->post
+PUT /profiles/manage/@item=ProfilesRestController->put
+DELETE /profiles/manage/@item=ProfilesRestController->delete
+
+
+GET /corespondence=CorespondenceController->index
+GET /services=ServicesController->index
+GET /todo=TodoController->index
+GET /finance=FinanceController->index
+GET /reports=ReportsController->index
+GET /help=HelpController->index
+GET /settings=SettingsController->index
+
+

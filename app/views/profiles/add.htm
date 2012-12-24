@@ -1,5 +1,5 @@
 <div id="profile_massage"></div>
-<form action="/profiles/manage/0" enctype="multipart/form-data"
+<form action="/profiles/manage" enctype="multipart/form-data"
       method="POST" name="profile_add">
   <span class="fieldset">Уважаемые коллеги! Анкета должна заполняться
   <strong>исключительно на английском языке</strong>. Просмотрите <a
@@ -319,7 +319,7 @@ fieldset fieldset ol{
         
         //e.preventDefault();
         data = new FormData(this);
-        makeRequest('POST', '/profiles/manage/0');
+        makeRequest('POST', this.getAttribute('action'));
         return false
         
         //return true;
