@@ -9,15 +9,15 @@
     <ol>
       <li>
         <label class="mandatory"  for="first_name">First Name</label>
-        <input class="mandatory" name="profile['first_name']" id="first_name" type="text" />
+        <input class="mandatory" name="profile[first_name]" id="first_name" type="text" />
       </li>
       <li>    
         <label class="mandatory"  for="last_name">Last Name</label>
-        <input class="mandatory" name="profile['last_name']" id="last_name" type="text" />
+        <input class="mandatory" name="profile[last_name]" id="last_name" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="birthday">Birthday</label>
-        <input class="mandatory" name="profile['birthday']" id="birthday" type="text" />
+        <input class="mandatory" name="profile[birthday]" id="birthday" type="text" />
       </li>
     </ol>
   </fieldset>
@@ -27,19 +27,19 @@
     <ol>
       <li>
         <label class="mandatory"  for="height">Height</label>
-        <input class="mandatory" name="profile['height']" type="text" />
+        <input class="mandatory" name="profile[height]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="weight">Weight</label>
-        <input class="mandatory" name="profile['weight']" type="text" />
+        <input class="mandatory" name="profile[weight]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="eyes">Eyes</label>
-        <input class="mandatory" name="profile['eyes']" type="text" />
+        <input class="mandatory" name="profile[eyes]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
-        <input class="mandatory" name="profile['hair']" type="text" />
+        <input class="mandatory" name="profile[hair]" type="text" />
       </li>
     </ol>
   </fieldset>
@@ -49,39 +49,39 @@
     <ol>
       <li>
         <label class="mandatory"  for="occupation">Occupation</label>
-        <input class="mandatory" name="profile['occupation']" type="text" />
+        <input class="mandatory" name="profile[occupation]" type="text" />
       </li>
       <li>    
         <label class="mandatory"  for="education">Education</label>
-        <input class="mandatory" name="profile['education']" type="text" />
+        <input class="mandatory" name="profile[education]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="religion">Religion</label>
-        <input class="mandatory" name="profile['religion']" type="text" />
+        <input class="mandatory" name="profile[religion]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="martial_status">Marital Status</label>
-        <input class="mandatory" name="profile['martial_status']" type="text" />
+        <input class="mandatory" name="profile[martial_status]" type="text" />
       </li>
       <li>    
         <label class="mandatory"  for="children">Children</label>
-        <input class="mandatory" name="profile['children']" type="text" />
+        <input class="mandatory" name="profile[children]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="language_spoken">Languages Spoken</label>
-        <input class="mandatory" name="profile['language_spoken']" type="text" />
+        <input class="mandatory" name="profile[language_spoken]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="english_proficiency">English Proficiency</label>
-        <input class="mandatory" name="profile['english_proficiency']" type="text" />
+        <input class="mandatory" name="profile[english_proficiency]" type="text" />
       </li>
       <li>    
         <label class="mandatory"  for="smoking">Smoking</label>
-        <input class="mandatory" name="profile['smoking']" type="text" />
+        <input class="mandatory" name="profile[smoking]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="looking_for_age">Looking for age</label>
-        <input class="mandatory" name="profile['looking_for_age']" type="text" />
+        <input class="mandatory" name="profile[looking_for_age]" type="text" />
       </li>
     </ol>
   </fieldset>
@@ -91,11 +91,11 @@
     <ol>
       <li>
         <label class="mandatory"  for="city">City</label>
-        <input class="mandatory" name="profile['city']" type="text" />
+        <input class="mandatory" name="profile[city]" type="text" />
       </li>
       <li>
         <label class="mandatory"  for="country">Country</label>
-        <input class="mandatory" name="profile['country']" type="text" />
+        <input class="mandatory" name="profile[country]" type="text" />
       </li>
       <li class="wide">
         <fieldset>
@@ -104,11 +104,11 @@
           <ol>
             <li>
               <label class="mandatory"  for="phone">Phone</label>
-              <input class="mandatory" name="profile['phone']" type="text" />
+              <input class="mandatory" name="profile[phone]" type="text" />
             </li>
             <li>
               <label class="mandatory"  for="email">Email</label>
-              <input class="mandatory" name="profile['email']" type="text" />
+              <input class="mandatory" name="profile[email]" type="text" />
             </li>
           </ol>
         </fieldset>
@@ -119,7 +119,7 @@
         country, city, street, building number, apartment
         number)</span>
         <label    class="mandatory"  for="post_address">Post Address</label>
-        <textarea class="mandatory" name="profile['post_address']"></textarea>
+        <textarea class="mandatory" name="profile[post_address]"></textarea>
       </li>
     </ol>
   </fieldset>
@@ -129,15 +129,15 @@
     <ol>
       <li class="wide">
         <label    class="mandatory"  for="hobbies">My hobbies are</label>
-        <textarea class="mandatory" name="profile['hobbies']"></textarea>
+        <textarea class="mandatory" name="profile[hobbies]"></textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="about">More about me</label>
-        <textarea class="mandatory" name="profile['about']"></textarea>
+        <textarea class="mandatory" name="profile[about]"></textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="ideal_relationship">Ideal relationship</label>
-        <textarea class="mandatory" name="profile['ideal_relationship']"></textarea>
+        <textarea class="mandatory" name="profile[ideal_relationship]"></textarea>
       </li>
     </ol>
   </fieldset>
@@ -285,7 +285,7 @@ fieldset fieldset ol{
 </style>
 <script type="text/javascript">
 (function() {
-    var httpRequest, data;
+    var httpRequest;
 
     document.forms['profile_add'].onsubmit = function(e){
         var empty_mandatory = [];
@@ -318,14 +318,13 @@ fieldset fieldset ol{
         }
         
         //e.preventDefault();
-        data = new FormData(this);
-        makeRequest('POST', this.getAttribute('action'));
+        makeRequest('POST', this.getAttribute('action'), new FormData(this));
         return false
         
         //return true;
     }
 
-    function makeRequest(method, url) {
+    function makeRequest(method, url, data) {
         if (window.XMLHttpRequest) { // Mozilla, Safari, ...
             httpRequest = new XMLHttpRequest();
         } else if (window.ActiveXObject) { // IE
@@ -355,19 +354,33 @@ fieldset fieldset ol{
                 var response = JSON.parse(httpRequest.responseText);
                 if(response.res == 1)
                 {
-                    var message = 'New profile was succesfully inserted';
+                    var message = ['New profile was succesfully inserted'];
                     var color   = 'green';
                     document.forms['profile_add'].reset()
                 }
                 else
                 {
-                    var message = 'Error occurs during profile inserting';
+                    var message = ['Error occurs during profile inserting'];
                     var color   = 'red';
+                    if(response.invalid)
+                    {
+                        for(var label in response.invalid)
+                        {
+                            message.push(label +' :: '+ response.invalid[label]);
+                        }
+                    }
                 }
                 
                 var messageElm = document.getElementById('profile_massage');
                 messageElm.setAttribute('style', 'text-align:center;margin:10px;color:'+color);
-                messageElm.appendChild(document.createTextNode(message));
+                messageElm.innerHTML = '';
+                for(var max=message.length, i=0; i<max; i++)
+                {
+                    var input_field = document.getElementById(i);
+                    addClass(input_field, 'warning');
+                    messageElm.appendChild(document.createTextNode(i+' :: '+message[i]));
+                    messageElm.appendChild(document.createElement("br"));
+                }
                 console.log(response);
             } else {
                 alert('There was a problem with the request.');
