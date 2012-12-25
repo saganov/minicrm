@@ -1,67 +1,52 @@
 <?php
 
+require_once dirname(__DIR__).'/models/PersoneModel.php';
+
 class ProfilesRestController
 {
-    protected $db;
+    protected $persone;
 
     public function __construct()
     {
-        $this->db=new DB(
-            'mysql:host='. F3::get('DB.host') .';port='. F3::get('DB.port') .';dbname='. F3::get('DB.name'),
-            F3::get('DB.user'),
-            F3::get('DB.password'));
+        $this->persone=new PersoneModel();
     }
 
-    function getAll()
-    {
-        echo json_encode($this->db->exec('SELECT * FROM profile'));
-    }
-
-    function get()
+    public function get()
     {
         $item = (int)F3::get('PARAMS.item');
         if($item > 0)
         {
-            $profile = $this->db->exec("SELECT * FROM profile WHERE id=$item");
-            if(count($profile))
+            $profile = $this->persone->get();
+            if(!empty($profile))
             {
-                echo json_encode($profile[0]);
+                echo json_encode($profile);
                 return;
             }
         }
         
-        echo json_encode(array());
+        echo json_encode($this->persone->getAll());
     }
 
-    function post()
+    public function post()
     {
-        $form = F3::get('POST.profile');
-        /*
-        foreach($form as $label=>$value)
+        list($valid, $invalid) = $this->persone->validate(F3::get('POST.profile'));
+        if(count($invalid))
         {
-            F3::input(
-                $label,
-                $funcs = NULL,
-                $tags = NULL,
-                $filter = FILTER_UNSAFE_RAW,
-                $opt = array()
-                      )
-                }
-        */
-
-        array_walk($form, function(&$value,$label) {$value = "`". trim($label, "'") ."`='$value'";});
-        $sql = "INSERT INTO profile SET ". implode(" ,", $form);
-        $res = $this->db->exec($sql);
-        echo json_encode(array('res' => $res, 'sql'=>$sql));
+            echo json_encode(array('invalid' => $invalid, 'debug'=>F3::get('POST.profile')));
+        }
+        else
+        {
+            echo json_encode(array('res' => $this->persone->insert($valid), 'debug'=>F3::get('POST.profile')));
+        }
     }
 
-    function put()
+    public function put()
     {
         // same as updateitem.php 
         echo "Update profile";
     }
 
-    function delete()
+    public function delete()
     {
         // same as deleteitem.php
         echo "Delete profile";
