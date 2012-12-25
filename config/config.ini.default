@@ -22,7 +22,7 @@ GET /profiles/get=ProfilesController->get
 GET /profiles/add=ProfilesController->add
 GET /profiles/statistics=ProfilesController->statistics
 GET /profiles/search=ProfilesController->search
-GET /profiles/@method=ProfilesController->@method
+;GET /profiles/@method=ProfilesController->@method
 
 ; RESTFull
 GET /profiles/manage=ProfilesRestController->get
