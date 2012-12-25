@@ -6,11 +6,12 @@
 -- Server version       x.xx.xx
 
 --
--- Table structure for table `profile`
+-- Table structure for table `persone`
 --
-DROP TABLE IF EXISTS `profile`;
-CREATE TABLE `profile` (
-  `id` INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+DROP TABLE IF EXISTS `persone`;
+CREATE TABLE `persone` (
+  `id`         INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `agent_id`   INTEGER      NOT NULL DEFAULT 0,
   `first_name` VARCHAR(100) NOT NULL DEFAULT '',
   `last_name`  VARCHAR(100) NOT NULL DEFAULT '',
   `birthday`   DATE         NOT NULL,
@@ -46,13 +47,20 @@ CREATE TABLE `profile` (
   `click`      INTEGER DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
 --
--- Dumping data for table `profile`
+-- Table structure for table `user`
 --
--- INSERT INTO `profile` VALUES
--- (NULL,'Miss First','Description of the Miss First',NULL,0,0),
--- (NULL,'Miss Second','Description of the Miss Second',NULL,0,0),
--- (NULL,'Miss Third','Description of the Miss Third',NULL,0,0);
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id`      INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `role_id` INTEGER      NOT NULL DEFAULT 0,
+  `name`    VARCHAR(100) NOT NULL DEFAULT '',
+  `phone`   VARCHAR(100) NOT NULL DEFAULT '',
+  `email`   VARCHAR(100) NOT NULL DEFAULT '',
+  `address` VARCHAR(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 --
 -- Table structure for table `statistics`
