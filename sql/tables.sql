@@ -53,13 +53,26 @@ CREATE TABLE `persone` (
 --
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id`      INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `role_id` INTEGER      NOT NULL DEFAULT 0,
-  `name`    VARCHAR(100) NOT NULL DEFAULT '',
-  `phone`   VARCHAR(100) NOT NULL DEFAULT '',
-  `email`   VARCHAR(100) NOT NULL DEFAULT '',
-  `address` VARCHAR(100) NOT NULL DEFAULT ''
+  `id`        INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `role_id`   INTEGER      NOT NULL DEFAULT 0,
+  `email`     VARCHAR(100) NOT NULL DEFAULT '' UNIQUE,
+  `password`  VARCHAR(100) NOT NULL DEFAULT '',
+  `name`      VARCHAR(100)          DEFAULT '',
+  `phone`     VARCHAR(100)          DEFAULT '',
+  `address`   VARCHAR(100)          DEFAULT '',
+  `timestamp` DATETIME     NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Table structure for table `logged`
+--
+DROP TABLE IF EXISTS `logged`;
+CREATE TABLE `logged` (
+  `id`         INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `user_id`    INTEGER NOT NULL, 
+--  `session_id` CHAR(32) BINARY NOT NULL, 
+  `token`      VARCHAR(128) NOT NULL
+);
 
 
 --

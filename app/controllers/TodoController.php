@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class TodoController
+require 'Controller.php';
+
+class TodoController extends Controller
 {
     public function index()
     {

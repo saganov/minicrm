@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class CorespondenceController
+require 'Controller.php';
+
+class CorespondenceController extends Controller
 {
     public function index()
     {

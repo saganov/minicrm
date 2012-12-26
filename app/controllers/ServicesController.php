@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class ServicesController
+require 'Controller.php';
+
+class ServicesController extends Controller
 {
     public function index()
     {

@@ -13,7 +13,9 @@ DB.password=root
 ;GET /page/@num=Page->@controller
 
 ; F3::route('GET /',      function() { F3::reroute('/news');});
-GET /=NewsController->index
+GET /=AuthController->auth
+POST /=AuthController->register
+GET /login=AuthController->login
 GET /news=NewsController->index
 ; F3::route('GET /profiles',      function() {F3::reroute('/profiles/index');});
 GET /profiles=ProfilesController->index

@@ -1,6 +1,8 @@
 <?php
 
-class ProfilesController
+require 'Controller.php';
+
+class ProfilesController extends Controller
 {
 
     public function index()

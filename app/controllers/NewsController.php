@@ -1,9 +1,9 @@
 <?php
 
+require 'Controller.php';
 
-class NewsController
+class NewsController extends Controller
 {
-
     public function index()
     {
         F3::set('content','news.htm');

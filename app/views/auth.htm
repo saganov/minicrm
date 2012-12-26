@@ -1,0 +1,147 @@
+<h4>Authentificatio</h4>
+<check if="{{ @message }}">
+  <span id="form_message" class="warning">{{ @message }}</span>
+</check>
+
+<form action="/login" method="GET" name="login">
+  <fieldset> 
+    <legend>Loggin</legend>
+    <ol>
+      <li>
+        <label class="mandatory"  for="email">Email</label>
+        <input class="mandatory" name="email" id="email" type="text" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="password">Password</label>
+        <input class="mandatory" name="password" id="password" type="password" />
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="submit">
+    <input class="submit" type="submit" value="Login" />
+  </fieldset>  
+</form>
+
+<form action="/" method="POST" name="register">
+  <fieldset> 
+    <legend>Register</legend>
+    <ol>
+      <li>
+        <label class="mandatory"  for="email">Email</label>
+        <input class="mandatory" name="email" id="email" type="text" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="password">Password</label>
+        <input class="mandatory" name="password" id="password" type="password" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="password_re">Repeate Password</label>
+        <input class="mandatory" name="password_re" id="password_re" type="password" />
+      </li>
+      <li>    
+        <label  for="name">Name</label>
+        <input name="name" id="name" type="text" />
+      </li>
+      <li>    
+        <label  for="phone">Phone</label>
+        <input name="phone" id="phone" type="text" />
+      </li>
+      <li>    
+        <label  for="address">Address</label>
+        <input name="address" id="address" type="address" />
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="submit">
+    <input class="submit" type="submit" value="Register" />
+  </fieldset>  
+</form>
+<style type="text/css">
+fieldset {    
+   float: left;    
+   clear: both;    
+   width: 100%;    
+   margin: 0 0 -1em 0;      
+   padding: 0 0 1em 0;      
+   border: 1px solid #BFBAB0;      
+   background-color: #F2EFE9; 
+}
+fieldset:nth-child(even) {
+   background-color: #E6E3DD;    
+}
+form span.fieldset, fieldset span{
+   color: maroon;
+   display: block;
+   margin: 1em;
+   text-align: center;
+}
+form span.fieldset strong, fieldset span strong{
+   text-decoration:underline;
+   font-weight:bold;
+}
+fieldset input{
+   width:20em;
+}
+fieldset textarea{
+   width:59em;
+   height:12em;
+}
+fieldset input.warning, fieldset textarea.warning{
+   border:1px solid red;
+}
+fieldset span.warning{
+   font-weight:bold;
+   color:red;
+}
+legend {  
+   margin-left: 1em;  
+   padding: 0;      
+   color: #545351;      
+   font-weight: bold;  
+}  
+label {
+   float: left;
+   width: 10em;
+   margin-right: 1em;
+   text-align: right;/* comment to make it left-aligned*/
+}
+fieldset ol {  
+   padding: 1em 1em 0 1em;
+   margin:0;
+   list-style: none;  
+}  
+fieldset li {
+   float: left;
+   /*clear: left;*//* to make it one collumn formed */
+   width: 50%;
+   padding-bottom: 1em;
+   list-style: none;
+}
+fieldset li.wide {
+   width: 100%;
+}
+fieldset .mandatory::after{
+   content:"*";
+   color:red;
+   font-weight:bold;
+}
+fieldset.submit {    
+   float: none;    
+   width: auto;    
+   border-style: none;    
+   padding-top: 1.5em;      
+   /*padding-left: 12em;*/
+   text-align: right;
+   background-color: transparent;    
+}
+fieldset.submit input{    
+   width: auto;
+}
+fieldset fieldset{
+   border: none;
+   background-color: transparent;
+}
+fieldset fieldset ol{
+   padding: 0;
+}
+</style>
