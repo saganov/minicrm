@@ -8,6 +8,11 @@ F3::set('UI',__DIR__.'/app/views/');
 
 F3::config(__DIR__.'/config/config.ini');
 
+F3::set('DB', new DB('mysql:host='. F3::get('DB.host') .';port='. F3::get('DB.port') .';dbname='. F3::get('DB.name'),
+                     F3::get('DB.user'),
+                     F3::get('DB.password')));
+
+
 F3::set('modules',
         array(
             'apc'  => 'Cache engine',

@@ -34,10 +34,7 @@ class PersoneModel
 
     public function __construct()
     {
-        $this->db=new DB(
-            'mysql:host='. F3::get('DB.host') .';port='. F3::get('DB.port') .';dbname='. F3::get('DB.name'),
-            F3::get('DB.user'),
-            F3::get('DB.password'));
+        $this->db=F3::get('DB');
     }
 
     public function get($id)
