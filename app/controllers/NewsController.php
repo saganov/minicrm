@@ -1,8 +1,8 @@
 <?php
 
-require 'Controller.php';
+require_once 'AuthController.php';
 
-class NewsController extends Controller
+class NewsController extends AuthController
 {
     public function index()
     {

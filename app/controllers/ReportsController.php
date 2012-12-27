@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class ReportsController
+require_once 'AuthController.php';
+
+class ReportsController extends AuthController
 {
     public function index()
     {

@@ -1,8 +1,8 @@
 <?php
 
-require 'Controller.php';
+require_once 'AuthController.php';
 
-class TodoController extends Controller
+class TodoController extends AuthController
 {
     public function index()
     {

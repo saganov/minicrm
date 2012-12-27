@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class FinanceController
+require_once 'AuthController.php';
+
+class FinanceController extends AuthController
 {
     public function index()
     {

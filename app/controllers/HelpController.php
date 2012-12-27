@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class HelpController
+require_once 'AuthController.php';
+
+class HelpController extends AuthController
 {
     public function index()
     {

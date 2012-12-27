@@ -1,8 +1,8 @@
 <?php
 
-require 'Controller.php';
+require_once 'AuthController.php';
 
-class ProfilesController extends Controller
+class ProfilesController extends AuthController
 {
 
     public function index()

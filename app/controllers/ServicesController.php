@@ -1,8 +1,8 @@
 <?php
 
-require 'Controller.php';
+require_once 'AuthController.php';
 
-class ServicesController extends Controller
+class ServicesController extends AuthController
 {
     public function index()
     {

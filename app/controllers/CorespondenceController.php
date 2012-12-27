@@ -1,8 +1,8 @@
 <?php
 
-require 'Controller.php';
+require_once 'AuthController.php';
 
-class CorespondenceController extends Controller
+class CorespondenceController extends AuthController
 {
     public function index()
     {

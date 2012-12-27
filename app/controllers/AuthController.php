@@ -9,10 +9,20 @@ class AuthController
 {
     private $_siteKey;
 
-
     public function __construct()
     {
         $this->siteKey = '123456qwertyasdfg';
+
+        // Don't rerout if we run inself
+        if(__CLASS__ != get_class($this))
+        {
+            F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'logged','id'=>'user_id','pw'=>'token'));
+            $auth = Auth::sql(F3::get('SESSION.id'), F3::get('SESSION.token'));
+            if (!$auth)
+            {
+                F3::reroute('/auth');
+            }
+        }
     }
 
     public function auth()

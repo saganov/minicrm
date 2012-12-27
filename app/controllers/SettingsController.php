@@ -1,11 +1,8 @@
 <?php
 
-/*
-namespace 'Controller';
-use 'F3';
-use 'Template';
-*/
-class SettingsController
+require_once 'AuthController.php';
+
+class SettingsController extends AuthController
 {
     public function index()
     {
