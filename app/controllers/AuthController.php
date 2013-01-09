@@ -27,7 +27,9 @@ class AuthController
 
     public function auth()
     {
-        F3::set('content','auth.htm');
+        F3::set('content', 'auth.htm');
+        F3::set('message', F3::get('GET.message'));
+        F3::set('email',   F3::get('GET.email'));
         echo Template::serve('index.htm');
     }
 
@@ -61,7 +63,7 @@ class AuthController
         else
         {
             F3::set('message', 'Login or password incorrect');
-            F3::reroute('/');
+            F3::reroute('/auth?message='. F3::get('message') .'&email='. $email);
         }
     }
 
@@ -90,8 +92,9 @@ class AuthController
 
         $user->save();
         // Return to admin home page, new blog entry should now be there
-        F3::reroute('/');
-
+        //F3::reroute("/login?email={$user->email}&password={$user->password}");
+        F3::set('message', 'Successfully registered. Please login');
+        F3::reroute('/auth?message='. F3::get('message') .'&email='. $user->email);
     }
 
 

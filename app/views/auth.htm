@@ -1,6 +1,6 @@
 <h4>Authentificatio</h4>
 <check if="{{ @message }}">
-  <span id="form_message" class="warning">{{ @message }}</span>
+  <div id="form_message" class="warning">{{ @message }}</div>
 </check>
 
 <form action="/login" method="GET" name="login">
@@ -9,7 +9,8 @@
     <ol>
       <li>
         <label class="mandatory"  for="email">Email</label>
-        <input class="mandatory" name="email" id="email" type="text" />
+        <input class="mandatory" name="email" id="email" type="text"
+               value="{{ @email }}" />
       </li>
       <li>    
         <label class="mandatory"  for="password">Password</label>
