@@ -18,7 +18,8 @@ GET /news=NewsController->index
 ; F3::route('GET /profiles',      function() {F3::reroute('/profiles/index');});
 GET /profiles=ProfilesController->index
 GET /profiles/list=ProfilesController->index
-GET /profiles/get=ProfilesController->get
+GET /profiles/get=ProfilesController->index
+GET /profiles/get/@item=ProfilesController->get
 GET /profiles/add=ProfilesController->add
 GET /profiles/statistics=ProfilesController->statistics
 GET /profiles/search=ProfilesController->search
