@@ -5,22 +5,23 @@
   <strong>исключительно на английском языке</strong>. Просмотрите <a
   href="/help">правила заполнения анкет</a>.</span>
   <fieldset> 
-    <input name="profile[agent_id]" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
+    <input name="id" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
+    <input name="agent_id" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
     <legend>Contact Details</legend>
     <ol>
       <li>
         <label class="mandatory"  for="first_name">First Name</label>
-        <input class="mandatory" name="profile[first_name]"
+        <input class="mandatory" name="first_name"
                id="first_name" type="text" value="{{ @persone->first_name }}" />
       </li>
       <li>    
         <label class="mandatory"  for="last_name">Last Name</label>
-        <input class="mandatory" name="profile[last_name]"
+        <input class="mandatory" name="last_name"
                id="last_name" type="text" value="{{ @persone->last_name }}" />
       </li>
       <li>
         <label class="mandatory"  for="birthday">Birthday</label>
-        <input class="mandatory" name="profile[birthday]"
+        <input class="mandatory" name="birthday"
                id="birthday" type="text" value="{{ @persone->birthday }}" />
       </li>
     </ol>
@@ -31,22 +32,22 @@
     <ol>
       <li>
         <label class="mandatory"  for="height">Height</label>
-        <input class="mandatory" name="profile[height]" type="text"
+        <input class="mandatory" name="height" type="text"
                value="{{ @persone->height }}" />
       </li>
       <li>
         <label class="mandatory"  for="weight">Weight</label>
-        <input class="mandatory" name="profile[weight]" type="text"
+        <input class="mandatory" name="weight" type="text"
                value="{{ @persone->weight }}" />
       </li>
       <li>
         <label class="mandatory"  for="eyes">Eyes</label>
-        <input class="mandatory" name="profile[eyes]" type="text"
+        <input class="mandatory" name="eyes" type="text"
                value="{{ @persone->eyes }}" />
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
-        <input class="mandatory" name="profile[hair]" type="text"
+        <input class="mandatory" name="hair" type="text"
                value="{{ @persone->hair }}" />
       </li>
     </ol>
@@ -57,47 +58,47 @@
     <ol>
       <li>
         <label class="mandatory"  for="occupation">Occupation</label>
-        <input class="mandatory" name="profile[occupation]"
+        <input class="mandatory" name="occupation"
                type="text"  value="{{ @persone->occupation }}" />
       </li>
       <li>    
         <label class="mandatory"  for="education">Education</label>
-        <input class="mandatory" name="profile[education]" type="text"
+        <input class="mandatory" name="education" type="text"
                value="{{ @persone->education }}" />
       </li>
       <li>
         <label class="mandatory"  for="religion">Religion</label>
-        <input class="mandatory" name="profile[religion]" type="text"
+        <input class="mandatory" name="religion" type="text"
                value="{{ @persone->religion }}" />
       </li>
       <li>
         <label class="mandatory"  for="martial_status">Marital Status</label>
-        <input class="mandatory" name="profile[martial_status]"
+        <input class="mandatory" name="martial_status"
                type="text"  value="{{ @persone->martial_status }}" />
       </li>
       <li>    
         <label class="mandatory"  for="children">Children</label>
-        <input class="mandatory" name="profile[children]" type="text"
+        <input class="mandatory" name="children" type="text"
                value="{{ @persone->children }}" />
       </li>
       <li>
         <label class="mandatory"  for="language_spoken">Languages Spoken</label>
-        <input class="mandatory" name="profile[language_spoken]"
+        <input class="mandatory" name="language_spoken"
                type="text"  value="{{ @persone->language_spoken }}" />
       </li>
       <li>
         <label class="mandatory"  for="english_proficiency">English Proficiency</label>
-        <input class="mandatory" name="profile[english_proficiency]"
+        <input class="mandatory" name="english_proficiency"
                type="text"  value="{{ @persone->english_proficiency }}" />
       </li>
       <li>    
         <label class="mandatory"  for="smoking">Smoking</label>
-        <input class="mandatory" name="profile[smoking]" type="text"
+        <input class="mandatory" name="smoking" type="text"
                value="{{ @persone->smoking }}" />
       </li>
       <li>
         <label class="mandatory"  for="looking_for_age">Looking for age</label>
-        <input class="mandatory" name="profile[looking_for_age]"
+        <input class="mandatory" name="looking_for_age"
                type="text"  value="{{ @persone->looking_for_age }}" />
       </li>
     </ol>
@@ -108,12 +109,12 @@
     <ol>
       <li>
         <label class="mandatory"  for="city">City</label>
-        <input class="mandatory" name="profile[city]" type="text"
+        <input class="mandatory" name="city" type="text"
                value="{{ @persone->city }}" />
       </li>
       <li>
         <label class="mandatory"  for="country">Country</label>
-        <input class="mandatory" name="profile[country]" type="text"
+        <input class="mandatory" name="country" type="text"
                value="{{ @persone->country }}" />
       </li>
       <li class="wide">
@@ -123,12 +124,12 @@
           <ol>
             <li>
               <label class="mandatory"  for="phone">Phone</label>
-              <input class="mandatory" name="profile[phone]"
+              <input class="mandatory" name="phone"
                      type="text"  value="{{ @persone->phone }}" />
             </li>
             <li>
               <label class="mandatory"  for="email">Email</label>
-              <input class="mandatory" name="profile[email]"
+              <input class="mandatory" name="email"
                      type="text"  value="{{ @persone->email }}" />
             </li>
           </ol>
@@ -140,7 +141,7 @@
         country, city, street, building number, apartment
         number)</span>
         <label    class="mandatory"  for="post_address">Post Address</label>
-        <textarea class="mandatory" name="profile[post_address]">{{ @persone->post_address }}</textarea>
+        <textarea class="mandatory" name="post_address">{{ @persone->post_address }}</textarea>
       </li>
     </ol>
   </fieldset>
@@ -150,15 +151,15 @@
     <ol>
       <li class="wide">
         <label    class="mandatory"  for="hobbies">My hobbies are</label>
-        <textarea class="mandatory" name="profile[hobbies]">{{ @persone->hobbies }}</textarea>
+        <textarea class="mandatory" name="hobbies">{{ @persone->hobbies }}</textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="about">More about me</label>
-        <textarea class="mandatory" name="profile[about]">{{ @persone->post_about }}</textarea>
+        <textarea class="mandatory" name="about">{{ @persone->post_about }}</textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="ideal_relationship">Ideal relationship</label>
-        <textarea class="mandatory" name="profile[ideal_relationship]">{{ @persone->ideal_relationship }}</textarea>
+        <textarea class="mandatory" name="ideal_relationship">{{ @persone->ideal_relationship }}</textarea>
       </li>
     </ol>
   </fieldset>

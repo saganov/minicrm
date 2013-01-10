@@ -41,7 +41,19 @@ class ProfilesRestController
         $profile = new Axon('persone');
         //overwrite with values just submitted
         $profile->copyFrom('POST');
-        $profile->id = 0;
+
+        if(!isset($profile->id))
+        {
+            $profile->id = 0;
+            $pkey = NULL;
+        }
+        else
+        {
+            $pkey = $profile->id;
+            $profile->load('id='.$pkey);
+            $profile->copyFrom('POST');
+        }
+        
         
         /** @todo there should be validatio */
 
@@ -61,9 +73,9 @@ class ProfilesRestController
             $profile->show  = 0;
             $profile->click = 0;
             
-            $res = $profile->save();
+            $res = $profile->save($pkey);
             
-            echo json_encode(array('res'=>$profile->_id, 'debug'=>F3::get('POST')));
+            echo json_encode(array('res'=>$pkey ? $pkey : $profile->_id, 'debug'=>F3::get('POST')));
         }
         return;
         
