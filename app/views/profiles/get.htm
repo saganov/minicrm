@@ -1,3 +1,431 @@
-<h5>{{ @profile['name'] }}</h5>
-<p style="font-size:0.7em;margin:0">Shown: {{ @profile['show'] }}; Clicked: {{ @profile['click'] }}</p>
-<p>{{ @profile['description'] }}</p>
+<div id="profile_massage"></div>
+<form action="/profiles/manage" enctype="multipart/form-data"
+      method="POST" name="profile_add">
+  <span class="fieldset">Уважаемые коллеги! Анкета должна заполняться
+  <strong>исключительно на английском языке</strong>. Просмотрите <a
+  href="/help">правила заполнения анкет</a>.</span>
+  <fieldset> 
+    <input name="profile[agent_id]" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
+    <legend>Contact Details</legend>
+    <ol>
+      <li>
+        <label class="mandatory"  for="first_name">First Name</label>
+        <input class="mandatory" name="profile[first_name]"
+               id="first_name" type="text" value="{{ @persone->first_name }}" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="last_name">Last Name</label>
+        <input class="mandatory" name="profile[last_name]"
+               id="last_name" type="text" value="{{ @persone->last_name }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="birthday">Birthday</label>
+        <input class="mandatory" name="profile[birthday]"
+               id="birthday" type="text" value="{{ @persone->birthday }}" />
+      </li>
+    </ol>
+  </fieldset>
+  
+  <fieldset>
+    <legend>Appearens</legend>  
+    <ol>
+      <li>
+        <label class="mandatory"  for="height">Height</label>
+        <input class="mandatory" name="profile[height]" type="text"
+               value="{{ @persone->height }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="weight">Weight</label>
+        <input class="mandatory" name="profile[weight]" type="text"
+               value="{{ @persone->weight }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="eyes">Eyes</label>
+        <input class="mandatory" name="profile[eyes]" type="text"
+               value="{{ @persone->eyes }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="hair">Hair</label>
+        <input class="mandatory" name="profile[hair]" type="text"
+               value="{{ @persone->hair }}" />
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>      
+    <legend>Legend</legend>  
+    <ol>
+      <li>
+        <label class="mandatory"  for="occupation">Occupation</label>
+        <input class="mandatory" name="profile[occupation]"
+               type="text"  value="{{ @persone->occupation }}" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="education">Education</label>
+        <input class="mandatory" name="profile[education]" type="text"
+               value="{{ @persone->education }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="religion">Religion</label>
+        <input class="mandatory" name="profile[religion]" type="text"
+               value="{{ @persone->religion }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="martial_status">Marital Status</label>
+        <input class="mandatory" name="profile[martial_status]"
+               type="text"  value="{{ @persone->martial_status }}" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="children">Children</label>
+        <input class="mandatory" name="profile[children]" type="text"
+               value="{{ @persone->children }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="language_spoken">Languages Spoken</label>
+        <input class="mandatory" name="profile[language_spoken]"
+               type="text"  value="{{ @persone->language_spoken }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="english_proficiency">English Proficiency</label>
+        <input class="mandatory" name="profile[english_proficiency]"
+               type="text"  value="{{ @persone->english_proficiency }}" />
+      </li>
+      <li>    
+        <label class="mandatory"  for="smoking">Smoking</label>
+        <input class="mandatory" name="profile[smoking]" type="text"
+               value="{{ @persone->smoking }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="looking_for_age">Looking for age</label>
+        <input class="mandatory" name="profile[looking_for_age]"
+               type="text"  value="{{ @persone->looking_for_age }}" />
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contacts</legend>
+    <ol>
+      <li>
+        <label class="mandatory"  for="city">City</label>
+        <input class="mandatory" name="profile[city]" type="text"
+               value="{{ @persone->city }}" />
+      </li>
+      <li>
+        <label class="mandatory"  for="country">Country</label>
+        <input class="mandatory" name="profile[country]" type="text"
+               value="{{ @persone->country }}" />
+      </li>
+      <li class="wide">
+        <fieldset>
+          <span>Обратите внимание! Адрес, телефон и электронная почта
+          должны быть <strong>полными и точными</strong>.</span>
+          <ol>
+            <li>
+              <label class="mandatory"  for="phone">Phone</label>
+              <input class="mandatory" name="profile[phone]"
+                     type="text"  value="{{ @persone->phone }}" />
+            </li>
+            <li>
+              <label class="mandatory"  for="email">Email</label>
+              <input class="mandatory" name="profile[email]"
+                     type="text"  value="{{ @persone->email }}" />
+            </li>
+          </ol>
+        </fieldset>
+      </li>
+      <li class="wide">
+        <span>Адрес заполняется на английском языке по образцу: 91055
+        Ukraine, Lugansk, Lenina Street, dom 1, kv 15 (zipcode,
+        country, city, street, building number, apartment
+        number)</span>
+        <label    class="mandatory"  for="post_address">Post Address</label>
+        <textarea class="mandatory" name="profile[post_address]">{{ @persone->post_address }}</textarea>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <legend>About</legend>  
+    <ol>
+      <li class="wide">
+        <label    class="mandatory"  for="hobbies">My hobbies are</label>
+        <textarea class="mandatory" name="profile[hobbies]">{{ @persone->hobbies }}</textarea>
+      </li>
+      <li class="wide">
+        <label    class="mandatory"  for="about">More about me</label>
+        <textarea class="mandatory" name="profile[about]">{{ @persone->post_about }}</textarea>
+      </li>
+      <li class="wide">
+        <label    class="mandatory"  for="ideal_relationship">Ideal relationship</label>
+        <textarea class="mandatory" name="profile[ideal_relationship]">{{ @persone->ideal_relationship }}</textarea>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <legend>Photos</legend>
+    <span>Вы можете прикрепить аватар в раздел Portrait. Аватар должен
+    быть размером 100x133 пикселей и в формате JPEG не более 12
+    КБ.</span>
+    <ol>
+      <li>
+        <label  for="portrait">Portrait</label>
+        <input name="portrait" type="file" />
+      </li>
+      <li>
+        <label class="mandatory"  for="photo1">Photo 1</label>
+        <input class="mandatory" name="photo1" type="file" />
+      </li>
+      <li>
+        <label  for="photo2">Photo 2</label>
+        <input name="photo2" type="file" />
+      </li>
+      <li>
+        <label  for="photo3">Photo 3</label>
+        <input name="photo3" type="file" />
+      </li>
+      <li>
+        <label  for="file4">Photo 4</label>
+        <input name="file4" type="file" />
+      </li>
+      <li>
+        <label  for="file5">Photo 5</label>
+        <input name="file5" type="file" />
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <legend>Passport</legend>
+    <span>Внимание!
+    Черно-белые копии паспорта не принимаются. Анкета девушки будет
+    активирована только в том случае, если в ней имеется ЦВЕТНАЯ копия
+    паспорта хорошего кач-ва размером не менее 600 пикселей в
+    ширину.</span>
+    <ol>
+      <li>
+        <label  for="passport">Passport Copy</label>
+        <input name="passport" type="file" />
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset class="submit">
+    <span id="form_message" class="warning"></span>
+    <input class="submit" type="submit" value="Save Profile" />
+  </fieldset>  
+</form>
+<style type="text/css">
+fieldset {    
+   float: left;    
+   clear: both;    
+   width: 100%;    
+   margin: 0 0 -1em 0;      
+   padding: 0 0 1em 0;      
+   border: 1px solid #BFBAB0;      
+   background-color: #F2EFE9; 
+}
+fieldset:nth-child(even) {
+   background-color: #E6E3DD;    
+}
+form span.fieldset, fieldset span{
+   color: maroon;
+   display: block;
+   margin: 1em;
+   text-align: center;
+}
+form span.fieldset strong, fieldset span strong{
+   text-decoration:underline;
+   font-weight:bold;
+}
+fieldset input{
+   width:20em;
+}
+fieldset textarea{
+   width:59em;
+   height:12em;
+}
+fieldset input.warning, fieldset textarea.warning{
+   border:1px solid red;
+}
+fieldset span.warning{
+   font-weight:bold;
+   color:red;
+}
+legend {  
+   margin-left: 1em;  
+   padding: 0;      
+   color: #545351;      
+   font-weight: bold;  
+}  
+label {
+   float: left;
+   width: 10em;
+   margin-right: 1em;
+   text-align: right;/* comment to make it left-aligned*/
+}
+fieldset ol {  
+   padding: 1em 1em 0 1em;
+   margin:0;
+   list-style: none;  
+}  
+fieldset li {
+   float: left;
+   /*clear: left;*//* to make it one collumn formed */
+   width: 50%;
+   padding-bottom: 1em;
+   list-style: none;
+}
+fieldset li.wide {
+   width: 100%;
+}
+fieldset .mandatory::after{
+   content:"*";
+   color:red;
+   font-weight:bold;
+}
+fieldset.submit {    
+   float: none;    
+   width: auto;    
+   border-style: none;    
+   padding-top: 1.5em;      
+   /*padding-left: 12em;*/
+   text-align: right;
+   background-color: transparent;    
+}
+fieldset.submit input{    
+   width: auto;
+}
+fieldset fieldset{
+   border: none;
+   background-color: transparent;
+}
+fieldset fieldset ol{
+   padding: 0;
+}
+</style>
+<script type="text/javascript">
+(function() {
+    var httpRequest;
+
+    document.forms['profile_add'].onsubmit = function(e){
+        var empty_mandatory = [];
+        for(var max = this.elements.length, i = 0; i < max; i++)
+        {
+            if(hasClass(this.elements[i], 'mandatory') && this.elements[i].value == '')
+            {
+                empty_mandatory.push(this.elements[i].value);
+                this.elements[i].className = this.elements[i].className + " warning";
+            }
+            else
+            {
+                removeClass(this.elements[i], 'warning');
+            }
+        } 
+        
+        var messager = document.getElementById('form_message');
+        messager.innerHTML = "";
+        messages = [];
+        
+        if(empty_mandatory.length)
+        {
+            messages.push("Please fill the mandatory fields");
+        }
+        
+        if(messages.length)
+        {
+            messager.appendChild(document.createTextNode(messages.join("<br/>\n")));
+            return false;
+        }
+        
+        //e.preventDefault();
+        makeRequest('POST', this.getAttribute('action'), new FormData(this));
+        return false
+        
+        //return true;
+    }
+
+    function makeRequest(method, url, data) {
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+            httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+            try {
+                httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+        
+        if (!httpRequest) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open(method, url, true);
+        httpRequest.send(data);
+    }
+    
+    function alertContents() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var response = JSON.parse(httpRequest.responseText);
+                if(response.res == 1)
+                {
+                    var message = ['New profile was succesfully inserted'];
+                    var color   = 'green';
+                    document.forms['profile_add'].reset()
+                }
+                else
+                {
+                    var message = ['Error occurs during profile inserting'];
+                    var color   = 'red';
+                    if(response.invalid)
+                    {
+                        for(var label in response.invalid)
+                        {
+                            message.push(label +' :: '+ response.invalid[label]);
+                        }
+                    }
+                }
+                
+                var messageElm = document.getElementById('profile_massage');
+                messageElm.setAttribute('style', 'text-align:center;margin:10px;color:'+color);
+                messageElm.innerHTML = '';
+                for(var max=message.length, i=0; i<max; i++)
+                {
+                    //var input_field = document.getElementById(i);
+                    //addClass(input_field, 'warning');
+                    messageElm.appendChild(document.createTextNode(message[i]));
+                    messageElm.appendChild(document.createElement("br"));
+                }
+                console.log(response);
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+    }
+    
+    function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    }
+    
+    function addClass(element, cls){
+        element.className = element.className +' '+ cls;
+    }
+    
+    function removeClass(element, cls){
+        var classes = element.className.split(/\s+/);
+        var idx = classes.indexOf(cls);
+        if(idx > -1)
+        {
+            classes.splice(idx, 1);
+        }
+        
+        element.className = classes.join(" ");
+    }
+})();
+</script>

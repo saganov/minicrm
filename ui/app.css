@@ -11,4 +11,4 @@ table.profile {border:0 none}
 table.profile tr {border:0 none}
 
 
-.warning {color: magenta; text-align:center; font-weight:bold; font-size:1.1em}
+#form_message.warning {color: magenta; text-align:center; font-weight:bold; font-size:1.1em}

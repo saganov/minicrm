@@ -15,7 +15,11 @@ class ProfilesController extends AuthController
 
     public function get()
     {
-        F3::set('profile_page_title','Profile');
+        $persone = new Axon('persone');
+        //$persone->findone('id='. F3::get('PARAMS.item'));
+        //$persone->copyTo('persone');
+        F3::set('persone', $persone->findone('id='. F3::get('PARAMS.item')));
+        F3::set('profile_page_title','Edit Profile');
         F3::set('profile_page','profiles/get.htm');
         F3::set('content','profiles/index.htm');
         echo Template::serve('index.htm');        

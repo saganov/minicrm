@@ -65,12 +65,24 @@ class PersoneModel
         
     }
 
+    protected function fieldHandlerBirthday()
+    {
+        F3::input('birthday',
+                  function($value, $field) { Code::dump($field ."=". $value); },
+                  NULL,
+                  FILTER_VALIDATE_REGEXP,
+                  array('options' => array('regexp' => '/^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/'))
+                  );
+    }
+
     /** @todo replace them into some base class */
     public function validate(array $data)
     {
         file_put_contents('/tmp/validate.dump', var_export($data, TRUE));
 
-       $valid = $invalid = array();
+        //$this->fieldHandlerBirthday();
+
+        $valid = $invalid = array();
         
         /** Redundant fields are skipped */
         foreach($this->persone as $label=>$desc)
