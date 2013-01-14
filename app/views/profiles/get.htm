@@ -11,18 +11,20 @@
     <ol>
       <li>
         <label class="mandatory"  for="first_name">First Name</label>
-        <input class="mandatory" name="first_name"
+        <input class="mandatory" name="first_name" required
                id="first_name" type="text" value="{{ @persone->first_name }}" />
       </li>
       <li>    
         <label class="mandatory"  for="last_name">Last Name</label>
-        <input class="mandatory" name="last_name"
+        <input class="mandatory" name="last_name" required
                id="last_name" type="text" value="{{ @persone->last_name }}" />
       </li>
       <li>
         <label class="mandatory"  for="birthday">Birthday</label>
         <input class="mandatory" name="birthday"
-               id="birthday" type="text" value="{{ @persone->birthday }}" />
+               placeholder="YYYY-MM-DD" pattern="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+               title="Enter your birthday in format yyyy-mm-dd" required
+               id="birthday" type="date" value="{{ @persone->birthday }}" />
       </li>
     </ol>
   </fieldset>
@@ -32,22 +34,26 @@
     <ol>
       <li>
         <label class="mandatory"  for="height">Height</label>
-        <input class="mandatory" name="height" type="text"
+        <input class="mandatory" name="height" type="number"
+               min="50" max="250" pattern="[0-9]{2,3}" required
                value="{{ @persone->height }}" />
       </li>
       <li>
         <label class="mandatory"  for="weight">Weight</label>
-        <input class="mandatory" name="weight" type="text"
+        <input class="mandatory" name="weight" type="number"
+               min="30" max="200" pattern="[0-9]{2,3}" required
                value="{{ @persone->weight }}" />
       </li>
       <li>
         <label class="mandatory"  for="eyes">Eyes</label>
         <input class="mandatory" name="eyes" type="text"
+               required
                value="{{ @persone->eyes }}" />
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
         <input class="mandatory" name="hair" type="text"
+               required
                value="{{ @persone->hair }}" />
       </li>
     </ol>
@@ -59,46 +65,55 @@
       <li>
         <label class="mandatory"  for="occupation">Occupation</label>
         <input class="mandatory" name="occupation"
+               required
                type="text"  value="{{ @persone->occupation }}" />
       </li>
       <li>    
         <label class="mandatory"  for="education">Education</label>
         <input class="mandatory" name="education" type="text"
+               required
                value="{{ @persone->education }}" />
       </li>
       <li>
         <label class="mandatory"  for="religion">Religion</label>
         <input class="mandatory" name="religion" type="text"
+               required
                value="{{ @persone->religion }}" />
       </li>
       <li>
         <label class="mandatory"  for="martial_status">Marital Status</label>
         <input class="mandatory" name="martial_status"
+               required
                type="text"  value="{{ @persone->martial_status }}" />
       </li>
       <li>    
         <label class="mandatory"  for="children">Children</label>
         <input class="mandatory" name="children" type="text"
+               required
                value="{{ @persone->children }}" />
       </li>
       <li>
         <label class="mandatory"  for="language_spoken">Languages Spoken</label>
         <input class="mandatory" name="language_spoken"
+               required
                type="text"  value="{{ @persone->language_spoken }}" />
       </li>
       <li>
         <label class="mandatory"  for="english_proficiency">English Proficiency</label>
         <input class="mandatory" name="english_proficiency"
+               required
                type="text"  value="{{ @persone->english_proficiency }}" />
       </li>
       <li>    
         <label class="mandatory"  for="smoking">Smoking</label>
         <input class="mandatory" name="smoking" type="text"
+               required
                value="{{ @persone->smoking }}" />
       </li>
       <li>
         <label class="mandatory"  for="looking_for_age">Looking for age</label>
         <input class="mandatory" name="looking_for_age"
+               required
                type="text"  value="{{ @persone->looking_for_age }}" />
       </li>
     </ol>
@@ -110,11 +125,13 @@
       <li>
         <label class="mandatory"  for="city">City</label>
         <input class="mandatory" name="city" type="text"
+               required
                value="{{ @persone->city }}" />
       </li>
       <li>
         <label class="mandatory"  for="country">Country</label>
         <input class="mandatory" name="country" type="text"
+               required
                value="{{ @persone->country }}" />
       </li>
       <li class="wide">
@@ -125,12 +142,14 @@
             <li>
               <label class="mandatory"  for="phone">Phone</label>
               <input class="mandatory" name="phone"
-                     type="text"  value="{{ @persone->phone }}" />
+                     required
+                     type="tel"  value="{{ @persone->phone }}" />
             </li>
             <li>
               <label class="mandatory"  for="email">Email</label>
               <input class="mandatory" name="email"
-                     type="text"  value="{{ @persone->email }}" />
+                     required
+                     type="email"  value="{{ @persone->email }}" />
             </li>
           </ol>
         </fieldset>
@@ -141,7 +160,7 @@
         country, city, street, building number, apartment
         number)</span>
         <label    class="mandatory"  for="post_address">Post Address</label>
-        <textarea class="mandatory" name="post_address">{{ @persone->post_address }}</textarea>
+        <textarea class="mandatory" name="post_address" required>{{ @persone->post_address }}</textarea>
       </li>
     </ol>
   </fieldset>
@@ -151,15 +170,15 @@
     <ol>
       <li class="wide">
         <label    class="mandatory"  for="hobbies">My hobbies are</label>
-        <textarea class="mandatory" name="hobbies">{{ @persone->hobbies }}</textarea>
+        <textarea class="mandatory" name="hobbies" required>{{ @persone->hobbies }}</textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="about">More about me</label>
-        <textarea class="mandatory" name="about">{{ @persone->post_about }}</textarea>
+        <textarea class="mandatory" name="about" required>{{ @persone->about }}</textarea>
       </li>
       <li class="wide">
         <label    class="mandatory"  for="ideal_relationship">Ideal relationship</label>
-        <textarea class="mandatory" name="ideal_relationship">{{ @persone->ideal_relationship }}</textarea>
+        <textarea class="mandatory" name="ideal_relationship" required>{{ @persone->ideal_relationship }}</textarea>
       </li>
     </ol>
   </fieldset>
@@ -253,6 +272,24 @@ fieldset span.warning{
    font-weight:bold;
    color:red;
 }
+input:invalid { 
+   border-color: #e88;
+   -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+   -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   box-shadow:0 0 5px rgba(255, 0, 0, .8);
+}
+/*
+input:required {
+   border-color: #88a;
+   -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -moz-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -o-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -ms-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+}
+*/
 legend {  
    margin-left: 1em;  
    padding: 0;      
