@@ -28,9 +28,9 @@ class ProfilesController extends AuthController
     public function add()
     {
         // @todo set agent_id according to the real ID from DataBase
-        F3::set('agent_id', 1);
+        F3::set('persone.agent_id', 1);
         F3::set('profile_page_title','Add new Profile');
-        F3::set('profile_page','profiles/add.htm');
+        F3::set('profile_page','profiles/get.htm');
         F3::set('content','profiles/index.htm');
        echo Template::serve('index.htm');
     }

@@ -5,7 +5,7 @@
   <strong>исключительно на английском языке</strong>. Просмотрите <a
   href="/help">правила заполнения анкет</a>.</span>
   <fieldset> 
-    <input name="id" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
+    <input name="id"       id="id"       type="hidden" value="{{ @persone->id }}" />
     <input name="agent_id" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
     <legend>Contact Details</legend>
     <ol>
@@ -374,22 +374,48 @@ fieldset fieldset ol{
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
                 var response = JSON.parse(httpRequest.responseText);
-                if(response.res == 1)
+                if(response.res !== false)
                 {
-                    var message = ['New profile was succesfully inserted'];
+                    switch (response.operation){
+                    case 'insert':
+                        var message = ['New profile was succesfully inserted'];
+                        break; 
+                    case 'update':
+                        var message = ['Profile was succesfully updated'];
+                        break;
+                    default:
+                        var message = ['Unknown operation: '+ response.operation];
+                    }
+
                     var color   = 'green';
                     document.forms['profile_add'].reset()
                 }
                 else
                 {
-                    var message = ['Error occurs during profile inserting'];
+                    var message = ['Error occurs during profile saving'];
                     var color   = 'red';
                     if(response.invalid)
                     {
-                        for(var label in response.invalid)
+                        var err = [];
+                        for(var max = response.invalid.length, i = 0; i < max; i++)
                         {
-                            message.push(label +' :: '+ response.invalid[label]);
+                            addClass('warning', document.getElementById(response.invalid[i]))
+                            err.push(response.invalid[i]);
                         }
+                        
+                        message.push('Invalid field(s): ' + err.join(', '));
+                    }
+
+                    if(response.absent)
+                    {
+                        var err = [];
+                        for(var max = response.absent.length, i = 0; i < max; i++)
+                        {
+                            addClass('warning', document.getElementById(response.absent[i]))
+                            err.push(response.absent[i]);
+                        }
+                        
+                        message.push('Missed mandatory field(s): ' + err.join(', '));
                     }
                 }
                 
@@ -415,7 +441,9 @@ fieldset fieldset ol{
     }
     
     function addClass(element, cls){
-        element.className = element.className +' '+ cls;
+        if(!hasClass(element, cls)){
+            element.className = element.className +' '+ cls;
+        }
     }
     
     function removeClass(element, cls){

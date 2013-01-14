@@ -20,6 +20,8 @@ class PersoneModel
     
     protected $db;
 
+    protected $data;
+
     protected $persone = array(
         /** label => array(type, access = readonly) */
         'id'         => array(self::INT),
@@ -32,32 +34,81 @@ class PersoneModel
         'weight'     => array(self::INT,    self::MANDATORY),
                                );
 
+    protected $mandatory = array(
+        //'id',
+        'agent_id',
+        'first_name',
+        'last_name',
+        'birthday',
+        'height',
+        'weight',
+                                 );
+
     public function __construct()
     {
-        $this->db=F3::get('DB');
+        $this->data = new Axon('persone');
     }
 
     public function get($id)
     {
-        $persone = $this->db->exec("SELECT * FROM `persone` WHERE `id`=$id");
-        return (count($profile) ? $profile[0] : array());
+        return $this->data->afindone('id='. $id);
     }
 
     public function getAll()
     {
-        return $this->db->exec("SELECT * FROM `persone");
+        return $this->data->afind();
+    }
+
+    public function save()
+    {
+        if (!$this->validate())
+        {
+            return FALSE;
+        }
+        
+        if(F3::exists('POST.id'))
+        {
+            F3::set('model.operation', 'update');
+            return $this->update(F3::get('POST.id'));
+        }
+        else
+        {
+            $this->data->id = 0;
+            F3::set('model.operation', 'insert');
+            return $this->insert();
+        }
     }
 
     public function insert(array $data)
     {
-        array_walk($data, function(&$value,$label) {$value = "`". trim($label, "'") ."`='$value'";});
-        $sql = "INSERT INTO `persone` SET ". implode(" ,", $data);
-        return $this->db->exec($sql);
+        $this->data->copyFrom('POST');
+
+        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
+        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
+        {
+            $this->data->$label = '';
+        }
+        $this->data->show  = 0;
+        $this->data->click = 0;
+
+        $this->data->save();
+        return $this->data->_id;
     }
 
-    public function update(array $data)
+    public function update($id)
     {
-        
+        $this->data->load('id='.$id);
+        $this->data->copyFrom('POST');
+
+        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
+        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
+        {
+            $this->data->$label = '';
+        }
+        $this->data->show  = 0;
+        $this->data->click = 0;
+        $this->data->save($id);
+        return $id;
     }
 
     public function delete($id)
@@ -68,58 +119,88 @@ class PersoneModel
     protected function fieldHandlerBirthday()
     {
         F3::input('birthday',
-                  function($value, $field) { Code::dump($field ."=". $value); },
+                  function($value, $field) {
+                      if(empty($value))
+                      {
+                          F3::push('invalid.form.field', $field);
+                      }
+                      else
+                      {
+                          list($year, $month, $day) = explode('-', $value);
+                          if(!checkdate($month , $day, $year))
+                          {
+                              F3::push('invalid.form.field', $field);
+                          }
+                          else
+                          {
+                              F3::push('valid.form.field', $field);
+                          }
+                      }
+                  },
                   NULL,
                   FILTER_VALIDATE_REGEXP,
                   array('options' => array('regexp' => '/^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/'))
                   );
     }
 
-    /** @todo replace them into some base class */
-    public function validate(array $data)
+    protected function fieldHandlerHeight()
     {
-        file_put_contents('/tmp/validate.dump', var_export($data, TRUE));
-
-        //$this->fieldHandlerBirthday();
-
-        $valid = $invalid = array();
-        
-        /** Redundant fields are skipped */
-        foreach($this->persone as $label=>$desc)
-        {
-            /** ReadOnly fields are skipped */
-            if (!isset($desc[1]) || self::READONLY === $desc[1]) continue;
-
-            /** @todo redesign because some values may by as empty */
-            if(self::MANDATORY === $desc[1] && empty($data[$label]))
-            {
-                $invalid[$label] = "Mandatory value not specified";
-                continue;
-            }
-            
-            $filter  = $desc[0];
-            $options = NULL;
-            switch ($filter)
-            {
-                case self::DATE:
-                    $filter  = FILTER_VALIDATE_REGEXP;
-                    $options = array('options' => array('regexp' => '/^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/'));
-                    break;
-                default:
-                    break;
-            }
-
-            if(FALSE === $res = filter_var($data[$label], $filter, $options))
-            {
-                $invalid[$label] = "{$data[$label]} are invalid value";
-            }
-            else
-            {
-                $valid[$label] = $res;
-            }
-        }
-        
-        return array($valid, $invalid);
+        F3::input('height',
+                  function($value, $field) {
+                      if(empty($value))
+                      {
+                          F3::push('invalid.form.field', $field);
+                      }
+                      else
+                      {
+                          F3::push('valid.form.field', $field);
+                      }
+                  },
+                  NULL,
+                  FILTER_VALIDATE_INT,
+                  array('options' => array('min_range' => 50, 'max_range' => 250))
+                  );
     }
 
+    protected function fieldHandlerWeight()
+    {
+        F3::input('weight',
+                  function($value, $field) {
+                      if(empty($value))
+                      {
+                          F3::push('invalid.form.field', $field);
+                      }
+                      else
+                      {
+                          F3::push('valid.form.field', $field);
+                      }
+                  },
+                  NULL,
+                  FILTER_VALIDATE_INT,
+                  array('options' => array('min_range' => 30, 'max_range' => 200))
+                  );
+    }
+
+    /** @todo replace them into some base class */
+    public function validate()
+    {
+        F3::clear('invalid.form.field');
+        F3::clear('valid.form.field');
+        F3::clear('absent.form.field');
+
+        foreach(F3::get('POST') as $key=>$value)
+        {
+            $handler = array($this, 'fieldHandler'. ucfirst($key));
+            if(in_array($key, $this->mandatory) && empty($value))
+            {
+                F3::push('absent.form.field', $key);
+            }
+            elseif(is_callable($handler))
+            {
+                call_user_func($handler);
+            }
+        }
+
+        return (!F3::exists('invalid.form.field') && !F3::exists('absent.form.field'));
+    }
 }
