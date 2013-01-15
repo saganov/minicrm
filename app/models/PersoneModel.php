@@ -83,11 +83,6 @@ class PersoneModel
     {
         $this->data->copyFrom('POST');
 
-        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
-        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
-        {
-            $this->data->$label = '';
-        }
         $this->data->show  = 0;
         $this->data->click = 0;
 
@@ -100,11 +95,6 @@ class PersoneModel
         $this->data->load('id='.$id);
         $this->data->copyFrom('POST');
 
-        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
-        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
-        {
-            $this->data->$label = '';
-        }
         $this->data->show  = 0;
         $this->data->click = 0;
         $this->data->save($id);
@@ -200,6 +190,49 @@ class PersoneModel
                 call_user_func($handler);
             }
         }
+
+
+        $error_types = array(
+            1=>'The uploaded file exceeds the upload_max_filesize directive in php.ini.',
+            'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.',
+            'The uploaded file was only partially uploaded.',
+            'No file was uploaded.',
+            6=>'Missing a temporary folder.',
+            'Failed to write file to disk.',
+            'A PHP extension stopped the file upload.'
+                             ); 
+        $uploaddir = dirname(dirname(__DIR__)).'/files/';
+        foreach(F3::get('FILES') as $key=>$file)
+        {
+            $handler = array($this, 'fileHandler'. ucfirst($key));
+            if(in_array($key, $this->mandatory) && empty($file['name']))
+            {
+                F3::push('absent.form.field', $key);
+            }
+            elseif($file['name'])
+            {
+                $uploadfile = $uploaddir . basename($file['name']);
+                
+                if($file['error'] > 0)
+                {
+                    F3::push('invalid.form.field', $key);
+                }
+                elseif(move_uploaded_file($file['tmp_name'], $uploadfile))
+                {
+                    F3::push('valid.form.field', $key);
+                    F3::set('POST.'.$key, '/files/'.$file['name']);
+                }
+                else
+                {
+                    F3::push('invalid.form.field', $key);
+                }
+            }
+            else
+            {
+                F3::set('POST.'.$key, '');
+            }
+        }
+       
 
         return (!F3::exists('invalid.form.field') && !F3::exists('absent.form.field'));
     }

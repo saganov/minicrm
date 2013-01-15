@@ -191,27 +191,69 @@
     <ol>
       <li>
         <label  for="portrait">Portrait</label>
-        <input name="portrait" type="file" />
+        <check if="{{ @persone->portrait }}">
+            <true>
+                <div><img src='{{ @persone->portrait }}' width="100"/></div>
+            </true>
+            <false>
+              <input name="portrait" type="file" />
+            </false>
+        </check>
       </li>
       <li>
         <label class="mandatory"  for="photo1">Photo 1</label>
-        <input class="mandatory" name="photo1" type="file" />
+        <check if="{{ @persone->photo1 }}">
+            <true>
+                <div><img src='{{ @persone->photo1 }}' width="250"/></div>
+            </true>
+            <false>
+                <input class="mandatory" name="photo1" type="file" />
+            </false>
+        </check>
       </li>
       <li>
         <label  for="photo2">Photo 2</label>
-        <input name="photo2" type="file" />
+        <check if="{{ @persone->photo2 }}">
+            <true>
+              <div><img src='{{ @persone->photo2 }}' width="250"/></div>
+            </true>
+            <false>
+              <input name="photo2" type="file" />
+            </false>
+        </check>
       </li>
       <li>
         <label  for="photo3">Photo 3</label>
-        <input name="photo3" type="file" />
+        <check if="{{ @persone->photo3 }}">
+            <true>
+              <div><img src='{{ @persone->photo3 }}' width="250"/></div>
+            </true>
+            <false>
+              <input name="photo3" type="file" />
+            </false>
+        </check>
       </li>
       <li>
         <label  for="file4">Photo 4</label>
-        <input name="file4" type="file" />
+        <check if="{{ @persone->photo4 }}">
+            <true>
+              <div><img src='{{ @persone->photo4 }}' width="250"/></div>
+            </true>
+            <false>
+              <input name="file4" type="file" />
+            </false>
+        </check>
       </li>
       <li>
         <label  for="file5">Photo 5</label>
-        <input name="file5" type="file" />
+        <check if="{{ @persone->photo5 }}">
+            <true>
+              <div><img src='{{ @persone->photo5 }}' width="250"/></div>
+            </true>
+            <false>
+              <input name="file5" type="file" />
+            </false>
+        </check>
       </li>
     </ol>
   </fieldset>
@@ -225,7 +267,14 @@
     <ol>
       <li>
         <label  for="passport">Passport Copy</label>
-        <input name="passport" type="file" />
+        <check if="{{ @persone->passport }}">
+          <true>
+            <div><img src='{{ @persone->passport }}' width="250"/></div>
+          </true>
+          <false>
+            <input name="passport" type="file" />
+          </false>
+        </check>
       </li>
     </ol>
   </fieldset>
