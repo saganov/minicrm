@@ -66,7 +66,7 @@ class PersoneModel
             return FALSE;
         }
         
-        if(F3::exists('POST.id'))
+        if(F3::exists('POST.id') && F3::get('POST.id') !== '')
         {
             F3::set('model.operation', 'update');
             return $this->update(F3::get('POST.id'));
@@ -79,10 +79,15 @@ class PersoneModel
         }
     }
 
-    public function insert(array $data)
+    public function insert()
     {
         $this->data->copyFrom('POST');
 
+        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
+        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
+        {
+            if(!isset($this->data->$label)) $this->data->$label = 'NULL';
+        }
         $this->data->show  = 0;
         $this->data->click = 0;
 
@@ -95,6 +100,11 @@ class PersoneModel
         $this->data->load('id='.$id);
         $this->data->copyFrom('POST');
 
+        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
+        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
+        {
+            if(!isset($this->data->$label)) $this->data->$label = 'NULL';
+        }
         $this->data->show  = 0;
         $this->data->click = 0;
         $this->data->save($id);

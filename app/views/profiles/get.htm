@@ -196,7 +196,7 @@
                 <div><img src='{{ @persone->portrait }}' width="100"/></div>
             </true>
             <false>
-              <input name="portrait" type="file" />
+              <input id="portrait" name="portrait" type="file" />
             </false>
         </check>
       </li>
@@ -207,7 +207,7 @@
                 <div><img src='{{ @persone->photo1 }}' width="250"/></div>
             </true>
             <false>
-                <input class="mandatory" name="photo1" type="file" />
+                <input id="photo1" class="mandatory" name="photo1" type="file" />
             </false>
         </check>
       </li>
@@ -218,7 +218,7 @@
               <div><img src='{{ @persone->photo2 }}' width="250"/></div>
             </true>
             <false>
-              <input name="photo2" type="file" />
+              <input id="photo2" name="photo2" type="file" />
             </false>
         </check>
       </li>
@@ -229,29 +229,29 @@
               <div><img src='{{ @persone->photo3 }}' width="250"/></div>
             </true>
             <false>
-              <input name="photo3" type="file" />
+              <input id="photo3" name="photo3" type="file" />
             </false>
         </check>
       </li>
       <li>
-        <label  for="file4">Photo 4</label>
+        <label  for="photo4">Photo 4</label>
         <check if="{{ @persone->photo4 }}">
             <true>
               <div><img src='{{ @persone->photo4 }}' width="250"/></div>
             </true>
             <false>
-              <input name="file4" type="file" />
+              <input id="photo4" name="photo4" type="file" />
             </false>
         </check>
       </li>
       <li>
-        <label  for="file5">Photo 5</label>
+        <label  for="photo5">Photo 5</label>
         <check if="{{ @persone->photo5 }}">
             <true>
               <div><img src='{{ @persone->photo5 }}' width="250"/></div>
             </true>
             <false>
-              <input name="file5" type="file" />
+              <input id="photo5" name="photo5" type="file" />
             </false>
         </check>
       </li>
@@ -272,7 +272,7 @@
             <div><img src='{{ @persone->passport }}' width="250"/></div>
           </true>
           <false>
-            <input name="passport" type="file" />
+            <input id="passport" name="passport" type="file" />
           </false>
         </check>
       </li>
