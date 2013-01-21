@@ -83,11 +83,6 @@ class PersoneModel
     {
         $this->data->copyFrom('POST');
 
-        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
-        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
-        {
-            if(!isset($this->data->$label)) $this->data->$label = 'NULL';
-        }
         $this->data->show  = 0;
         $this->data->click = 0;
 
@@ -100,13 +95,9 @@ class PersoneModel
         $this->data->load('id='.$id);
         $this->data->copyFrom('POST');
 
-        // `portrait`,`photo1`,`photo2`,`photo3`,`photo4`,`photo5`,`passport`,`show`,`click`
-        foreach(array('portrait','photo1','photo2','photo3','photo4','photo5','passport') as $label)
-        {
-            if(!isset($this->data->$label)) $this->data->$label = 'NULL';
-        }
         $this->data->show  = 0;
         $this->data->click = 0;
+
         $this->data->save($id);
         return $id;
     }
