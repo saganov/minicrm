@@ -42,12 +42,18 @@
                     link.setAttribute('href', '/profiles/get/'+response[i].id);
                     link.appendChild(document.createTextNode(response[i].first_name +' '+ response[i].last_name));
                     name.appendChild(link);
+                    var avatar = document.createElement('IMG');
+                    avatar.setAttribute('src', response[i].portrait);
+                    avatar.setAttribute('width', 100);
+                    avatar.setAttribute('height', 133);
+                    avatar.setAttribute('style', 'float:left;margin:3px 3px 0 0');
                     var statistics = document.createElement('P');
                     statistics.setAttribute('style', 'font-size:0.7em;margin:0');
                     statistics.appendChild(document.createTextNode('Shown: '+ response[i].show +'; Clicked: '+ response[i].click));
                     var description = document.createElement('P');
                     description.appendChild(document.createTextNode(response[i].about));
                     profile.appendChild(name);
+                    profile.appendChild(avatar);
                     profile.appendChild(statistics);
                     profile.appendChild(description);
                     container.appendChild(profile);
