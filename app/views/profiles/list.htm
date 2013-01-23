@@ -1,5 +1,37 @@
 <div id="profile_list"></div>
 <div style="clear:left"></div>
+<style type="text/css">
+#profile_list div{
+   border: 1px solid #F4F4F4;
+   width:32%;
+   margin:10px 3px;
+   float:left
+}
+#profile_list ol {  
+   margin:0;
+   float:left;
+   list-style: none;  
+}  
+#profile_list li {
+   /*float: left;*/
+   clear: left; /* to make it one collumn formed */
+   list-style: none;
+   font-size: 0.8em;
+}
+#profile_list li span{
+   display:block;
+   text-align:left;
+}
+#profile_list li span:nth-child(1){
+   font-weight:bold;
+   float:left;
+   width:67%;
+}
+#profile_list li span:nth-child(2){
+   width:30%;
+   float:right;
+}
+</style>
 <script type="text/javascript">
 (function() {
     var httpRequest;
@@ -35,27 +67,129 @@
                 var response = JSON.parse(httpRequest.responseText);
                 var container = document.getElementById('profile_list');
                 for(var max=response.length, i=0; i<max; i++){
+                    /*
+                      ID:		
+                      First Name:
+                      Last Name:
+                      Profile: 		View,Edit
+                      Status:		Active, Invisible
+                      Login:		View
+                      Video:		Upload
+                      Firstletter:	Upload
+                      Profile views:	
+                    */
                     var profile = document.createElement('DIV');
-                    profile.setAttribute('style', 'width:22%;margin:10px;float:left')
-                    var name = document.createElement('H5');
+                    
+                    var item = {id: 'ID', first_name: 'First Name', last_name: 'Last Name'};
+                    var desc = document.createElement('OL');
+                    for(var lbl in item){
+                        var elm = document.createElement('LI');
+                        var label = document.createElement('SPAN');
+                        label.appendChild(document.createTextNode(item[lbl] +': '));
+                        elm.appendChild(label);
+                        var text = document.createElement('SPAN');
+                        text.appendChild(document.createTextNode(response[i][lbl] || lbl));
+                        elm.appendChild(text);
+                        desc.appendChild(elm);
+                    }
+                    
+                    // Profile: 	View,Edit
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Profile: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    var view = document.createElement('A');
+                    view.setAttribute('href', '/profiles/get/'+response[i].id);
+                    view.appendChild(document.createTextNode('view'));
+                    var edit = document.createElement('A');
+                    edit.setAttribute('href', '/profiles/get/'+response[i].id);
+                    edit.appendChild(document.createTextNode('edit'));
+                    text.appendChild(view);
+                    text.appendChild(document.createTextNode('|'));
+                    text.appendChild(edit);
+                    elm.appendChild(text);
+                    desc.appendChild(elm);
+
+                    // Status:		Active, Invisible
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Status: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    var active = document.createElement('A');
+                    active.setAttribute('href', '#');
+                    active.appendChild(document.createTextNode('active'));
+                    var invisible = document.createElement('A');
+                    invisible.setAttribute('href', '#');
+                    invisible.appendChild(document.createTextNode('invisible'));
+                    text.appendChild(active);
+                    text.appendChild(document.createTextNode('|'));
+                    text.appendChild(invisible);
+                    elm.appendChild(text);
+                    desc.appendChild(elm);
+
+                    // Login:		View
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Login: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    var view = document.createElement('A');
+                    view.setAttribute('href', '#');
+                    view.appendChild(document.createTextNode('view'));
+                    text.appendChild(view);
+                    elm.appendChild(text);
+                    desc.appendChild(elm);                    
+                    
+                    //  Video:		Upload
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Video: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    var upload = document.createElement('A');
+                    upload.setAttribute('href', '#');
+                    upload.appendChild(document.createTextNode('upload'));
+                    text.appendChild(upload);
+                    elm.appendChild(text);
+                    desc.appendChild(elm);                    
+
+                    //  Firstletter:	Upload
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Firstletter: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    var upload = document.createElement('A');
+                    upload.setAttribute('href', '#');
+                    upload.appendChild(document.createTextNode('upload'));
+                    text.appendChild(upload);
+                    elm.appendChild(text);
+                    desc.appendChild(elm);
+
+                    //  Profile views:
+                    var elm = document.createElement('LI');
+                    var label = document.createElement('SPAN');
+                    label.appendChild(document.createTextNode('Profile views: '));
+                    elm.appendChild(label);
+                    var text = document.createElement('SPAN');
+                    text.appendChild(document.createTextNode(response[i]['show']));
+                    elm.appendChild(text);
+                    desc.appendChild(elm);
+
+
                     var link = document.createElement('A');
                     link.setAttribute('href', '/profiles/get/'+response[i].id);
-                    link.appendChild(document.createTextNode(response[i].first_name +' '+ response[i].last_name));
-                    name.appendChild(link);
                     var avatar = document.createElement('IMG');
                     avatar.setAttribute('src', response[i].portrait);
                     avatar.setAttribute('width', 100);
                     avatar.setAttribute('height', 133);
                     avatar.setAttribute('style', 'float:left;margin:3px 3px 0 0');
-                    var statistics = document.createElement('P');
-                    statistics.setAttribute('style', 'font-size:0.7em;margin:0');
-                    statistics.appendChild(document.createTextNode('Shown: '+ response[i].show +'; Clicked: '+ response[i].click));
-                    var description = document.createElement('P');
-                    description.appendChild(document.createTextNode(response[i].about));
-                    profile.appendChild(name);
-                    profile.appendChild(avatar);
-                    profile.appendChild(statistics);
-                    profile.appendChild(description);
+                    link.appendChild(avatar);
+
+                    profile.appendChild(link);
+                    profile.appendChild(desc);
                     container.appendChild(profile);
                 }
                 console.log(response);

@@ -1,9 +1,9 @@
 <div id="profile_massage"></div>
 <form action="/profiles/manage" enctype="multipart/form-data"
       method="POST" name="profile_add">
-  <span class="fieldset">Уважаемые коллеги! Анкета должна заполняться
-  <strong>исключительно на английском языке</strong>. Просмотрите <a
-  href="/help">правила заполнения анкет</a>.</span>
+  <span class="fieldset">Анкета заполняется на английском языке. Все
+  поля, отмеченные звездочкой (*) обязательны для заполнения.Правила
+  заполнения анкет <a href="/help">здесь</a>.</span>
   <fieldset> 
     <input name="id"       id="id"       type="hidden" value="{{ @persone->id }}" />
     <input name="agent_id" id="agent_id" type="hidden" value="{{ @persone->agent_id }}" />
@@ -46,15 +46,28 @@
       </li>
       <li>
         <label class="mandatory"  for="eyes">Eyes</label>
-        <input class="mandatory" name="eyes" type="text"
-               required
-               value="{{ @persone->eyes }}" />
+        <select class="mandatory" name="eyes" required>
+          <option value="">Select</option>
+          <option value="brown" {{ @persone->eyes == 'brown'?'selected="selected"':'' }}>brown</option>
+          <option value="blue"  {{ @persone->eyes == 'blue'?'selected="selected"':'' }}>blue</option>
+          <option value="green" {{ @persone->eyes == 'green'?'selected="selected"':'' }}>green</option>
+          <option value="grey"  {{ @persone->eyes == 'grey'?'selected="selected"':'' }}>grey</option>
+          <option value="hazel" {{ @persone->eyes == 'hazel'?'selected="selected"':'' }}>hazel</option>
+        </select>
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
-        <input class="mandatory" name="hair" type="text"
-               required
-               value="{{ @persone->hair }}" />
+        <select class="mandatory" name="hair" required>
+          <option value=''>Select</option>
+          <option value='black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
+          <option value='brown' {{ @persone->hair == 'brown'?'selected="selected"':'' }}>brown</option>
+          <option value='light-brown' {{ @persone->hair == 'light-brown'?'selected="selected"':'' }}>light-brown</option>
+          <option value='blond' {{ @persone->hair == 'blond'?'selected="selected"':'' }}>blond</option>
+          <option value='red'   {{ @persone->hair == 'red'?'selected="selected"':'' }}>red</option>
+          <option value='white' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
+          <option value='grey'  {{ @persone->hair == 'grey'?'selected="selected"':'' }}>grey</option>
+          <option value='bald'  {{ @persone->hair == 'bald'?'selected="selected"':'' }}>bald</option>
+        </select>
       </li>
     </ol>
   </fieldset>
@@ -70,21 +83,37 @@
       </li>
       <li>    
         <label class="mandatory"  for="education">Education</label>
-        <input class="mandatory" name="education" type="text"
-               required
-               value="{{ @persone->education }}" />
+        <select class="mandatory" name="education" required>
+          <option value=''>Select</option>
+          <option value='high school' {{ @persone->education == 'high school'?'selected="selected"':'' }}>high school</option>
+          <option value='some college' {{ @persone->education == 'some college'?'selected="selected"':'' }}>some college</option>
+          <option value='college' {{ @persone->education == 'college'?'selected="selected"':'' }}>college</option>
+          <option value='graduate school' {{ @persone->education == 'graduate school'?'selected="selected"':'' }}>graduate school</option>
+        </select>
       </li>
       <li>
         <label class="mandatory"  for="religion">Religion</label>
-        <input class="mandatory" name="religion" type="text"
-               required
-               value="{{ @persone->religion }}" />
+        <select  class="mandatory" name="religion" required>
+          <option value=''>Select</option>
+          <option value='Christianity' {{ @persone->religion == 'Christianity'?'selected="selected"':'' }}>Christianity</option>
+          <option value='Catholic' {{ @persone->religion == 'Catholic'?'selected="selected"':'' }}>Catholic</option>
+          <option value='Orthodoxy' {{ @persone->religion == 'Orthodoxy'?'selected="selected"':'' }}>Orthodoxy</option>
+          <option value='Muslim' {{ @persone->religion == 'Muslim'?'selected="selected"':'' }}>Muslim</option>
+          <option value='Buddhism' {{ @persone->religion == 'Buddhism'?'selected="selected"':'' }}>Buddhism</option>
+          <option value='Judaism' {{ @persone->religion == 'Judaism'?'selected="selected"':'' }}>Judaism</option>
+          <option value='Atheism' {{ @persone->religion == 'Atheism'?'selected="selected"':'' }}>Atheism</option>
+          <option value='other' {{ @persone->religion == 'other'?'selected="selected"':'' }}>other</option>
+        </select>
       </li>
       <li>
-        <label class="mandatory"  for="martial_status">Marital Status</label>
-        <input class="mandatory" name="martial_status"
-               required
-               type="text"  value="{{ @persone->martial_status }}" />
+        <label class="mandatory"  for="martial_status">Marital
+        Status</label>
+        <select class="mandatory" name="martial_status" required>
+          <option value=''>Select</option>
+          <option value='never married' {{ @persone->martial_status == 'never married'?'selected="selected"':'' }}>never married</option>
+          <option value='divorced' {{ @persone->martial_status == 'divorced'?'selected="selected"':'' }}>divorced</option>
+          <option value='widowed' {{ @persone->martial_status == 'widowed'?'selected="selected"':'' }}>widowed</option>
+        </select>
       </li>
       <li>    
         <label class="mandatory"  for="children">Children</label>
@@ -99,16 +128,23 @@
                type="text"  value="{{ @persone->language_spoken }}" />
       </li>
       <li>
-        <label class="mandatory"  for="english_proficiency">English Proficiency</label>
-        <input class="mandatory" name="english_proficiency"
-               required
-               type="text"  value="{{ @persone->english_proficiency }}" />
+        <label class="mandatory"  for="english_proficiency">English
+        Proficiency</label>
+        <select class="mandatory" name="english_proficiency" required>
+          <option value=''>Select</option>
+          <option value='basic' {{ @persone->english_proficiency == 'basic'?'selected="selected"':'' }}>basic</option>
+          <option value='intermediate' {{ @persone->english_proficiency == 'intermediate'?'selected="selected"':'' }}>intermediate</option>
+          <option value='good' {{ @persone->english_proficiency == 'good'?'selected="selected"':'' }}>good</option>
+          <option value='excellent' {{ @persone->english_proficiency == 'excellent'?'selected="selected"':'' }}>excellent</option>
+        </select>
       </li>
       <li>    
         <label class="mandatory"  for="smoking">Smoking</label>
-        <input class="mandatory" name="smoking" type="text"
-               required
-               value="{{ @persone->smoking }}" />
+        <select class="mandatory" name="smoking" required>
+          <option value=''>Select</option>
+          <option value='yes' {{ @persone->smoking == 'yes'?'selected="selected"':'' }}>yes</option>
+          <option value='no'  {{ @persone->smoking == 'no'?'selected="selected"':'' }}>no</option>
+        </select>
       </li>
       <li>
         <label class="mandatory"  for="looking_for_age">Looking for age</label>
@@ -136,8 +172,6 @@
       </li>
       <li class="wide">
         <fieldset>
-          <span>Обратите внимание! Адрес, телефон и электронная почта
-          должны быть <strong>полными и точными</strong>.</span>
           <ol>
             <li>
               <label class="mandatory"  for="phone">Phone</label>
@@ -155,10 +189,8 @@
         </fieldset>
       </li>
       <li class="wide">
-        <span>Адрес заполняется на английском языке по образцу: 91055
-        Ukraine, Lugansk, Lenina Street, dom 1, kv 15 (zipcode,
-        country, city, street, building number, apartment
-        number)</span>
+        <span>Адрес заполняется в последовательности: почтовый индекс,
+        улица, номер дома, квартира.</span>
         <label    class="mandatory"  for="post_address">Post Address</label>
         <textarea class="mandatory" name="post_address" required>{{ @persone->post_address }}</textarea>
       </li>
@@ -185,9 +217,8 @@
 
   <fieldset>
     <legend>Photos</legend>
-    <span>Вы можете прикрепить аватар в раздел Portrait. Аватар должен
-    быть размером 100x133 пикселей и в формате JPEG не более 12
-    КБ.</span>
+    <span>В разделе Portrait фото должно быть размером 100x133
+    пикселей и в формате JPEG.</span>
     <ol>
       <li>
         <label  for="portrait">Portrait</label>
@@ -259,11 +290,10 @@
   </fieldset>
   <fieldset>
     <legend>Passport</legend>
-    <span>Внимание!
-    Черно-белые копии паспорта не принимаются. Анкета девушки будет
-    активирована только в том случае, если в ней имеется ЦВЕТНАЯ копия
-    паспорта хорошего кач-ва размером не менее 600 пикселей в
-    ширину.</span>
+    <span>Вам необходимо загрузить цветную скан-копию страницы
+    паспорта или другого идентификационного документа, в котором есть
+    фотография девушки, ее фамилия, имя, дата рождения.ЦВЕТНАЯ копия
+    должна быть размером не менее 600 пикселей в ширину.</span>
     <ol>
       <li>
         <label  for="passport">Passport Copy</label>
@@ -307,7 +337,7 @@ form span.fieldset strong, fieldset span strong{
    text-decoration:underline;
    font-weight:bold;
 }
-fieldset input{
+fieldset input, fieldset select{
    width:20em;
 }
 fieldset textarea{
