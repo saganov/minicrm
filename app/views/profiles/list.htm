@@ -4,8 +4,12 @@
 #profile_list div{
    border: 1px solid #F4F4F4;
    width:32%;
-   margin:10px 3px;
+   margin:10px 3px 10px 0;
    float:left
+}
+#profile_list img {  
+   float:left;
+   margin:3px;
 }
 #profile_list ol {  
    margin:0;
@@ -28,7 +32,7 @@
    width:67%;
 }
 #profile_list li span:nth-child(2){
-   width:30%;
+   width:32%;
    float:right;
 }
 </style>
@@ -185,7 +189,6 @@
                     avatar.setAttribute('src', response[i].portrait);
                     avatar.setAttribute('width', 100);
                     avatar.setAttribute('height', 133);
-                    avatar.setAttribute('style', 'float:left;margin:3px 3px 0 0');
                     link.appendChild(avatar);
 
                     profile.appendChild(link);
