@@ -120,6 +120,9 @@ fieldset li {
    padding-bottom: 1em;
    list-style: none;
 }
+fieldset li.wide {
+   width: 100%;
+}
 fieldset.submit {    
    /*float: none;*/
    width: auto;    
@@ -210,6 +213,78 @@ fieldset.submit input{
 
         setTimeout(function(){popup.setAttribute('style', 'opacity:100');}, 500);
     }
+
+    function showActivateDeactivate(item){
+        var popup   = createElement('DIV', {'class': 'popup'});
+        
+        var header  = append(
+            append(createElement('H3'),
+                   createTextNode(('active' == item.status ? 'Де-активация' : 'Активация')),
+                   append(setEvent(createElement('A', {'class':'close', 'href': '#close', 'title':'Close'}),
+                                   'click',
+                                   (function(elm){
+                                       return function(e){
+                                           elm.setAttribute('style', 'opacity:0');
+                                           setTimeout(function(){document.getElementsByTagName('BODY')[0].removeChild(elm);}, 500);
+                                       }})(popup)),
+                          createTextNode('x'))));
+        
+        var tostatus = ('active' == item.status ? 'деактивации' :  'активации');
+        var fieldset  = append(createElement('FIELDSET', {'style': 'width:100%;margin:20px 0;padding:0'}),
+                              append(createElement('OL'),
+                                     append(createElement('LI', {'class': 'wide'}),
+                                            append(createElement('LABEL',{'for': 'reason', 'style': 'width:100%;font-weight:bold'}),
+                                                   createTextNode('Причина '+ tostatus +' анкеты '
+                                                                  +'#'+ item.id +' ('+ item.first_name +' '+ item.last_name +'):')),
+                                            createElement('INPUT', {'type': 'text',
+                                                                    'name': 'reason',
+                                                                   'style': 'width:100%'}))));
+        var submit  = append(createElement('FIELDSET', {'class': 'submit'}),
+                             append(createElement('OL'),
+                                    append(createElement('LI'),
+                                           createElement('INPUT', {'type': 'submit',
+                                                                   'name': 'submit',
+                                                                   'value':('active' == item.status ? 'Deactivate' :  'Activate')}))));
+        append(document.getElementsByTagName('BODY')[0],
+               append(popup, append(createElement('DIV'), header,  fieldset, submit)));
+
+        setTimeout(function(){popup.setAttribute('style', 'opacity:100');}, 500);
+    }
+
+    function showFirstletterPopup(item){
+        var popup   = createElement('DIV', {'class': 'popup'});
+        
+        var header  = append(
+            append(createElement('H3'),
+                   createTextNode('Первое письмо'),
+                   append(setEvent(createElement('A', {'class':'close', 'href': '#close', 'title':'Close'}),
+                                   'click',
+                                   (function(elm){
+                                       return function(e){
+                                           elm.setAttribute('style', 'opacity:0');
+                                           setTimeout(function(){document.getElementsByTagName('BODY')[0].removeChild(elm);}, 500);
+                                       }})(popup)),
+                          createTextNode('x'))));
+        
+        var fieldset  = append(createElement('FIELDSET', {'style': 'width:100%;margin:20px 0;padding:0'}),
+                              append(createElement('OL'),
+                                     append(createElement('LI', {'class': 'wide'}),
+                                            append(createElement('LABEL',{'for': 'reason', 'style': 'width:100%;font-weight:bold'}),
+                                                   createTextNode('')),
+                                            createElement('TEXTAREA', {'name': 'first_letter',
+                                                                       'style': 'width:100%;height:90px'}))));
+        var submit  = append(createElement('FIELDSET', {'class': 'submit'}),
+                             append(createElement('OL'),
+                                    append(createElement('LI'),
+                                           createElement('INPUT', {'type': 'submit',
+                                                                   'name': 'submit',
+                                                                   'value':'Save'}))));
+        append(document.getElementsByTagName('BODY')[0],
+               append(popup, append(createElement('DIV'), header,  fieldset, submit)));
+
+        setTimeout(function(){popup.setAttribute('style', 'opacity:100');}, 500);
+    }
+
 
     function createElement(tag, attributes){
         attributes = attributes || false;
@@ -316,16 +391,31 @@ fieldset.submit input{
                     label.appendChild(document.createTextNode('Status: '));
                     elm.appendChild(label);
                     var text = document.createElement('SPAN');
-                    var active = document.createElement('A');
-                    active.setAttribute('href', '#');
-                    active.appendChild(document.createTextNode('active'));
-                    var invisible = document.createElement('A');
-                    invisible.setAttribute('href', '#');
-                    invisible.appendChild(document.createTextNode('invisible'));
-                    text.appendChild(active);
-                    text.appendChild(document.createTextNode('|'));
-                    text.appendChild(invisible);
-                    elm.appendChild(text);
+                    var status_text = ('active' == response[i].status ? 'active' : 'inactive');
+                    var status = append(createElement('A', {'href': '#', 'data-status': status_text}),
+                                        createTextNode(status_text));
+                    setEvent(status, 'mouseenter', (function(status){
+                        return function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            e.target.innerHTML = ('active' == status ? 'deactivate?' : 'activate?');
+                        }
+                    })(status_text));
+                    setEvent(status, 'mouseout', (function(status){
+                        return function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            e.target.innerHTML = this.getAttribute('data-status');
+                        }
+                    })(status_text));
+                    setEvent(status, 'click', (function(item){
+                        return function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            showActivateDeactivate(item);
+                        }
+                    })(response[i]));
+                    elm.appendChild(append(text, status));
                     desc.appendChild(elm);
 
                     // Login:		View
@@ -372,6 +462,11 @@ fieldset.submit input{
                     var text = document.createElement('SPAN');
                     var upload = document.createElement('A');
                     upload.setAttribute('href', '#');
+                    setEvent(upload, 'click', (function(item){return function(e){
+                        //e.stopImmediatePropagation();
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showFirstletterPopup(item)}})(response[i]));
                     upload.appendChild(document.createTextNode('upload'));
                     text.appendChild(upload);
                     elm.appendChild(text);

@@ -43,6 +43,7 @@ CREATE TABLE `persone` (
   `photo4`     VARCHAR(100) DEFAULT '',
   `photo5`     VARCHAR(100) DEFAULT '',
   `passport`   VARCHAR(100) NOT NULL DEFAULT '',
+  `status`     ENUM('active', 'inactive'),
   `show`       INTEGER DEFAULT 0,
   `click`      INTEGER DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
