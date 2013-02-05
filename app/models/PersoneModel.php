@@ -44,19 +44,22 @@ class PersoneModel
         'weight',
                                  );
 
-    public function __construct()
+    protected $agent_id;
+
+    public function __construct($agent_id)
     {
         $this->data = new Axon('persone');
+        $this->agent_id = $agent_id;
     }
 
     public function get($id)
     {
-        return $this->data->afindone('id='. $id);
+        return $this->data->afindone('id='. $id .'AND agent_id='. $this->agent_id);
     }
 
     public function getAll()
     {
-        return $this->data->afind();
+        return $this->data->afind('agent_id='. $this->agent_id);
     }
 
     public function save()
@@ -85,6 +88,7 @@ class PersoneModel
 
         $this->data->show  = 0;
         $this->data->click = 0;
+        $this->data->agent_id = $this->agent_id;
 
         $this->data->save();
         return $this->data->_id;
@@ -97,6 +101,7 @@ class PersoneModel
 
         $this->data->show  = 0;
         $this->data->click = 0;
+        $this->data->agent_id = $this->agent_id;
 
         $this->data->save($id);
         return $id;

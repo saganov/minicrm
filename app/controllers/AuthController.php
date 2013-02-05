@@ -9,6 +9,8 @@ class AuthController
 {
     private $_siteKey;
 
+    protected $user_id;
+
     public function __construct()
     {
         $this->siteKey = '123456qwertyasdfg';
@@ -21,6 +23,10 @@ class AuthController
             if (!$auth)
             {
                 F3::reroute('/auth');
+            }
+            else
+            {
+                $this->user_id = $auth->user_id;
             }
         }
     }

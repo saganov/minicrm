@@ -1,14 +1,16 @@
 <?php
 
 require_once dirname(__DIR__).'/models/PersoneModel.php';
+require_once __DIR__.'/AuthController.php';
 
-class ProfilesRestController
+class ProfilesRestController extends AuthController
 {
     protected $persone;
 
     public function __construct()
     {
-        $this->persone=new PersoneModel();
+        parent::__construct();
+        $this->persone=new PersoneModel($this->user_id);
     }
 
     public function get()
