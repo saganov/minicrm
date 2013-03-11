@@ -47,14 +47,16 @@ class AuthController
         $password = F3::get('GET.password');
 
         //F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'user','id'=>'email','pw'=>'password'));
-         $auth = new Auth(new \DB\SQL\Mapper(F3::get('DB'), 'user'), array('id'=>'email', 'pw'=>'password'));
+        $mapper = new \DB\SQL\Mapper(F3::get('DB'), 'user');
+        $auth = new Auth($mapper, array('id'=>'email', 'pw'=>'password'));
 
         //$auth = Auth::sql($email, $password);
         //$auth = Auth::sql('SESSION.user', 'test');
         if ($auth->login($email, $password))
         {
             //set the session so user stays logged in
-            F3::set('SESSION.id', $auth->id);
+            $user = $mapper->findone('email="'.$email.'"');
+            F3::set('SESSION.id', $user->id);
             //Build the token
             $token = $this->hashData($_SERVER['HTTP_USER_AGENT']
                                      . $this->randomString());
@@ -62,7 +64,7 @@ class AuthController
 
             $logged = new \DB\SQL\Mapper(F3::get('DB'), 'logged');
             $logged->id      = 0;
-            $logged->user_id = $auth->id;
+            $logged->user_id = $user->id;
             $logged->token   = $token;
             
             $logged->save();
