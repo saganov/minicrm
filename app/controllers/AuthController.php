@@ -18,15 +18,16 @@ class AuthController
         // Don't rerout if we run inself
         if(__CLASS__ != get_class($this))
         {
-            F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'logged','id'=>'user_id','pw'=>'token'));
-            $auth = Auth::sql(F3::get('SESSION.id'), F3::get('SESSION.token'));
-            if (!$auth)
+            //F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'logged','id'=>'user_id','pw'=>'token'));
+            $auth = new Auth(new \DB\SQL\Mapper(F3::get('DB'), 'logged'), array('id'=>'user_id', 'pw'=>'token'));
+            //$auth = Auth::sql(F3::get('SESSION.id'), F3::get('SESSION.token'));
+            if (!$auth->login(F3::get('SESSION.id'), F3::get('SESSION.token')))
             {
                 F3::reroute('/auth');
             }
             else
             {
-                $this->user_id = $auth->user_id;
+                $this->user_id = F3::get('SESSION.id');
             }
         }
     }
@@ -36,7 +37,8 @@ class AuthController
         F3::set('content', 'auth.htm');
         F3::set('message', F3::get('GET.message'));
         F3::set('email',   F3::get('GET.email'));
-        echo Template::serve('index.htm');
+        $view = new Template;                               
+        echo $view->render('index.htm');  
     }
 
     public function login()
@@ -44,10 +46,12 @@ class AuthController
         $email    = F3::get('GET.email');
         $password = F3::get('GET.password');
 
-        F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'user','id'=>'email','pw'=>'password'));
-        $auth = Auth::sql($email, $password);
+        //F3::set('AUTH',array('db'=>F3::get('DB'), 'table'=>'user','id'=>'email','pw'=>'password'));
+         $auth = new Auth(new \DB\SQL\Mapper(F3::get('DB'), 'user'), array('id'=>'email', 'pw'=>'password'));
+
+        //$auth = Auth::sql($email, $password);
         //$auth = Auth::sql('SESSION.user', 'test');
-        if ($auth)
+        if ($auth->login($email, $password))
         {
             //set the session so user stays logged in
             F3::set('SESSION.id', $auth->id);
@@ -56,7 +60,7 @@ class AuthController
                                      . $this->randomString());
             F3::set('SESSION.token', $token);
 
-            $logged = new Axon('logged');
+            $logged = new \DB\SQL\Mapper(F3::get('DB'), 'logged');
             $logged->id      = 0;
             $logged->user_id = $auth->id;
             $logged->token   = $token;
@@ -75,7 +79,7 @@ class AuthController
 
     public function register()
     {
-        $user = new Axon('user');
+        $user = new \DB\SQL\Mapper(F3::get('DB'), 'user');
         //overwrite with values just submitted
         $user->copyFrom('POST');
         //create a timestamp in MySQL format

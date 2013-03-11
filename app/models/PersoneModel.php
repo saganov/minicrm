@@ -48,17 +48,19 @@ class PersoneModel
 
     public function __construct($agent_id)
     {
-        $this->data = new Axon('persone');
+        //$this->data = new Axon('persone');
+        $this->data = new \DB\SQL\Mapper(F3::get('DB'),'persone');
         $this->agent_id = $agent_id;
     }
 
     public function get($id)
     {
-        return $this->data->afindone('id='. $id .'AND agent_id='. $this->agent_id);
+        return $this->data->findone('id='. $id .' AND agent_id='. $this->agent_id);
     }
 
     public function getAll()
     {
+        // @todo  refactor to use find method instead of the afind
         return $this->data->afind('agent_id='. $this->agent_id);
     }
 

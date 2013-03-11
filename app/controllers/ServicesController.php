@@ -7,7 +7,8 @@ class ServicesController extends AuthController
     public function index()
     {
         F3::set('content','services.htm');
-        echo Template::serve('index.htm');
+        $view = new Template;                               
+        echo $view->render('index.htm');  
     }
 
 
