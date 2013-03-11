@@ -49,7 +49,8 @@ class PersoneModel
     public function __construct($agent_id)
     {
         //$this->data = new Axon('persone');
-        $this->data = new \DB\SQL\Mapper(F3::get('DB'),'persone');
+        //$this->data = new \DB\SQL\Mapper(F3::get('DB'),'persone');
+        $this->data = new \DB\SQL\Mapper(F3::get('DB'),'jos_lovefactory_profiles');
         $this->agent_id = $agent_id;
     }
 
