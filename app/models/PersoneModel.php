@@ -61,7 +61,15 @@ class PersoneModel
     public function getAll()
     {
         // @todo  refactor to use find method instead of the afind
-        return $this->data->afind('agent_id='. $this->agent_id);
+        //return $this->data->find('agent_id='. $this->agent_id);
+
+        $all = array();
+        foreach($this->data->find('agent_id='. $this->agent_id) as $persone)
+        {
+            $persone->copyTo('temp.persone');
+            $all[] = F3::get('temp.persone');
+        }
+        return $all;
     }
 
     public function save()
