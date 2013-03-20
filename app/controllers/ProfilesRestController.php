@@ -42,8 +42,8 @@ class ProfilesRestController extends AuthController
         else
         {
             echo json_encode(array('res'=>$pkey,
-                                   'invalid' => F3::get('invalid.form.field'),
-                                   'absent' => F3::get('absent.form.field'),
+                                   'invalid' => F3::get('field.invalid'),
+                                   'absent' => F3::get('field.absent'),
                                    'debug'=>F3::get('POST')));
         }
     }

@@ -89,18 +89,18 @@ class PersoneModel
                   function($value, $field) {
                       if(empty($value))
                       {
-                          F3::push('invalid.form.field', $field);
+                          F3::push('field.invalid', $field);
                       }
                       else
                       {
                           list($year, $month, $day) = explode('-', $value);
                           if(!checkdate($month , $day, $year))
                           {
-                              F3::push('invalid.form.field', $field);
+                              F3::push('field.invalid', $field);
                           }
                           else
                           {
-                              F3::push('valid.form.field', $field);
+                              F3::push('field.valid', $field);
                           }
                       }
                   },
@@ -116,11 +116,11 @@ class PersoneModel
                   function($value, $field) {
                       if(empty($value))
                       {
-                          F3::push('invalid.form.field', $field);
+                          F3::push('field.invalid', $field);
                       }
                       else
                       {
-                          F3::push('valid.form.field', $field);
+                          F3::push('field.valid', $field);
                       }
                   },
                   NULL,
@@ -135,11 +135,11 @@ class PersoneModel
                   function($value, $field) {
                       if(empty($value))
                       {
-                          F3::push('invalid.form.field', $field);
+                          F3::push('field.invalid', $field);
                       }
                       else
                       {
-                          F3::push('valid.form.field', $field);
+                          F3::push('field.valid', $field);
                       }
                   },
                   NULL,
@@ -151,16 +151,16 @@ class PersoneModel
     /** @todo replace them into some base class */
     public function validate()
     {
-        F3::clear('invalid.form.field');
-        F3::clear('valid.form.field');
-        F3::clear('absent.form.field');
+        F3::clear('field.invalid');
+        F3::clear('field.valid');
+        F3::clear('field.absent');
 
         foreach(F3::get('POST') as $key=>$value)
         {
             $handler = array($this, 'fieldHandler'. ucfirst($key));
             if(in_array($key, $this->mandatory) && empty($value))
             {
-                F3::push('absent.form.field', $key);
+                F3::push('field.absent', $key);
             }
             elseif(is_callable($handler))
             {
@@ -184,7 +184,7 @@ class PersoneModel
             $handler = array($this, 'fileHandler'. ucfirst($key));
             if(in_array($key, $this->mandatory) && empty($file['name']))
             {
-                F3::push('absent.form.field', $key);
+                F3::push('field.absent', $key);
             }
             elseif($file['name'])
             {
@@ -192,16 +192,16 @@ class PersoneModel
                 
                 if($file['error'] > 0)
                 {
-                    F3::push('invalid.form.field', $key);
+                    F3::push('field.invalid', $key);
                 }
                 elseif(move_uploaded_file($file['tmp_name'], $uploadfile))
                 {
-                    F3::push('valid.form.field', $key);
+                    F3::push('field.valid', $key);
                     F3::set('POST.'.$key, '/files/'.$file['name']);
                 }
                 else
                 {
-                    F3::push('invalid.form.field', $key);
+                    F3::push('field.invalid', $key);
                 }
             }
             else
@@ -211,6 +211,6 @@ class PersoneModel
         }
        
 
-        return (!F3::exists('invalid.form.field') && !F3::exists('absent.form.field'));
+        return (!F3::exists('field.invalid') && !F3::exists('field.absent'));
     }
 }
