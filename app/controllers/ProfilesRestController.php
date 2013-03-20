@@ -1,6 +1,7 @@
 <?php
 
-require_once dirname(__DIR__).'/models/PersoneModel.php';
+//require_once dirname(__DIR__).'/models/Profile.php';
+require_once dirname(__DIR__).'/models/JosProfile.php';
 require_once __DIR__.'/AuthController.php';
 
 class ProfilesRestController extends AuthController
@@ -10,7 +11,8 @@ class ProfilesRestController extends AuthController
     public function __construct()
     {
         parent::__construct();
-        $this->persone=new PersoneModel($this->user_id);
+        //$this->persone=new Profiles($this->user_id);
+        $this->persone = JosProfile::getInstance($this->user_id);
     }
 
     public function get()
@@ -18,7 +20,7 @@ class ProfilesRestController extends AuthController
         $item = (int)F3::get('PARAMS.item');
         if($item > 0)
         {
-            $profile = $this->persone->get($item);
+            $profile = $this->persone->getById($item);
             if(!empty($profile))
             {
                 echo json_encode($profile);

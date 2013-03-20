@@ -54,7 +54,7 @@ CREATE TABLE `persone` (
 --
 DROP TABLE IF EXISTS `jos_lovefactory_profiles`;
 CREATE TABLE `jos_lovefactory_profiles` (
-  `id`         INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `user_id`    INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `agent_id`   INTEGER      NOT NULL DEFAULT 0,
   `first_name` VARCHAR(100) NOT NULL DEFAULT '',
   `last_name`  VARCHAR(100) NOT NULL DEFAULT '',

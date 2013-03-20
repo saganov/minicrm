@@ -1,6 +1,7 @@
 <?php
 
-require_once dirname(__DIR__).'/models/PersoneModel.php';
+//require_once dirname(__DIR__).'/models/Profile.php';
+require_once dirname(__DIR__).'/models/JosProfile.php';
 require_once 'AuthController.php';
 
 class ProfilesController extends AuthController
@@ -17,11 +18,9 @@ class ProfilesController extends AuthController
 
     public function get()
     {
-        //$persone = new Axon('persone');
-        $persone = new PersoneModel($this->user_id);
-        //$persone->findone('id='. F3::get('PARAMS.item'));
-        //$persone->copyTo('persone');
-        F3::set('persone', $persone->get(F3::get('PARAMS.item')));
+        $persone = JosProfile::getInstance($this->user_id);
+
+        F3::set('persone', $persone->getById(F3::get('PARAMS.item')));
         F3::set('profile_page_title','Edit Profile');
         F3::set('profile_page','profiles/get.htm');
         F3::set('content','profiles/index.htm');

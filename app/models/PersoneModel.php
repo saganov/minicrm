@@ -2,37 +2,7 @@
 
 class PersoneModel
 {
-    /** @todo replace them into some base class */
-    const BOOL   = FILTER_VALIDATE_BOOLEAN;
-    const INT    = FILTER_VALIDATE_INT;
-    const FLOAT  = FILTER_VALIDATE_FLOAT;
-    const STRING = FILTER_DEFAULT;
-    const DATE   = 5;
-    const REGEXP = FILTER_VALIDATE_REGEXP;
-    const EMAIL  = FILTER_VALIDATE_EMAIL;
-    const IP     = FILTER_VALIDATE_IP;
-    const URL    = FILTER_VALIDATE_URL;
-    
-
-    const READONLY  = 100;
-    const WRITE     = 101;
-    const MANDATORY = 102;
-    
-    protected $db;
-
     protected $data;
-
-    protected $persone = array(
-        /** label => array(type, access = readonly) */
-        'id'         => array(self::INT),
-        'agent_id'   => array(self::INT,    self::MANDATORY),
-        'first_name' => array(self::STRING, self::MANDATORY),
-        'last_name'  => array(self::STRING, self::MANDATORY),
-        /** @todo the data format should be specified */
-        'birthday'   => array(self::DATE,   self::MANDATORY),
-        'height'     => array(self::INT,    self::MANDATORY),
-        'weight'     => array(self::INT,    self::MANDATORY),
-                               );
 
     protected $mandatory = array(
         //'id',
@@ -48,9 +18,7 @@ class PersoneModel
 
     public function __construct($agent_id)
     {
-        //$this->data = new Axon('persone');
-        //$this->data = new \DB\SQL\Mapper(F3::get('DB'),'persone');
-        $this->data = new \DB\SQL\Mapper(F3::get('DB'),'jos_lovefactory_profiles');
+        $this->data = new \DB\SQL\Mapper(F3::get('DB'),'persone');
         $this->agent_id = $agent_id;
     }
 
@@ -61,16 +29,8 @@ class PersoneModel
 
     public function getAll()
     {
-        // @todo  refactor to use find method instead of the afind
-        //return $this->data->find('agent_id='. $this->agent_id);
-
-        $all = array();
-        foreach($this->data->find('agent_id='. $this->agent_id) as $persone)
-        {
-            $persone->copyTo('temp.persone');
-            $all[] = F3::get('temp.persone');
-        }
-        return $all;
+        return array_map(function($persone){return $persone->cast();},
+                         $this->data->find('agent_id='. $this->agent_id));
     }
 
     public function save()
