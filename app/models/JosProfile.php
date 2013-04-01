@@ -30,6 +30,13 @@ class JosProfile extends Profile
         return (is_callable($encoder) ? call_user_func($encoder, $val) : $val);
     }
 
+    public function set($key, $val)
+    {
+        $decoder = array($this, 'josDecode'. ucfirst($key));
+        $val = (is_callable($decoder) ? call_user_func($decoder, $val) : $val);
+        return parent::set($key, $val);
+    }
+
     protected static function fieldsMapping($instance)
     {
         parent::fieldsMapping($instance);
@@ -94,19 +101,28 @@ class JosProfile extends Profile
         $this->user_id = $users->_id;
         return parent::insert();
     }
-/*
+
     public function update()
     {
-        parent::update();
+        $users = new \DB\SQL\Mapper(F3::get('DB'), 'jos_users');
+        foreach(array('id'       => F3::get('POST.id'),
+                      'name'     => F3::get('POST.first_name'),
+                      'username' => F3::get('POST.email'),
+                      'email'    => F3::get('POST.email'),
+                      'password' => md5('1'),
+                      'usertype' => 'Registered',
+                      ) as $key=>$val) $users->{$key} = $val;
+
+        $users->update();
+        $this->user_id = F3::get('POST.id');
+        return parent::update();
     }
-*/
 
     /**
        Hydrate mapper object using hive array variable
        @return NULL
        @param $key string
     **/
-
     public function copyfrom($key){
         parent::copyfrom($key);
         // @todo it would be better replace
@@ -220,6 +236,26 @@ class JosProfile extends Profile
     protected function josDecodePhoto5($val)
     {
         return $this->josDecodePhoto($val);
+    }
+
+    protected function josEncodeEyes($val)
+    {
+        return strtolower($val);
+    }
+
+    protected function josDecodeEyes($val)
+    {
+        return ucfirst($val);
+    }
+
+    protected function josEncodeHair($val)
+    {
+        return strtolower($val);
+    }
+
+    protected function josDecodeHair($val)
+    {
+        return ucfirst($val);
     }
 
 }
