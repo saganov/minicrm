@@ -105,6 +105,7 @@ class JosProfile extends Profile
     public function update()
     {
         $users = new \DB\SQL\Mapper(F3::get('DB'), 'jos_users');
+        $users->load(array('id=?', F3::get('POST.id')));
         foreach(array('id'       => F3::get('POST.id'),
                       'name'     => F3::get('POST.first_name'),
                       'username' => F3::get('POST.email'),
@@ -113,7 +114,7 @@ class JosProfile extends Profile
                       'usertype' => 'Registered',
                       ) as $key=>$val) $users->{$key} = $val;
 
-        $users->update();
+        $users->save();
         $this->user_id = F3::get('POST.id');
         return parent::update();
     }

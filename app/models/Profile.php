@@ -69,7 +69,7 @@ class Profile extends \DB\SQL\Mapper
 
         $this->copyFrom('POST');
         $this->setDefault();
-        return (parent::save() ? $this->user_id : FALSE);
+        return (FALSE !== parent::save() ? $this->user_id : FALSE);
     }
 
     private function setDefault()
