@@ -165,9 +165,13 @@
       </li>
       <li>
         <label class="mandatory"  for="country">Country</label>
-        <input class="mandatory" name="country" type="text"
-               required
-               value="{{ @persone->country }}" />
+        <select class="mandatory" name="country" required>
+          <option value=''>Select</option>
+          <option value='Russian Federation'{{ @persone->country ==
+          'Russian Federation'?'selected="selected"':'' }}>Russian
+          Federation</option>
+          <option value='Ukraine'{{ @persone->country == 'Ukraine'?'selected="selected"':'' }}>Ukraine</option>
+        </select>
       </li>
       <li class="wide">
         <fieldset>
