@@ -47,25 +47,28 @@
         <label class="mandatory"  for="eyes">Eyes</label>
         <select class="mandatory" name="eyes" required>
           <option value="">Select</option>
+          <option value="amber" {{ @persone->eyes == 'amber'?'selected="selected"':'' }}>amber</option>
+          <option value="black" {{ @persone->eyes == 'black'?'selected="selected"':'' }}>black</option>
+          <option value="blue"  {{ @persone->eyes == 'blue' ?'selected="selected"':'' }}>blue</option>
           <option value="brown" {{ @persone->eyes == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value="blue"  {{ @persone->eyes == 'blue'?'selected="selected"':'' }}>blue</option>
           <option value="green" {{ @persone->eyes == 'green'?'selected="selected"':'' }}>green</option>
-          <option value="grey"  {{ @persone->eyes == 'grey'?'selected="selected"':'' }}>grey</option>
           <option value="hazel" {{ @persone->eyes == 'hazel'?'selected="selected"':'' }}>hazel</option>
+          <option value="red"   {{ @persone->eyes == 'red'  ?'selected="selected"':'' }}>red</option>
+          <option value="violet" {{ @persone->eyes == 'violet'?'selected="selected"':'' }}>violet</option>
         </select>
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
         <select class="mandatory" name="hair" required>
           <option value=''>Select</option>
-          <option value='black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
           <option value='brown' {{ @persone->hair == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value='light-brown' {{ @persone->hair == 'light-brown'?'selected="selected"':'' }}>light-brown</option>
+          <option value='black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
           <option value='blond' {{ @persone->hair == 'blond'?'selected="selected"':'' }}>blond</option>
+          <option value='auburn' {{ @persone->hair == 'auburn'?'selected="selected"':'' }}>auburn</option>
+          <option value='chestnut' {{ @persone->hair == 'chestnut'?'selected="selected"':'' }}>chestnut</option>
           <option value='red'   {{ @persone->hair == 'red'?'selected="selected"':'' }}>red</option>
-          <option value='white' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
           <option value='grey'  {{ @persone->hair == 'grey'?'selected="selected"':'' }}>grey</option>
-          <option value='bald'  {{ @persone->hair == 'bald'?'selected="selected"':'' }}>bald</option>
+          <option value='white' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
         </select>
       </li>
     </ol>
