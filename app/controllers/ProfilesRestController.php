@@ -17,35 +17,42 @@ class ProfilesRestController extends AuthController
 
     public function get()
     {
+        $view = new Template;
         $item = (int)F3::get('PARAMS.item');
         if($item > 0)
         {
             $profile = $this->persone->getById($item);
             if(!empty($profile))
             {
-                echo json_encode($profile);
-                return;
+                F3::set('json_data', $profile);
             }
         }
-        
-        echo json_encode($this->persone->getAll());
+        else
+        {
+            F3::set('json_data', $this->persone->getAll());
+        }
+
+        echo $view->render('json.htm', 'text/json');
     }
 
     public function post()
     {
+        $view = new Template;
         if(FALSE !== $pkey = $this->persone->save())
         {
-            echo json_encode(array('res'=>$pkey,
-                                   'operation'=>F3::get('model.operation'),
-                                   'debug'=>F3::get('POST')));
+            F3::set('json_data', array('res'=>$pkey,
+                                       'operation'=>F3::get('model.operation'),
+                                       'debug'=>F3::get('POST')));
         }
         else
         {
-            echo json_encode(array('res'=>$pkey,
-                                   'invalid' => F3::get('field.invalid'),
-                                   'absent' => F3::get('field.absent'),
-                                   'debug'=>F3::get('POST')));
+            F3::set('json_data', array('res'=>$pkey,
+                                       'invalid' => F3::get('field.invalid'),
+                                       'absent' => F3::get('field.absent'),
+                                       'debug'=>F3::get('POST')));
         }
+        
+        echo $view->render('json.htm', 'text/json');
     }
 
     public function put()
