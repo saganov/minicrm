@@ -1,0 +1,106 @@
+/* Profile form */
+fieldset {    
+   float: left;    
+   clear: both;    
+   width: 100%;    
+   margin: 0 0 -1em 0;      
+   padding: 0 0 1em 0;      
+   border: 1px solid #BFBAB0;      
+   background-color: #F2EFE9; 
+}
+fieldset:nth-child(even) {
+   background-color: #E6E3DD;    
+}
+form span.fieldset, fieldset span{
+   color: maroon;
+   display: block;
+   margin: 1em;
+   text-align: center;
+}
+form span.fieldset strong, fieldset span strong{
+   text-decoration:underline;
+   font-weight:bold;
+}
+fieldset input, fieldset select{
+   width:20em;
+}
+fieldset textarea{
+   width:59em;
+   height:12em;
+}
+fieldset input.warning, fieldset textarea.warning{
+   border:1px solid red;
+}
+fieldset span.warning{
+   font-weight:bold;
+   color:red;
+}
+input:invalid { 
+   border-color: #e88;
+   -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+   -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+   box-shadow:0 0 5px rgba(255, 0, 0, .8);
+}
+/*
+input:required {
+   border-color: #88a;
+   -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -moz-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -o-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   -ms-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+   box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+}
+*/
+legend {  
+   margin-left: 1em;  
+   padding: 0;      
+   color: #545351;      
+   font-weight: bold;  
+}  
+label {
+   float: left;
+   width: 10em;
+   margin-right: 1em;
+   text-align: right;/* comment to make it left-aligned*/
+}
+fieldset ol {  
+   padding: 1em 1em 0 1em;
+   margin:0;
+   list-style: none;  
+}  
+fieldset li {
+   float: left;
+   /*clear: left;*//* to make it one collumn formed */
+   width: 50%;
+   padding-bottom: 1em;
+   list-style: none;
+}
+fieldset li.wide {
+   width: 100%;
+}
+fieldset .mandatory::after{
+   content:"*";
+   color:red;
+   font-weight:bold;
+}
+fieldset.submit {    
+   float: none;    
+   width: auto;    
+   border-style: none;    
+   padding-top: 1.5em;      
+   /*padding-left: 12em;*/
+   text-align: right;
+   background-color: transparent;    
+}
+fieldset.submit input{    
+   width: auto;
+}
+fieldset fieldset{
+   border: none;
+   background-color: transparent;
+}
+fieldset fieldset ol{
+   padding: 0;
+}
