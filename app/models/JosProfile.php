@@ -66,24 +66,24 @@ class JosProfile extends Profile
         $instance->portrait   = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
             .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1'; // @todo there should be different adhoc
-        $instance->passport   = 'SELECT `filename` FROM `jos_lovefactory_photos`'
-            .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1'; // @todo there should be different adhoc
         $instance->photo1     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1';
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1,1';
         $instance->photo2     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1,1';
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 2,1';
         $instance->photo3     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 2,1';
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 3,1';
         $instance->photo4     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 3,1';
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 4,1';
         $instance->photo5     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 4,1';
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 5,1';
+        $instance->passport   = 'SELECT `filename` FROM `jos_lovefactory_photos`'
+            .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
+            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 6,1'; // @todo there should be different adhoc
     }
 
 
@@ -96,8 +96,25 @@ class JosProfile extends Profile
                       'password' => md5('1'),
                       'usertype' => 'Registered',
                       ) as $key=>$val) $users->{$key} = $val;
-
         $users->save();
+
+        foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
+        {
+            $file = F3::get('POST.'. $field);
+            if(!empty($file))
+            {
+                $photo = new \DB\SQL\Mapper(F3::get('DB'), 'jos_lovefactory_photos');
+                foreach(array('user_id'  => $users->_id,
+                              'filename' => $file,
+                              'ordering' => $order,
+                              'is_main'  => (int)(0 === $order),
+                              'date_added'=> gmdate('Y-m-d H:i:s'),
+                              'status'   => 0,
+                              ) as $key=>$val) $photo->{$key} = $val;
+                $photo->save();
+            }
+        }
+
         $this->user_id = $users->_id;
         return parent::insert();
     }
@@ -110,11 +127,27 @@ class JosProfile extends Profile
                       'name'     => F3::get('POST.first_name'),
                       'username' => F3::get('POST.email'),
                       'email'    => F3::get('POST.email'),
-                      'password' => md5('1'),
-                      'usertype' => 'Registered',
                       ) as $key=>$val) $users->{$key} = $val;
 
         $users->save();
+
+        foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
+        {
+            $file = F3::get('POST.'. $field);
+            if(!empty($file))
+            {
+                $photo = new \DB\SQL\Mapper(F3::get('DB'), 'jos_lovefactory_photos');
+                $photo->load(array('user_id=? AND ordering=?', F3::get('POST.id'), $order));
+                if($file !== $photo->filename)
+                {
+                    foreach(array('filename' => $file,
+                                  'date_added'=> gmdate('Y-m-d H:i:s'),
+                                  ) as $key=>$val) $photo->{$key} = $val;
+                    $photo->save();
+                }
+            }
+        }
+
         $this->user_id = F3::get('POST.id');
         return parent::update();
     }
@@ -257,6 +290,11 @@ class JosProfile extends Profile
     protected function josDecodeHair($val)
     {
         return ucfirst($val);
+    }
+
+    protected function uploadDir()
+    {
+        return dirname(dirname(__DIR__)) . self::$_filesDir . ($this->id ? $this->id : F3::get('POST.id')) .'/';
     }
 
 }

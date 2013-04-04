@@ -3,9 +3,22 @@
 class Profile extends \DB\SQL\Mapper
 {
     protected static $_instance;
-    protected static $_table = 'persone';
-    protected static $_key   = 'id';
-    protected static $_map   = array();
+    protected static $_table  = 'persone';
+    protected static $_key    = 'id';
+    protected static $_map    = array();
+    protected static $_filesDir = '/files/';
+    protected static $_filter = array(
+        'birthday' => array(
+            'filter'  => FILTER_VALIDATE_REGEXP,
+            'options' => array(
+                'regexp' => '/^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/')),
+        'height'   => array(
+            'filter' => FILTER_VALIDATE_INT,
+            'options' => array('min_range' => 50, 'max_range' => 250)),
+        'weight'   => array(
+            'filter' => FILTER_VALIDATE_INT,
+            'options' => array('min_range' => 30, 'max_range' => 200)),
+                                      );
 
     protected static $_default = array(
         'show'  => 0,
@@ -92,6 +105,11 @@ class Profile extends \DB\SQL\Mapper
         //F3::clear('field.valid');
         //F3::clear('field.absent');
 
+        foreach(filter_input_array(INPUT_POST, self::$_filter) as $field=>$res)
+        {
+            if(FALSE === $res) F3::push('field.invalid', $field);
+        }
+
         foreach(F3::get('POST') as $key=>$value)
         {
             $handler = array($this, 'fieldHandler'. ucfirst($key));
@@ -101,10 +119,9 @@ class Profile extends \DB\SQL\Mapper
             }
             elseif(is_callable($handler))
             {
-                call_user_func($handler, $value);
+                if(FALSE === call_user_func($handler, $value)) F3::push('field.invalid', $key);
             }
         }
-
 
         $error_types = array(
             1=>'The uploaded file exceeds the upload_max_filesize directive in php.ini.',
@@ -115,26 +132,25 @@ class Profile extends \DB\SQL\Mapper
             'Failed to write file to disk.',
             'A PHP extension stopped the file upload.'
                              ); 
-        $uploaddir = dirname(dirname(__DIR__)).'/files/';
+
         foreach(F3::get('FILES') as $key=>$file)
         {
-            $handler = array($this, 'fileHandler'. ucfirst($key));
+            //$handler = array($this, 'fileHandler'. ucfirst($key));
             if(in_array($key, static::$_mandatory) && empty($file['name']))
             {
                 F3::push('field.absent', $key);
             }
             elseif($file['name'])
             {
-                $uploadfile = $uploaddir . basename($file['name']);
-                
+                $uploadfile = $this->uploadDir() . basename($file['name']);
                 if($file['error'] > 0)
                 {
                     F3::push('field.invalid', $key);
                 }
-                elseif(move_uploaded_file($file['tmp_name'], $uploadfile))
+                elseif(@mkdir($this->uploadDir()) && @move_uploaded_file($file['tmp_name'], $uploadfile))
                 {
                     F3::push('field.valid', $key);
-                    F3::set('POST.'.$key, '/files/'.$file['name']);
+                    F3::set('POST.'.$key, $file['name']); // @todo base class doesn't work 
                 }
                 else
                 {
@@ -153,27 +169,8 @@ class Profile extends \DB\SQL\Mapper
         return (empty($field['invalid']) && empty($field['absent']));
     }
 
-    protected function fieldHandlerBirthday($value)
+    protected function uploadDir()
     {
-        /*
-          FILTER_VALIDATE_REGEXP,
-          array('options' => array('regexp' => '/^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/'))
-        */
-    }
-
-    protected function fieldHandlerHeight($value)
-    {
-        /*
-          FILTER_VALIDATE_INT,
-          array('options' => array('min_range' => 50, 'max_range' => 250))
-        */
-    }
-
-    protected function fieldHandlerWeight($value)
-    {
-        /*
-          FILTER_VALIDATE_INT,
-          array('options' => array('min_range' => 30, 'max_range' => 200))
-        */
+        return dirname(dirname(__DIR__)) . self::$_filesDir;
     }
 }
