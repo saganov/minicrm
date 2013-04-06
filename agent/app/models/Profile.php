@@ -142,15 +142,14 @@ class Profile extends \DB\SQL\Mapper
             }
             elseif($file['name'])
             {
-                $uploadfile = $this->uploadDir() . basename($file['name']);
                 if($file['error'] > 0)
                 {
                     F3::push('field.invalid', $key);
                 }
-                elseif(@mkdir($this->uploadDir()) && @move_uploaded_file($file['tmp_name'], $uploadfile))
+                elseif($this->savePhoto($file['tmp_name'], $file['name']))
                 {
                     F3::push('field.valid', $key);
-                    F3::set('POST.'.$key, $file['name']); // @todo base class doesn't work 
+                    F3::set('POST.'.$key, $file['name']); // @todo base (current) class doesn't work 
                 }
                 else
                 {
@@ -169,8 +168,16 @@ class Profile extends \DB\SQL\Mapper
         return (empty($field['invalid']) && empty($field['absent']));
     }
 
+    protected function savePhoto($temporary, $name)
+    {
+        $dir = $this->uploadDir();
+        if(!file_exists($dir) && FALSE === @mkdir($dir, 0777, TRUE)) return FALSE;
+        elseif(FALSE === @move_uploaded_file($temporary, $dir . $name)) return FALSE;
+        else return TRUE;
+    }
+
     protected function uploadDir()
     {
-        return dirname(dirname(__DIR__)) . self::$_filesDir;
+        return F3::get('ROOT') . self::$_filesDir;
     }
 }

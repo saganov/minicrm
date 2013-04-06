@@ -1,6 +1,6 @@
 (function() {
     var httpRequest;
-    makeRequest('GET', '/profiles/manage');
+    makeRequest('GET', app_root+'/profiles/manage');
 
     function setEvent(elm, event, listener){
         if (elm.addEventListener)
@@ -216,10 +216,10 @@
                     elm.appendChild(label);
                     var text = document.createElement('SPAN');
                     var view = document.createElement('A');
-                    view.setAttribute('href', '/profiles/get/'+response[i].id);
+                    view.setAttribute('href', app_root+'/profiles/get/'+response[i].id);
                     view.appendChild(document.createTextNode('view'));
                     var edit = document.createElement('A');
-                    edit.setAttribute('href', '/profiles/get/'+response[i].id);
+                    edit.setAttribute('href', app_root+'/profiles/get/'+response[i].id);
                     edit.appendChild(document.createTextNode('edit'));
                     text.appendChild(view);
                     text.appendChild(document.createTextNode('|'));
@@ -326,7 +326,7 @@
 
 
                     var link = document.createElement('A');
-                    link.setAttribute('href', '/profiles/get/'+response[i].id);
+                    link.setAttribute('href', app_root+'/profiles/get/'+response[i].id);
                     var avatar = document.createElement('IMG');
                     avatar.setAttribute('src', response[i].portrait);
                     avatar.setAttribute('width', 100);

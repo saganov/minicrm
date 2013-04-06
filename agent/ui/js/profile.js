@@ -74,7 +74,7 @@
                         break; 
                     case 'update':
                         var message = ['Profile was succesfully updated'];
-                        window.location.href = '/profiles/list/';
+                        window.location.href = app_root+'/profiles/list/';
                         break;
                     default:
                         var message = ['Unknown operation: '+ response.operation];

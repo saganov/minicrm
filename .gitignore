@@ -3,4 +3,9 @@
 /logs
 /config/config.ini
 /components
-/files
+/agent/files
+/agent/temp
+/agent/tmp
+/agent/logs
+/agent/config/config.ini
+/agent/files

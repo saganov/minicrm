@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Mini CRM</title>
+        <link rel="stylesheet" type="text/css"  href="{{ @BASE }}/ui/style.css" />
+        <link rel="stylesheet" type="text/css"  href="{{ @BASE }}/ui/app.css" />
+</head>
+<body>
+<script type="text/javascript">
+  var app_root='{{ @BASE }}';
+</script>
+	<div class="header">
+		<h4>Description</h4>
+		<h1>The mini CRM</h1>
+                <ul class="menu">
+                  <li><a href="{{ @BASE }}/news">News</a></li>
+                  <li><a href="{{ @BASE }}/profiles">Profiles</a></li>
+                  <li><a href="{{ @BASE }}/corespondence">Correspondence</a></li>
+                  <li><a href="{{ @BASE }}/services">Services</a></li>
+                  <li><a href="{{ @BASE }}/todo">To Do</a></li>
+                  <li><a href="{{ @BASE }}/finance">Finance</a></li>
+                  <li><a href="{{ @BASE }}/reports">Reports</a></li>
+                  <li><a href="{{ @BASE }}/help">Help</a></li>
+                  <li><a href="{{ @BASE }}/settings">Settings</a></li>
+                </ul>
+	</div>
+	<div id="content" class="content">
+          <include href="{{ @content }}" />
+	</div>
+	<div class="footer">
+		<h5>miniCRM is licensed under the terms of the GPL v3. Copyright &copy; 2012-2013</h5>
+	</div>
+</body>
+</html>

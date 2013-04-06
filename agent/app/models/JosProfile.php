@@ -294,7 +294,7 @@ class JosProfile extends Profile
 
     protected function uploadDir()
     {
-        return dirname(dirname(__DIR__)) . self::$_filesDir . ($this->id ? $this->id : F3::get('POST.id')) .'/';
+        return F3::get('ROOT') . self::$_filesDir . ($this->id ? $this->id : F3::get('POST.id')) .'/';
     }
 
 }

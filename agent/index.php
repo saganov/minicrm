@@ -57,8 +57,5 @@ F3::set('DB', new \DB\SQL('mysql:host='. F3::get('DB.host') .';port='. F3::get('
                      F3::get('DB.user'),
                      F3::get('DB.password')));
 
-
 F3::set('AUTOLOAD','app/controllers/');
 F3::run();
-
-?>

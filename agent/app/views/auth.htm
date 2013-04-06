@@ -3,7 +3,7 @@
   <div id="form_message" class="warning">{{ @message }}</div>
 </check>
 
-<form action="/login" method="GET" name="login">
+<form action="{{ @BASE }}/login" method="GET" name="login">
   <fieldset> 
     <legend>Loggin</legend>
     <ol>
@@ -23,7 +23,7 @@
   </fieldset>  
 </form>
 
-<form action="/login" method="POST" name="register">
+<form action="{{ @BASE }}/login" method="POST" name="register">
   <fieldset> 
     <legend>Register</legend>
     <ol>
