@@ -135,12 +135,21 @@ class Profile extends \DB\SQL\Mapper
 
         foreach(F3::get('FILES') as $key=>$file)
         {
-            //$handler = array($this, 'fileHandler'. ucfirst($key));
             if(in_array($key, static::$_mandatory) && empty($file['name']))
             {
                 F3::push('field.absent', $key);
             }
-            elseif($file['name'])
+        }
+       
+        $field = F3::get('field');
+        return (empty($field['invalid']) && empty($field['absent']));
+    }
+
+    protected function saveFiles(array $allowed = array())
+    {
+        foreach(F3::get('FILES') as $key=>$file)
+        {
+            if($file['name'] && (empty($allowed) || array_search($key, $allowed)))
             {
                 if($file['error'] > 0)
                 {
@@ -160,20 +169,21 @@ class Profile extends \DB\SQL\Mapper
             {
                 F3::set('POST.'.$key, '');
             }
-        }
-       
-
-        //return (!F3::exists('field.invalid') && !F3::exists('field.absent'));
-        $field = F3::get('field');
-        return (empty($field['invalid']) && empty($field['absent']));
+        }        
     }
 
     protected function savePhoto($temporary, $name)
     {
         $dir = $this->uploadDir();
-        if(!file_exists($dir) && FALSE === @mkdir($dir, 0777, TRUE)) return FALSE;
-        elseif(FALSE === @move_uploaded_file($temporary, $dir . $name)) return FALSE;
-        else return TRUE;
+        if(!file_exists($dir) && FALSE === @mkdir($dir, 0777, TRUE)){
+            $log = new Log('error.log');
+            $log->write("Unable to create directory '{$dir}'");
+            return FALSE;
+        } elseif(FALSE === @move_uploaded_file($temporary, $dir . $name)){
+            $log = new Log('error.log');
+            $log->write("Unable to move temporary file '$temporary' to the '{$dir}{$name}'");
+            return FALSE;
+        } else return TRUE;
     }
 
     protected function uploadDir()

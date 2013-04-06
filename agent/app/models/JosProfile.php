@@ -97,7 +97,9 @@ class JosProfile extends Profile
                       'usertype' => 'Registered',
                       ) as $key=>$val) $users->{$key} = $val;
         $users->save();
-
+        $this->user_id = $users->_id;
+        
+        if(FALSE === $this->saveFiles(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport'))) return FALSE;
         foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
         {
             $file = F3::get('POST.'. $field);
@@ -115,7 +117,6 @@ class JosProfile extends Profile
             }
         }
 
-        $this->user_id = $users->_id;
         return parent::insert();
     }
 
@@ -130,7 +131,9 @@ class JosProfile extends Profile
                       ) as $key=>$val) $users->{$key} = $val;
 
         $users->save();
+        $this->user_id = F3::get('POST.id');
 
+        if (FALSE === $this->saveFiles(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport'))) return FALSE;
         foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
         {
             $file = F3::get('POST.'. $field);
@@ -138,17 +141,23 @@ class JosProfile extends Profile
             {
                 $photo = new \DB\SQL\Mapper(F3::get('DB'), 'jos_lovefactory_photos');
                 $photo->load(array('user_id=? AND ordering=?', F3::get('POST.id'), $order));
-                if($file !== $photo->filename)
+                $data_row = array('filename' => $file,
+                                  'date_added'=> gmdate('Y-m-d H:i:s'));
+                if(!$photo->filename)
                 {
-                    foreach(array('filename' => $file,
-                                  'date_added'=> gmdate('Y-m-d H:i:s'),
-                                  ) as $key=>$val) $photo->{$key} = $val;
+                    $data_row['user_id']  = F3::get('POST.id');
+                    $data_row['ordering'] = $order;
+                    $data_row['is_main']  = (int)(0 === $order);
+                    $data_row['status']   = 0;
+                }
+
+                if($file !== $photo->filename){
+                    foreach($data_row as $key=>$val) $photo->{$key} = $val;
                     $photo->save();
                 }
             }
         }
-
-        $this->user_id = F3::get('POST.id');
+        
         return parent::update();
     }
 

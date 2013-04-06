@@ -3,6 +3,7 @@
 /logs
 /config/config.ini
 /components
+/components.bak
 /agent/files
 /agent/temp
 /agent/tmp
