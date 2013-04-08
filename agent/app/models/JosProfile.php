@@ -6,10 +6,11 @@ class JosProfile extends Profile
 {
     protected static $_table = 'jos_lovefactory_profiles';
     protected static $_key   = 'user_id';
+    protected static $_agent_field = 'field_33';
 
     protected static $_map   = array(
         'id'         => 'user_id',
-        //'agent_id'   => 'field_33',
+        'agent_id'   => 'field_33',
         'first_name' => 'field_16',
         'last_name'  => 'field_17',
         'about'      => 'field_18',
@@ -96,7 +97,11 @@ class JosProfile extends Profile
                       'password' => md5('1'),
                       'usertype' => 'Registered',
                       ) as $key=>$val) $users->{$key} = $val;
-        $users->save();
+        if(FALSE === $users->save())
+        {
+            return FALSE;
+        }
+        
         $this->user_id = $users->_id;
         
         if(FALSE === $this->saveFiles(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport'))) return FALSE;

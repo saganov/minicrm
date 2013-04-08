@@ -3,6 +3,8 @@
 class Profile extends \DB\SQL\Mapper
 {
     protected static $_instance;
+    protected static $_agent_id;
+    protected static $_agent_field = 'agent_id';
     protected static $_table  = 'persone';
     protected static $_key    = 'id';
     protected static $_map    = array();
@@ -27,7 +29,7 @@ class Profile extends \DB\SQL\Mapper
 
     protected static $_mandatory = array(
         //'id',
-        'agent_id',
+        //'agent_id',
         'first_name',
         'last_name',
         'birthday',
@@ -40,7 +42,8 @@ class Profile extends \DB\SQL\Mapper
         if(!isset(static::$_instance))
         {
             static::$_instance = new static(F3::get('DB'), static::$_table);
-            static::$_instance->agent_id = $agent_id;
+            static::$_agent_id = $agent_id;
+            static::$_instance->{static::$_agent_field} = $agent_id;
             static::fieldsMapping(static::$_instance);
         }
         
@@ -54,13 +57,13 @@ class Profile extends \DB\SQL\Mapper
 
     public function getById($id)
     {
-        return $this->findone(static::$_key .'='. $id .' AND agent_id='. $this->agent_id);
+        return $this->findone(static::$_key .'='. $id .' AND '. static::$_agent_field .'='. static::$_agent_id);
     }
 
     public function getAll()
     {
         return array_map(function($profile){return $profile->cast();},
-                         $this->find('agent_id='. $this->agent_id));
+                         $this->find(static::$_agent_field .'='. static::$_agent_id));
     }
 
     public function save()
