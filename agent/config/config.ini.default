@@ -3,7 +3,7 @@
 ; Database configuration
 DB.host=localhost
 DB.port=3306
-DB.name=crm
+DB.name=minicrm
 DB.user=root
 DB.password=root
 

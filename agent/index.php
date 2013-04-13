@@ -5,6 +5,8 @@ require __DIR__.'/lib/base.php';
 F3::set('CACHE',FALSE);
 F3::set('DEBUG',3);
 F3::set('UI',__DIR__.'/app/views/');
+F3::set('TEMP',dirname(dirname(__DIR__)).'/tmp');
+F3::set('LOGS',dirname(dirname(__DIR__)).'/logs/');
 
 F3::config(__DIR__.'/config/config.ini');
 
