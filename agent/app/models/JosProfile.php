@@ -298,6 +298,7 @@ class JosProfile extends Profile
         return $this->josDecodePhoto($val);
     }
 
+/*
     protected function josEncodeEyes($val)
     {
         return strtolower($val);
@@ -317,7 +318,7 @@ class JosProfile extends Profile
     {
         return ucfirst($val);
     }
-
+*/
     protected function uploadDir()
     {
         return F3::get('ROOT') . self::$_filesDir . ($this->user_id ? $this->user_id : F3::get('POST.id')) .'/';
