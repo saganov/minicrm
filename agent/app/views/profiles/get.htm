@@ -47,28 +47,26 @@
         <label class="mandatory"  for="eyes">Eyes</label>
         <select class="mandatory" name="eyes" required>
           <option value="">Select</option>
-          <option value="amber" {{ @persone->eyes == 'amber'?'selected="selected"':'' }}>amber</option>
-          <option value="black" {{ @persone->eyes == 'black'?'selected="selected"':'' }}>black</option>
-          <option value="blue"  {{ @persone->eyes == 'blue' ?'selected="selected"':'' }}>blue</option>
-          <option value="brown" {{ @persone->eyes == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value="green" {{ @persone->eyes == 'green'?'selected="selected"':'' }}>green</option>
-          <option value="hazel" {{ @persone->eyes == 'hazel'?'selected="selected"':'' }}>hazel</option>
-          <option value="red"   {{ @persone->eyes == 'red'  ?'selected="selected"':'' }}>red</option>
-          <option value="violet" {{ @persone->eyes == 'violet'?'selected="selected"':'' }}>violet</option>
+          <option value="Grey"  {{ @persone->eyes == 'grey' ?'selected="selected"':'' }}>grey</option>
+          <option value="Black" {{ @persone->eyes == 'black'?'selected="selected"':'' }}>black</option>
+          <option value="Blue"  {{ @persone->eyes == 'blue' ?'selected="selected"':'' }}>blue</option>
+          <option value="Brown" {{ @persone->eyes == 'brown'?'selected="selected"':'' }}>brown</option>
+          <option value="Green" {{ @persone->eyes == 'green'?'selected="selected"':'' }}>green</option>
+          <option value="Hazel" {{ @persone->eyes == 'hazel'?'selected="selected"':'' }}>hazel</option>
         </select>
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
         <select class="mandatory" name="hair" required>
           <option value=''>Select</option>
-          <option value='brown' {{ @persone->hair == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value='black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
-          <option value='blond' {{ @persone->hair == 'blond'?'selected="selected"':'' }}>blond</option>
-          <option value='auburn' {{ @persone->hair == 'auburn'?'selected="selected"':'' }}>auburn</option>
-          <option value='chestnut' {{ @persone->hair == 'chestnut'?'selected="selected"':'' }}>chestnut</option>
-          <option value='red'   {{ @persone->hair == 'red'?'selected="selected"':'' }}>red</option>
-          <option value='grey'  {{ @persone->hair == 'grey'?'selected="selected"':'' }}>grey</option>
-          <option value='white' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
+          <option value='Brown' {{ @persone->hair == 'brown'?'selected="selected"':'' }}>brown</option>
+          <option value='Black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
+          <option value='Blond' {{ @persone->hair == 'blond'?'selected="selected"':'' }}>blond</option>
+          <option value='Auburn' {{ @persone->hair == 'auburn'?'selected="selected"':'' }}>auburn</option>
+          <option value='Chestnut' {{ @persone->hair == 'chestnut'?'selected="selected"':'' }}>chestnut</option>
+          <option value='Red'   {{ @persone->hair == 'red'?'selected="selected"':'' }}>red</option>
+          <option value='Grey'  {{ @persone->hair == 'grey'?'selected="selected"':'' }}>grey</option>
+          <option value='White' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
         </select>
       </li>
     </ol>
@@ -117,11 +115,15 @@
           <option value='widowed' {{ @persone->martial_status == 'widowed'?'selected="selected"':'' }}>widowed</option>
         </select>
       </li>
-      <li>    
+      <li>
         <label class="mandatory"  for="children">Children</label>
-        <input class="mandatory" name="children" type="text"
-               required
-               value="{{ @persone->children }}" />
+        <select class="mandatory" name="children" required>
+          <option value=''>Select</option>
+          <option value='0' {{ @persone->children == '0'?'selected="selected"':'' }}>0</option>
+          <option value='1' {{ @persone->children == '1'?'selected="selected"':'' }}>1</option>
+          <option value='2' {{ @persone->children == '2'?'selected="selected"':'' }}>2</option>
+          <option value='3' {{ @persone->children == '3'?'selected="selected"':'' }}>3</option>
+        </select>
       </li>
       <li>
         <label class="mandatory"  for="language_spoken">Languages Spoken</label>
