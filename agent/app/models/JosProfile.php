@@ -49,6 +49,7 @@ class JosProfile extends Profile
         $instance->email      = 'SELECT `email` FROM `jos_users`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_users`.`id`';
 
+	// @todo create related fields into Joomla
         // Not mapped fields
         $instance->birthday   = '"1988-12-12"';
         $instance->height     = '120';
