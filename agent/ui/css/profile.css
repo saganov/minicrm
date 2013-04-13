@@ -104,3 +104,14 @@ fieldset fieldset{
 fieldset fieldset ol{
    padding: 0;
 }
+
+.close {
+    color: red;
+    float: right;
+    font-weight: bold;
+    left: -32px;
+    position: relative;
+    top: 0;
+}
+
+.close:hover {cursor: pointer;}

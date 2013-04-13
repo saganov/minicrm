@@ -152,7 +152,7 @@ class Profile extends \DB\SQL\Mapper
     {
         foreach(F3::get('FILES') as $key=>$file)
         {
-            if($file['name'] && (empty($allowed) || array_search($key, $allowed)))
+            if($file['name'] && (empty($allowed) || FALSE !== array_search($key, $allowed)))
             {
                 if($file['error'] > 0)
                 {
@@ -179,14 +179,18 @@ class Profile extends \DB\SQL\Mapper
     {
         $dir = $this->uploadDir();
         if(!file_exists($dir) && FALSE === @mkdir($dir, 0777, TRUE)){
-            $log = new Log('error.log');
+            $log = new Log('minicrm.error.log');
             $log->write("Unable to create directory '{$dir}'");
             return FALSE;
         } elseif(FALSE === @move_uploaded_file($temporary, $dir . $name)){
-            $log = new Log('error.log');
-            $log->write("Unable to move temporary file '$temporary' to the '{$dir}{$name}'");
+            $log = new Log('minicrm.error.log');
+            $log->write("Unable to move temporary file '{$temporary}' to the '{$dir}{$name}'");
             return FALSE;
-        } else return TRUE;
+        } else {
+            $log = new Log('minicrm.info.log');
+            $log->write("Temporary file '{$temporary}' was moved to '{$dir}{$name}'");
+	    return TRUE;
+	}
     }
 
     protected function uploadDir()

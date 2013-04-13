@@ -1,3 +1,12 @@
+function removePhoto(elm, id){
+    var imgDiv     = elm.parentNode;
+    var photoInput = document.createElement('input');
+    photoInput.setAttribute('type', 'file');
+    photoInput.setAttribute('id',   id);
+    photoInput.setAttribute('name', id);
+    imgDiv.parentNode.replaceChild(photoInput, imgDiv);
+}
+
 (function() {
     var httpRequest;
 

@@ -230,7 +230,10 @@
         <label  for="portrait">Portrait</label>
         <check if="{{ @persone->portrait }}">
             <true>
-                <div><img src='{{ @persone->portrait }}' width="100"/></div>
+                <div>
+		    <img src='{{ @persone->portrait }}' width="250"/>
+		    <div class="close" onclick="removePhoto(this, 'portrait')">X</div>
+		</div>
             </true>
             <false>
               <input id="portrait" name="portrait" type="file" />
@@ -241,7 +244,10 @@
         <label class="mandatory"  for="photo1">Photo 1</label>
         <check if="{{ @persone->photo1 }}">
             <true>
-                <div><img src='{{ @persone->photo1 }}' width="250"/></div>
+                <div>
+		    <img src='{{ @persone->photo1 }}' width="250"/>
+		    <div class="close" onclick="removePhoto(this, 'photo1')">X</div>
+		</div>
             </true>
             <false>
                 <input id="photo1" class="mandatory" name="photo1" type="file" />
@@ -252,7 +258,10 @@
         <label  for="photo2">Photo 2</label>
         <check if="{{ @persone->photo2 }}">
             <true>
-              <div><img src='{{ @persone->photo2 }}' width="250"/></div>
+              <div>
+		<img src='{{ @persone->photo2 }}' width="250"/>
+		<div class="close" onclick="removePhoto(this, 'photo2')">X</div>
+	    </div>
             </true>
             <false>
               <input id="photo2" name="photo2" type="file" />
@@ -263,7 +272,10 @@
         <label  for="photo3">Photo 3</label>
         <check if="{{ @persone->photo3 }}">
             <true>
-              <div><img src='{{ @persone->photo3 }}' width="250"/></div>
+              <div>
+		<img src='{{ @persone->photo3 }}' width="250"/>
+		<div class="close" onclick="removePhoto(this, 'photo3')">X</div>
+	    </div>
             </true>
             <false>
               <input id="photo3" name="photo3" type="file" />
@@ -274,7 +286,10 @@
         <label  for="photo4">Photo 4</label>
         <check if="{{ @persone->photo4 }}">
             <true>
-              <div><img src='{{ @persone->photo4 }}' width="250"/></div>
+              <div>
+		<img src='{{ @persone->photo4 }}' width="250"/>
+		<div class="close" onclick="removePhoto(this, 'photo4')">X</div>
+	     </div>
             </true>
             <false>
               <input id="photo4" name="photo4" type="file" />
@@ -285,7 +300,10 @@
         <label  for="photo5">Photo 5</label>
         <check if="{{ @persone->photo5 }}">
             <true>
-              <div><img src='{{ @persone->photo5 }}' width="250"/></div>
+              <div>
+		<img src='{{ @persone->photo5 }}' width="250"/>
+		<div class="close" onclick="removePhoto(this, 'photo5')">X</div>
+	     </div>
             </true>
             <false>
               <input id="photo5" name="photo5" type="file" />
@@ -305,7 +323,10 @@
         <label  for="passport">Passport Copy</label>
         <check if="{{ @persone->passport }}">
           <true>
-            <div><img src='{{ @persone->passport }}' width="250"/></div>
+            <div>
+		<img src='{{ @persone->passport }}' width="250"/>
+		<div class="close" onclick="removePhoto(this, 'passport')">X</div>
+	    </div>
           </true>
           <false>
             <input id="passport" name="passport" type="file" />

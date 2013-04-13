@@ -8,6 +8,8 @@ class JosProfile extends Profile
     protected static $_key   = 'user_id';
     protected static $_agent_field = 'field_33';
 
+    protected static $_photos_order = array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport');
+
     protected static $_map   = array(
         'id'         => 'user_id',
         'agent_id'   => 'field_33',
@@ -20,6 +22,8 @@ class JosProfile extends Profile
         
         'hair'       => 'field_31',
         'eyes'       => 'field_32',
+
+	'portrait'   => 'main_photo',
                                      );
 
     protected static $_filesDir = '/components/com_lovefactory/storage/photos/';
@@ -58,33 +62,42 @@ class JosProfile extends Profile
         $instance->english_proficiency = '"basic"';
         $instance->smoking    = '"no"';
         $instance->looking_for_age = '20';
-        $instance->phone      = '2012-12-12';
+        $instance->phone      = '+380661234567';
         $instance->post_address = '"Post Address"';
         $instance->hobbies    = '"Hobbies"';
         $instance->ideal_relationship = '"Ideal Relationship"';
 
         // photo
+/*
         $instance->portrait   = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1'; // @todo there should be different adhoc
+	    .' AND `jos_lovefactory_photos`.`ordering` = 0 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1'; // @todo there should be different adhoc
+*/
         $instance->photo1     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1,1';
+	    .' AND `jos_lovefactory_photos`.`ordering` = 1 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 1,1';
         $instance->photo2     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 2,1';
+	    .' AND `jos_lovefactory_photos`.`ordering` = 2 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 2,1';
         $instance->photo3     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 3,1';
+	    .' AND `jos_lovefactory_photos`.`ordering` = 3 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 3,1';
         $instance->photo4     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 4,1';
+	    .' AND `jos_lovefactory_photos`.`ordering` = 4 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 4,1';
         $instance->photo5     = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 5,1';
+ 	    .' AND `jos_lovefactory_photos`.`ordering` = 5 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 5,1';
         $instance->passport   = 'SELECT `filename` FROM `jos_lovefactory_photos`'
             .' WHERE `'. self::$_table .'`.`user_id` = `jos_lovefactory_photos`.`user_id`'
-            .' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 6,1'; // @todo there should be different adhoc
+	    .' AND `jos_lovefactory_photos`.`ordering` = 6 LIMIT 1';
+            //.' ORDER BY `jos_lovefactory_photos`.`ordering` LIMIT 6,1'; // @todo there should be different adhoc
     }
 
 
@@ -104,8 +117,8 @@ class JosProfile extends Profile
         
         $this->user_id = $users->_id;
         
-        if(FALSE === $this->saveFiles(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport'))) return FALSE;
-        foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
+        if(FALSE === $this->saveFiles(self::$_photos_order)) return FALSE;
+        foreach(self::$_photos_order as $order=>$field)
         {
             $file = F3::get('POST.'. $field);
             if(!empty($file))
@@ -121,7 +134,7 @@ class JosProfile extends Profile
                 $photo->save();
             }
         }
-
+        $this->main_photo = F3::get('POST.portrait');
         return parent::insert();
     }
 
@@ -137,9 +150,8 @@ class JosProfile extends Profile
 
         $users->save();
         $this->user_id = F3::get('POST.id');
-
-        if (FALSE === $this->saveFiles(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport'))) return FALSE;
-        foreach(array('portrait', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'passport') as $order=>$field)
+        if (FALSE === $this->saveFiles(self::$_photos_order)) return FALSE;
+        foreach(self::$_photos_order as $order=>$field)
         {
             $file = F3::get('POST.'. $field);
             if(!empty($file))
@@ -162,7 +174,7 @@ class JosProfile extends Profile
                 }
             }
         }
-        
+        if(F3::get('POST.portrait') && $this->main_photo !== F3::get('POST.portrait')) $this->main_photo = F3::get('POST.portrait');
         return parent::update();
     }
 
@@ -308,7 +320,7 @@ class JosProfile extends Profile
 
     protected function uploadDir()
     {
-        return F3::get('ROOT') . self::$_filesDir . ($this->id ? $this->id : F3::get('POST.id')) .'/';
+        return F3::get('ROOT') . self::$_filesDir . ($this->user_id ? $this->user_id : F3::get('POST.id')) .'/';
     }
 
 }
