@@ -33,40 +33,188 @@
     <ol>
       <li>
         <label class="mandatory"  for="height">Height</label>
-        <input class="mandatory" name="height" type="number"
-               min="50" max="250" pattern="[0-9]{2,3}" required
-               value="{{ @persone->height }}" />
+        <select class="mandatory" name="height" required>
+          <option value="">Select</option>
+          <option value="121" {{ @persone->height == '121' ?'selected="selected"':'' }}>121 cm = 4'0''</option>
+          <option value="124" {{ @persone->height == '124' ?'selected="selected"':'' }}>124 cm = 4'1''</option>
+          <option value="127" {{ @persone->height == '127' ?'selected="selected"':'' }}>127 cm = 4'2''</option>
+          <option value="129" {{ @persone->height == '129' ?'selected="selected"':'' }}>129 cm = 4'3''</option>
+          <option value="132" {{ @persone->height == '132' ?'selected="selected"':'' }}>132 cm = 4'4''</option>
+          <option value="134" {{ @persone->height == '134' ?'selected="selected"':'' }}>134 cm = 4'5''</option>
+          <option value="137" {{ @persone->height == '137' ?'selected="selected"':'' }}>137 cm = 4'6''</option>
+          <option value="139" {{ @persone->height == '139' ?'selected="selected"':'' }}>139 cm = 4'7''</option>
+          <option value="142" {{ @persone->height == '142' ?'selected="selected"':'' }}>142 cm = 4'8''</option>
+          <option value="144" {{ @persone->height == '144' ?'selected="selected"':'' }}>144 cm = 4'9''</option>
+          <option value="147" {{ @persone->height == '147' ?'selected="selected"':'' }}>147 cm = 4'10''</option>
+          <option value="149" {{ @persone->height == '149' ?'selected="selected"':'' }}>149 cm = 4'11''</option>
+          <option value="152" {{ @persone->height == '152' ?'selected="selected"':'' }}>152 cm = 5'0''</option>
+          <option value="154" {{ @persone->height == '154' ?'selected="selected"':'' }}>154 cm = 5'1''</option>
+          <option value="157" {{ @persone->height == '157' ?'selected="selected"':'' }}>157 cm = 5'2''</option>
+          <option value="160" {{ @persone->height == '160' ?'selected="selected"':'' }}>160 cm = 5'3''</option>
+          <option value="162" {{ @persone->height == '162' ?'selected="selected"':'' }}>162 cm = 5'4''</option>
+          <option value="165" {{ @persone->height == '165' ?'selected="selected"':'' }}>165 cm = 5'5''</option>
+          <option value="167" {{ @persone->height == '167' ?'selected="selected"':'' }}>167 cm = 5'6''</option>
+          <option value="170" {{ @persone->height == '170' ?'selected="selected"':'' }}>170 cm = 5'7''</option>
+          <option value="172" {{ @persone->height == '172' ?'selected="selected"':'' }}>172 cm = 5'8''</option>
+          <option value="175" {{ @persone->height == '175' ?'selected="selected"':'' }}>175 cm = 5'9''</option>
+          <option value="177" {{ @persone->height == '177' ?'selected="selected"':'' }}>177 cm = 5'10''</option>
+          <option value="180" {{ @persone->height == '180' ?'selected="selected"':'' }}>180 cm = 5'11''</option>
+          <option value="182" {{ @persone->height == '182' ?'selected="selected"':'' }}>182 cm = 6'0''</option>
+          <option value="185" {{ @persone->height == '185' ?'selected="selected"':'' }}>185 cm = 6'1''</option>
+          <option value="187" {{ @persone->height == '187' ?'selected="selected"':'' }}>187 cm = 6'2''</option>
+          <option value="190" {{ @persone->height == '190' ?'selected="selected"':'' }}>190 cm = 6'3''</option>
+          <option value="193" {{ @persone->height == '193' ?'selected="selected"':'' }}>193 cm = 6'4''</option>
+          <option value="195" {{ @persone->height == '195' ?'selected="selected"':'' }}>195 cm = 6'5''</option>
+          <option value="198" {{ @persone->height == '198' ?'selected="selected"':'' }}>198 cm = 6'6''</option>
+          <option value="200" {{ @persone->height == '200' ?'selected="selected"':'' }}>200 cm = 6'7''</option>
+          <option value="203" {{ @persone->height == '203' ?'selected="selected"':'' }}>203 cm = 6'8''</option>
+          <option value="205" {{ @persone->height == '205' ?'selected="selected"':'' }}>205 cm = 6'9''</option>
+          <option value="208" {{ @persone->height == '208' ?'selected="selected"':'' }}>208 cm = 6'10''</option>
+          <option value="210" {{ @persone->height == '210' ?'selected="selected"':'' }}>210 cm = 6'11''</option>
+          <option value="213" {{ @persone->height == '213' ?'selected="selected"':'' }}>213 cm = 7'0''</option>
+	</select>
       </li>
       <li>
         <label class="mandatory"  for="weight">Weight</label>
-        <input class="mandatory" name="weight" type="number"
-               min="30" max="200" pattern="[0-9]{2,3}" required
-               value="{{ @persone->weight }}" />
+        <select class="mandatory" name="weight" required>
+          <option value="">Select</option>
+          <option value="40" {{ @persone->weight == '40' ?'selected="selected"':'' }}>40 kg = 88 lbs</option>
+          <option value="41" {{ @persone->weight == '41' ?'selected="selected"':'' }}>41 kg = 90 lbs</option>
+          <option value="42" {{ @persone->weight == '42' ?'selected="selected"':'' }}>42 kg = 92 lbs</option>
+          <option value="43" {{ @persone->weight == '43' ?'selected="selected"':'' }}>43 kg = 94 lbs</option>
+          <option value="44" {{ @persone->weight == '44' ?'selected="selected"':'' }}>44 kg = 97 lbs</option>
+          <option value="45" {{ @persone->weight == '45' ?'selected="selected"':'' }}>45 kg = 99 lbs</option>
+          <option value="46" {{ @persone->weight == '46' ?'selected="selected"':'' }}>46 kg = 101 lbs</option>
+          <option value="47" {{ @persone->weight == '47' ?'selected="selected"':'' }}>47 kg = 103 lbs</option>
+          <option value="48" {{ @persone->weight == '48' ?'selected="selected"':'' }}>48 kg = 105 lbs</option>
+          <option value="49" {{ @persone->weight == '49' ?'selected="selected"':'' }}>49 kg = 108 lbs</option>
+          <option value="50" {{ @persone->weight == '50' ?'selected="selected"':'' }}>50 kg = 110 lbs</option>
+          <option value="51" {{ @persone->weight == '51' ?'selected="selected"':'' }}>51 kg = 112 lbs</option>
+          <option value="52" {{ @persone->weight == '52' ?'selected="selected"':'' }}>52 kg = 114 lbs</option>
+          <option value="53" {{ @persone->weight == '53' ?'selected="selected"':'' }}>53 kg = 116 lbs</option>
+          <option value="54" {{ @persone->weight == '54' ?'selected="selected"':'' }}>54 kg = 119 lbs</option>
+          <option value="55" {{ @persone->weight == '55' ?'selected="selected"':'' }}>55 kg = 121 lbs</option>
+          <option value="56" {{ @persone->weight == '56' ?'selected="selected"':'' }}>56 kg = 123 lbs</option>
+          <option value="57" {{ @persone->weight == '57' ?'selected="selected"':'' }}>57 kg = 125 lbs</option>
+          <option value="58" {{ @persone->weight == '58' ?'selected="selected"':'' }}>58 kg = 128 lbs</option>
+          <option value="59" {{ @persone->weight == '59' ?'selected="selected"':'' }}>59 kg = 130 lbs</option>
+          <option value="60" {{ @persone->weight == '60' ?'selected="selected"':'' }}>60 kg = 132 lbs</option>
+          <option value="61" {{ @persone->weight == '61' ?'selected="selected"':'' }}>61 kg = 134 lbs</option>
+          <option value="62" {{ @persone->weight == '62' ?'selected="selected"':'' }}>62 kg = 136 lbs</option>
+          <option value="63" {{ @persone->weight == '63' ?'selected="selected"':'' }}>63 kg = 139 lbs</option>
+          <option value="64" {{ @persone->weight == '64' ?'selected="selected"':'' }}>64 kg = 141 lbs</option>
+          <option value="65" {{ @persone->weight == '65' ?'selected="selected"':'' }}>65 kg = 143 lbs</option>
+          <option value="66" {{ @persone->weight == '66' ?'selected="selected"':'' }}>66 kg = 145 lbs</option>
+          <option value="67" {{ @persone->weight == '67' ?'selected="selected"':'' }}>67 kg = 147 lbs</option>
+          <option value="68" {{ @persone->weight == '68' ?'selected="selected"':'' }}>68 kg = 150 lbs</option>
+          <option value="69" {{ @persone->weight == '69' ?'selected="selected"':'' }}>69 kg = 152 lbs</option>
+          <option value="70" {{ @persone->weight == '70' ?'selected="selected"':'' }}>70 kg = 154 lbs</option>
+          <option value="71" {{ @persone->weight == '71' ?'selected="selected"':'' }}>71 kg = 156 lbs</option>
+          <option value="72" {{ @persone->weight == '72' ?'selected="selected"':'' }}>72 kg = 158 lbs</option>
+          <option value="73" {{ @persone->weight == '73' ?'selected="selected"':'' }}>73 kg = 161 lbs</option>
+          <option value="74" {{ @persone->weight == '74' ?'selected="selected"':'' }}>74 kg = 163 lbs</option>
+          <option value="75" {{ @persone->weight == '75' ?'selected="selected"':'' }}>75 kg = 165 lbs</option>
+          <option value="76" {{ @persone->weight == '76' ?'selected="selected"':'' }}>76 kg = 167 lbs</option>
+          <option value="77" {{ @persone->weight == '77' ?'selected="selected"':'' }}>77 kg = 169 lbs</option>
+          <option value="78" {{ @persone->weight == '78' ?'selected="selected"':'' }}>78 kg = 172 lbs</option>
+          <option value="79" {{ @persone->weight == '79' ?'selected="selected"':'' }}>79 kg = 174 lbs</option>
+          <option value="80" {{ @persone->weight == '80' ?'selected="selected"':'' }}>80 kg = 176 lbs</option>
+          <option value="81" {{ @persone->weight == '81' ?'selected="selected"':'' }}>81 kg = 178 lbs</option>
+          <option value="82" {{ @persone->weight == '82' ?'selected="selected"':'' }}>82 kg = 181 lbs</option>
+          <option value="83" {{ @persone->weight == '83' ?'selected="selected"':'' }}>83 kg = 183 lbs</option>
+          <option value="84" {{ @persone->weight == '84' ?'selected="selected"':'' }}>84 kg = 185 lbs</option>
+          <option value="85" {{ @persone->weight == '85' ?'selected="selected"':'' }}>85 kg = 187 lbs</option>
+          <option value="86" {{ @persone->weight == '86' ?'selected="selected"':'' }}>86 kg = 189 lbs</option>
+          <option value="87" {{ @persone->weight == '87' ?'selected="selected"':'' }}>87 kg = 192 lbs</option>
+          <option value="88" {{ @persone->weight == '88' ?'selected="selected"':'' }}>88 kg = 194 lbs</option>
+          <option value="89" {{ @persone->weight == '89' ?'selected="selected"':'' }}>89 kg = 196 lbs</option>
+          <option value="90" {{ @persone->weight == '90' ?'selected="selected"':'' }}>90 kg = 198 lbs</option>
+          <option value="91" {{ @persone->weight == '91' ?'selected="selected"':'' }}>91 kg = 200 lbs</option>
+          <option value="92" {{ @persone->weight == '92' ?'selected="selected"':'' }}>92 kg = 203 lbs</option>
+          <option value="93" {{ @persone->weight == '93' ?'selected="selected"':'' }}>93 kg = 205 lbs</option>
+          <option value="94" {{ @persone->weight == '94' ?'selected="selected"':'' }}>94 kg = 207 lbs</option>
+          <option value="95" {{ @persone->weight == '95' ?'selected="selected"':'' }}>95 kg = 209 lbs</option>
+          <option value="96" {{ @persone->weight == '96' ?'selected="selected"':'' }}>96 kg = 211 lbs</option>
+          <option value="97" {{ @persone->weight == '97' ?'selected="selected"':'' }}>97 kg = 214 lbs</option>
+          <option value="98" {{ @persone->weight == '98' ?'selected="selected"':'' }}>98 kg = 216 lbs</option>
+          <option value="99" {{ @persone->weight == '99' ?'selected="selected"':'' }}>99 kg = 218 lbs</option>
+          <option value="100" {{ @persone->weight == '100' ?'selected="selected"':'' }}>100 kg = 220 lbs</option>
+          <option value="101" {{ @persone->weight == '101' ?'selected="selected"':'' }}>101 kg = 222 lbs</option>
+          <option value="102" {{ @persone->weight == '102' ?'selected="selected"':'' }}>102 kg = 225 lbs</option>
+          <option value="103" {{ @persone->weight == '103' ?'selected="selected"':'' }}>103 kg = 227 lbs</option>
+          <option value="104" {{ @persone->weight == '104' ?'selected="selected"':'' }}>104 kg = 229 lbs</option>
+          <option value="105" {{ @persone->weight == '105' ?'selected="selected"':'' }}>105 kg = 231 lbs</option>
+          <option value="106" {{ @persone->weight == '106' ?'selected="selected"':'' }}>106 kg = 233 lbs</option>
+          <option value="107" {{ @persone->weight == '107' ?'selected="selected"':'' }}>107 kg = 236 lbs</option>
+          <option value="108" {{ @persone->weight == '108' ?'selected="selected"':'' }}>108 kg = 238 lbs</option>
+          <option value="109" {{ @persone->weight == '109' ?'selected="selected"':'' }}>109 kg = 240 lbs</option>
+          <option value="110" {{ @persone->weight == '110' ?'selected="selected"':'' }}>110 kg = 242 lbs</option>
+          <option value="111" {{ @persone->weight == '111' ?'selected="selected"':'' }}>111 kg = 245 lbs</option>
+          <option value="112" {{ @persone->weight == '112' ?'selected="selected"':'' }}>112 kg = 247 lbs</option>
+          <option value="113" {{ @persone->weight == '113' ?'selected="selected"':'' }}>113 kg = 249 lbs</option>
+          <option value="114" {{ @persone->weight == '114' ?'selected="selected"':'' }}>114 kg = 251 lbs</option>
+          <option value="115" {{ @persone->weight == '115' ?'selected="selected"':'' }}>115 kg = 253 lbs</option>
+          <option value="116" {{ @persone->weight == '116' ?'selected="selected"':'' }}>116 kg = 256 lbs</option>
+          <option value="117" {{ @persone->weight == '117' ?'selected="selected"':'' }}>117 kg = 258 lbs</option>
+          <option value="118" {{ @persone->weight == '118' ?'selected="selected"':'' }}>118 kg = 260 lbs</option>
+          <option value="119" {{ @persone->weight == '119' ?'selected="selected"':'' }}>119 kg = 262 lbs</option>
+          <option value="120" {{ @persone->weight == '120' ?'selected="selected"':'' }}>120 kg = 264 lbs</option>
+          <option value="121" {{ @persone->weight == '121' ?'selected="selected"':'' }}>121 kg = 267 lbs</option>
+          <option value="122" {{ @persone->weight == '122' ?'selected="selected"':'' }}>122 kg = 269 lbs</option>
+          <option value="123" {{ @persone->weight == '123' ?'selected="selected"':'' }}>123 kg = 271 lbs</option>
+          <option value="124" {{ @persone->weight == '124' ?'selected="selected"':'' }}>124 kg = 273 lbs</option>
+          <option value="125" {{ @persone->weight == '125' ?'selected="selected"':'' }}>125 kg = 275 lbs</option>
+          <option value="126" {{ @persone->weight == '126' ?'selected="selected"':'' }}>126 kg = 278 lbs</option>
+          <option value="127" {{ @persone->weight == '127' ?'selected="selected"':'' }}>127 kg = 280 lbs</option>
+          <option value="128" {{ @persone->weight == '128' ?'selected="selected"':'' }}>128 kg = 282 lbs</option>
+          <option value="129" {{ @persone->weight == '129' ?'selected="selected"':'' }}>129 kg = 284 lbs</option>
+          <option value="130" {{ @persone->weight == '130' ?'selected="selected"':'' }}>130 kg = 286 lbs</option>
+          <option value="131" {{ @persone->weight == '131' ?'selected="selected"':'' }}>131 kg = 289 lbs</option>
+          <option value="132" {{ @persone->weight == '132' ?'selected="selected"':'' }}>132 kg = 291 lbs</option>
+          <option value="133" {{ @persone->weight == '133' ?'selected="selected"':'' }}>133 kg = 293 lbs</option>
+          <option value="134" {{ @persone->weight == '134' ?'selected="selected"':'' }}>134 kg = 295 lbs</option>
+          <option value="135" {{ @persone->weight == '135' ?'selected="selected"':'' }}>135 kg = 298 lbs</option>
+          <option value="136" {{ @persone->weight == '136' ?'selected="selected"':'' }}>136 kg = 300 lbs</option>
+          <option value="137" {{ @persone->weight == '137' ?'selected="selected"':'' }}>137 kg = 302 lbs</option>
+          <option value="138" {{ @persone->weight == '138' ?'selected="selected"':'' }}>138 kg = 304 lbs</option>
+          <option value="139" {{ @persone->weight == '139' ?'selected="selected"':'' }}>139 kg = 306 lbs</option>
+          <option value="140" {{ @persone->weight == '140' ?'selected="selected"':'' }}>140 kg = 309 lbs</option>
+          <option value="141" {{ @persone->weight == '141' ?'selected="selected"':'' }}>141 kg = 311 lbs</option>
+          <option value="142" {{ @persone->weight == '142' ?'selected="selected"':'' }}>142 kg = 313 lbs</option>
+          <option value="143" {{ @persone->weight == '143' ?'selected="selected"':'' }}>143 kg = 315 lbs</option>
+          <option value="144" {{ @persone->weight == '144' ?'selected="selected"':'' }}>144 kg = 317 lbs</option>
+          <option value="145" {{ @persone->weight == '145' ?'selected="selected"':'' }}>145 kg = 320 lbs</option>
+          <option value="146" {{ @persone->weight == '146' ?'selected="selected"':'' }}>146 kg = 322 lbs</option>
+          <option value="147" {{ @persone->weight == '147' ?'selected="selected"':'' }}>147 kg = 324 lbs</option>
+          <option value="148" {{ @persone->weight == '148' ?'selected="selected"':'' }}>148 kg = 326 lbs</option>
+          <option value="149" {{ @persone->weight == '149' ?'selected="selected"':'' }}>149 kg = 328 lbs</option>
+          <option value="150" {{ @persone->weight == '150' ?'selected="selected"':'' }}>150 kg = 331 lbs</option>
+        </select>
       </li>
       <li>
         <label class="mandatory"  for="eyes">Eyes</label>
         <select class="mandatory" name="eyes" required>
           <option value="">Select</option>
-          <option value="Grey"  {{ @persone->eyes == 'grey' ?'selected="selected"':'' }}>grey</option>
-          <option value="Black" {{ @persone->eyes == 'black'?'selected="selected"':'' }}>black</option>
-          <option value="Blue"  {{ @persone->eyes == 'blue' ?'selected="selected"':'' }}>blue</option>
-          <option value="Brown" {{ @persone->eyes == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value="Green" {{ @persone->eyes == 'green'?'selected="selected"':'' }}>green</option>
-          <option value="Hazel" {{ @persone->eyes == 'hazel'?'selected="selected"':'' }}>hazel</option>
+          <option value="Grey"  {{ @persone->eyes == 'Grey' ?'selected="selected"':'' }}>grey</option>
+          <option value="Black" {{ @persone->eyes == 'Black'?'selected="selected"':'' }}>black</option>
+          <option value="Blue"  {{ @persone->eyes == 'Blue' ?'selected="selected"':'' }}>blue</option>
+          <option value="Brown" {{ @persone->eyes == 'Brown'?'selected="selected"':'' }}>brown</option>
+          <option value="Green" {{ @persone->eyes == 'Green'?'selected="selected"':'' }}>green</option>
+          <option value="Hazel" {{ @persone->eyes == 'Hazel'?'selected="selected"':'' }}>hazel</option>
         </select>
       </li>
       <li>
         <label class="mandatory"  for="hair">Hair</label>
         <select class="mandatory" name="hair" required>
           <option value=''>Select</option>
-          <option value='Brown' {{ @persone->hair == 'brown'?'selected="selected"':'' }}>brown</option>
-          <option value='Black' {{ @persone->hair == 'black'?'selected="selected"':'' }}>black</option>
-          <option value='Blond' {{ @persone->hair == 'blond'?'selected="selected"':'' }}>blond</option>
-          <option value='Auburn' {{ @persone->hair == 'auburn'?'selected="selected"':'' }}>auburn</option>
-          <option value='Chestnut' {{ @persone->hair == 'chestnut'?'selected="selected"':'' }}>chestnut</option>
-          <option value='Red'   {{ @persone->hair == 'red'?'selected="selected"':'' }}>red</option>
-          <option value='Grey'  {{ @persone->hair == 'grey'?'selected="selected"':'' }}>grey</option>
-          <option value='White' {{ @persone->hair == 'white'?'selected="selected"':'' }}>white</option>
+          <option value='Brown' {{ @persone->hair == 'Brown'?'selected="selected"':'' }}>brown</option>
+          <option value='Black' {{ @persone->hair == 'Black'?'selected="selected"':'' }}>black</option>
+          <option value='Blond' {{ @persone->hair == 'Blond'?'selected="selected"':'' }}>blond</option>
+          <option value='Auburn' {{ @persone->hair == 'Auburn'?'selected="selected"':'' }}>auburn</option>
+          <option value='Chestnut' {{ @persone->hair == 'Chestnut'?'selected="selected"':'' }}>chestnut</option>
+          <option value='Red'   {{ @persone->hair == 'Red'?'selected="selected"':'' }}>red</option>
+          <option value='Grey'  {{ @persone->hair == 'Grey'?'selected="selected"':'' }}>grey</option>
+          <option value='White' {{ @persone->hair == 'White'?'selected="selected"':'' }}>white</option>
         </select>
       </li>
     </ol>
@@ -172,10 +320,246 @@
         <label class="mandatory"  for="country">Country</label>
         <select class="mandatory" name="country" required>
           <option value=''>Select</option>
-          <option value='Russian Federation'{{ @persone->country ==
-          'Russian Federation'?'selected="selected"':'' }}>Russian
-          Federation</option>
-          <option value='Ukraine'{{ @persone->country == 'Ukraine'?'selected="selected"':'' }}>Ukraine</option>
+	  <option value="Afghanistan" {{ @persone->country == 'Afghanistan'?'selected="selected"':'' }}>Afghanistan</option>
+	  <option value="Albania" {{ @persone->country == 'Albania'?'selected="selected"':'' }}>Albania</option>
+	  <option value="Algeria" {{ @persone->country == 'Algeria'?'selected="selected"':'' }}>Algeria</option>
+	  <option value="American Samoa" {{ @persone->country == 'American Samoa'?'selected="selected"':'' }}>American Samoa</option>
+	  <option value="Andorra" {{ @persone->country == 'Andorra'?'selected="selected"':'' }}>Andorra</option>
+	  <option value="Angola" {{ @persone->country == 'Angola'?'selected="selected"':'' }}>Angola</option>
+	  <option value="Anguilla" {{ @persone->country == 'Anguilla'?'selected="selected"':'' }}>Anguilla</option>
+	  <option value="Antarctica" {{ @persone->country == 'Antarctica'?'selected="selected"':'' }}>Antarctica</option>
+	  <option value="Antigua" {{ @persone->country == 'Antigua'?'selected="selected"':'' }}>Antigua</option>
+	  <option value="Argentina" {{ @persone->country == 'Argentina'?'selected="selected"':'' }}>Argentina</option>
+	  <option value="Armenia" {{ @persone->country == 'Armenia'?'selected="selected"':'' }}>Armenia</option>
+	  <option value="Aruba" {{ @persone->country == 'Aruba'?'selected="selected"':'' }}>Aruba</option>
+	  <option value="Australia" {{ @persone->country == 'Australia'?'selected="selected"':'' }}>Australia</option>
+	  <option value="Austria" {{ @persone->country == 'Austria'?'selected="selected"':'' }}>Austria</option>
+	  <option value="Azerbaijan" {{ @persone->country == 'Azerbaijan'?'selected="selected"':'' }}>Azerbaijan</option>
+	  <option value="Bahamas" {{ @persone->country == 'Bahamas'?'selected="selected"':'' }}>Bahamas</option>
+	  <option value="Bahrain" {{ @persone->country == 'Bahrain'?'selected="selected"':'' }}>Bahrain</option>
+	  <option value="Bangladesh" {{ @persone->country == 'Bangladesh'?'selected="selected"':'' }}>Bangladesh</option>
+	  <option value="Barbados" {{ @persone->country == 'Barbados'?'selected="selected"':'' }}>Barbados</option>
+	  <option value="Belarus" {{ @persone->country == 'Belarus'?'selected="selected"':'' }}>Belarus</option>
+	  <option value="Belgium" {{ @persone->country == 'Belgium'?'selected="selected"':'' }}>Belgium</option>
+	  <option value="Belize" {{ @persone->country == 'Belize'?'selected="selected"':'' }}>Belize</option>
+	  <option value="Benin" {{ @persone->country == 'Benin'?'selected="selected"':'' }}>Benin</option>
+	  <option value="Bermuda" {{ @persone->country == 'Bermuda'?'selected="selected"':'' }}>Bermuda</option>
+	  <option value="Bhutan" {{ @persone->country == 'Bhutan'?'selected="selected"':'' }}>Bhutan</option>
+	  <option value="Bolivia" {{ @persone->country == 'Bolivia'?'selected="selected"':'' }}>Bolivia</option>
+	  <option value="Bosnia and Herzegowina" {{ @persone->country == 'Bosnia and Herzegowina'?'selected="selected"':'' }}>Bosnia and Herzegowina</option>
+	  <option value="Botswana" {{ @persone->country == 'Botswana'?'selected="selected"':'' }}>Botswana</option>
+	  <option value="Bouvet Island" {{ @persone->country == 'Bouvet Island'?'selected="selected"':'' }}>Bouvet Island</option>
+	  <option value="Brazil" {{ @persone->country == 'Brazil'?'selected="selected"':'' }}>Brazil</option>
+	  <option value="British Indian Ocean Territory" {{ @persone->country == 'British Indian Ocean Territory'?'selected="selected"':'' }}>British Indian Ocean Territory</option>
+	  <option value="Brunei Darussalam" {{ @persone->country == 'Brunei Darussalam'?'selected="selected"':'' }}>Brunei Darussalam</option>
+	  <option value="Bulgaria" {{ @persone->country == 'Bulgaria'?'selected="selected"':'' }}>Bulgaria</option>
+	  <option value="Burkina Faso" {{ @persone->country == 'Burkina Faso'?'selected="selected"':'' }}>Burkina Faso</option>
+	  <option value="Burundi" {{ @persone->country == 'Burundi'?'selected="selected"':'' }}>Burundi</option>
+	  <option value="Cambodia" {{ @persone->country == 'Cambodia'?'selected="selected"':'' }}>Cambodia</option>
+	  <option value="Cameroon" {{ @persone->country == 'Cameroon'?'selected="selected"':'' }}>Cameroon</option>
+	  <option value="Canada" {{ @persone->country == 'Canada'?'selected="selected"':'' }}>Canada</option>
+	  <option value="Cape Verde" {{ @persone->country == 'Cape Verde'?'selected="selected"':'' }}>Cape Verde</option>
+	  <option value="Cayman Islands" {{ @persone->country == 'Cayman Islands'?'selected="selected"':'' }}>Cayman Islands</option>
+	  <option value="Central African Republic" {{ @persone->country == 'Central African Republic'?'selected="selected"':'' }}>Central African Republic</option>
+	  <option value="Chad" {{ @persone->country == 'Chad'?'selected="selected"':'' }}>Chad</option>
+	  <option value="Chile" {{ @persone->country == 'Chile'?'selected="selected"':'' }}>Chile</option>
+	  <option value="China" {{ @persone->country == 'China'?'selected="selected"':'' }}>China</option>
+	  <option value="Christmas Island" {{ @persone->country == 'Christmas Island'?'selected="selected"':'' }}>Christmas Island</option>
+	  <option value="Cocos (Keeling) Islands" {{ @persone->country == 'Cocos (Keeling) Islands'?'selected="selected"':'' }}>Cocos (Keeling) Islands</option>
+	  <option value="Colombia" {{ @persone->country == 'Colombia'?'selected="selected"':'' }}>Colombia</option>
+	  <option value="Comoros" {{ @persone->country == 'Comoros'?'selected="selected"':'' }}>Comoros</option>
+	  <option value="Congo" {{ @persone->country == 'Congo'?'selected="selected"':'' }}>Congo</option>
+	  <option value="Cook Islands" {{ @persone->country == 'Cook Islands'?'selected="selected"':'' }}>Cook Islands</option>
+	  <option value="Costa Rica" {{ @persone->country == 'Costa Rica'?'selected="selected"':'' }}>Costa Rica</option>
+	  <option value="Cote D'Ivoire" {{ @persone->country == "Cote D'Ivoire"?'selected="selected"':'' }}>Cote D'Ivoire</option>
+	  <option value="Croatia" {{ @persone->country == 'Croatia'?'selected="selected"':'' }}>Croatia</option>
+	  <option value="Cuba" {{ @persone->country == 'Cuba'?'selected="selected"':'' }}>Cuba</option>
+	  <option value="Cyprus" {{ @persone->country == 'Cyprus'?'selected="selected"':'' }}>Cyprus</option>
+	  <option value="Czech Republic" {{ @persone->country == 'Czech Republic'?'selected="selected"':'' }}>Czech Republic</option>
+	  <option value="Denmark" {{ @persone->country == 'Denmark'?'selected="selected"':'' }}>Denmark</option>
+	  <option value="Djibouti" {{ @persone->country == 'Djibouti'?'selected="selected"':'' }}>Djibouti</option>
+	  <option value="Dominica" {{ @persone->country == 'Dominica'?'selected="selected"':'' }}>Dominica</option>
+	  <option value="Dominican Republic" {{ @persone->country == 'Dominican Republic'?'selected="selected"':'' }}>Dominican Republic</option>
+	  <option value="East Timor" {{ @persone->country == 'East Timor'?'selected="selected"':'' }}>East Timor</option>
+	  <option value="Ecuador" {{ @persone->country == 'Ecuador'?'selected="selected"':'' }}>Ecuador</option>
+	  <option value="Egypt" {{ @persone->country == 'Egypt'?'selected="selected"':'' }}>Egypt</option>
+	  <option value="El Salvador" {{ @persone->country == 'El Salvador'?'selected="selected"':'' }}>El Salvador</option>
+	  <option value="Equatorial Guinea" {{ @persone->country == 'Equatorial Guinea'?'selected="selected"':'' }}>Equatorial Guinea</option>
+	  <option value="Eritrea" {{ @persone->country == 'Eritrea'?'selected="selected"':'' }}>Eritrea</option>
+	  <option value="Estonia" {{ @persone->country == 'Estonia'?'selected="selected"':'' }}>Estonia</option>
+	  <option value="Ethiopia" {{ @persone->country == 'Ethiopia'?'selected="selected"':'' }}>Ethiopia</option>
+	  <option value="Falkland Islands (Malvinas)" {{ @persone->country == 'Falkland Islands (Malvinas)'?'selected="selected"':'' }}>Falkland Islands (Malvinas)</option>
+	  <option value="Faroe Islands" {{ @persone->country == 'Faroe Islands'?'selected="selected"':'' }}>Faroe Islands</option>
+	  <option value="Fiji" {{ @persone->country == 'Fiji'?'selected="selected"':'' }}>Fiji</option>
+	  <option value="Finland" {{ @persone->country == 'Finland'?'selected="selected"':'' }}>Finland</option>
+	  <option value="France" {{ @persone->country == 'France'?'selected="selected"':'' }}>France</option>
+	  <option value="France, Metropolitan" {{ @persone->country == 'France, Metropolitan'?'selected="selected"':'' }}>France, Metropolitan</option>
+	  <option value="French Guiana" {{ @persone->country == 'French Guiana'?'selected="selected"':'' }}>French Guiana</option>
+	  <option value="French Polynesia" {{ @persone->country == 'French Polynesia'?'selected="selected"':'' }}>French Polynesia</option>
+	  <option value="French Southern Territories" {{ @persone->country == 'French Southern Territories'?'selected="selected"':'' }}>French Southern Territories</option>
+	  <option value="Gabon" {{ @persone->country == 'Gabon'?'selected="selected"':'' }}>Gabon</option>
+	  <option value="Gambia" {{ @persone->country == 'Gambia'?'selected="selected"':'' }}>Gambia</option>
+	  <option value="Georgia" {{ @persone->country == 'Georgia'?'selected="selected"':'' }}>Georgia</option>
+	  <option value="Germany" {{ @persone->country == 'Germany'?'selected="selected"':'' }}>Germany</option>
+	  <option value="Ghana" {{ @persone->country == 'Ghana'?'selected="selected"':'' }}>Ghana</option>
+	  <option value="Gibraltar" {{ @persone->country == 'Gibraltar'?'selected="selected"':'' }}>Gibraltar</option>
+	  <option value="Greece" {{ @persone->country == 'Greece'?'selected="selected"':'' }}>Greece</option>
+	  <option value="Greenland" {{ @persone->country == 'Greenland'?'selected="selected"':'' }}>Greenland</option>
+	  <option value="Grenada" {{ @persone->country == 'Grenada'?'selected="selected"':'' }}>Grenada</option>
+	  <option value="Guadeloupe" {{ @persone->country == 'Guadeloupe'?'selected="selected"':'' }}>Guadeloupe</option>
+	  <option value="Guam" {{ @persone->country == 'Guam'?'selected="selected"':'' }}>Guam</option>
+	  <option value="Guatemala" {{ @persone->country == 'Guatemala'?'selected="selected"':'' }}>Guatemala</option>
+	  <option value="Guinea" {{ @persone->country == 'Guinea'?'selected="selected"':'' }}>Guinea</option>
+	  <option value="Guinea-bissau" {{ @persone->country == 'Guinea-bissau'?'selected="selected"':'' }}>Guinea-bissau</option>
+	  <option value="Guyana" {{ @persone->country == 'Guyana'?'selected="selected"':'' }}>Guyana</option>
+	  <option value="Haiti" {{ @persone->country == 'Haiti'?'selected="selected"':'' }}>Haiti</option>
+	  <option value="Heard and Mc Donald Islands" {{ @persone->country == 'Heard and Mc Donald Islands'?'selected="selected"':'' }}>Heard and Mc Donald Islands</option>
+	  <option value="Honduras" {{ @persone->country == 'Honduras'?'selected="selected"':'' }}>Honduras</option>
+	  <option value="Hong Kong" {{ @persone->country == 'Hong Kong'?'selected="selected"':'' }}>Hong Kong</option>
+	  <option value="Hungary" {{ @persone->country == 'Hungary'?'selected="selected"':'' }}>Hungary</option>
+	  <option value="Iceland" {{ @persone->country == 'Iceland'?'selected="selected"':'' }}>Iceland</option>
+	  <option value="India" {{ @persone->country == 'India'?'selected="selected"':'' }}>India</option>
+	  <option value="Indonesia" {{ @persone->country == 'Indonesia'?'selected="selected"':'' }}>Indonesia</option>
+	  <option value="Iran (Islamic Republic of)" {{ @persone->country == 'Iran (Islamic Republic of)'?'selected="selected"':'' }}>Iran (Islamic Republic of)</option>
+	  <option value="Iraq" {{ @persone->country == 'Iraq'?'selected="selected"':'' }}>Iraq</option>
+	  <option value="Ireland" {{ @persone->country == 'Ireland'?'selected="selected"':'' }}>Ireland</option>
+	  <option value="Israel" {{ @persone->country == 'Israel'?'selected="selected"':'' }}>Israel</option>
+	  <option value="Italy" {{ @persone->country == 'Italy'?'selected="selected"':'' }}>Italy</option>
+	  <option value="Jamaica" {{ @persone->country == 'Jamaica'?'selected="selected"':'' }}>Jamaica</option>
+	  <option value="Japan" {{ @persone->country == 'Japan'?'selected="selected"':'' }}>Japan</option>
+	  <option value="Jordan" {{ @persone->country == 'Jordan'?'selected="selected"':'' }}>Jordan</option>
+	  <option value="Kazakhstan" {{ @persone->country == 'Kazakhstan'?'selected="selected"':'' }}>Kazakhstan</option>
+	  <option value="Kenya" {{ @persone->country == 'Kenya'?'selected="selected"':'' }}>Kenya</option>
+	  <option value="Kiribati" {{ @persone->country == 'Kiribati'?'selected="selected"':'' }}>Kiribati</option>
+	  <option value="Korea, Democratic People's Republic of" {{ @persone->country == "Korea, Democratic People's Republic of"?'selected="selected"':'' }}>Korea, Democratic People's Republic of</option>
+	  <option value="Korea, Republic of" {{ @persone->country == "Korea, Republic of"?'selected="selected"':'' }}>Korea, Republic of</option>
+	  <option value="Kuwait" {{ @persone->country == 'Kuwait'?'selected="selected"':'' }}>Kuwait</option>
+	  <option value="Kyrgyzstan" {{ @persone->country == 'Kyrgyzstan'?'selected="selected"':'' }}>Kyrgyzstan</option>
+	  <option value="Lao People's Democratic Republic" {{ @persone->country == "Lao People's Democratic Republic"?'selected="selected"':'' }}>Lao People's Democratic Republic</option>
+	  <option value="Latvia" {{ @persone->country == 'Latvia'?'selected="selected"':'' }}>Latvia</option>
+	  <option value="Lebanon" {{ @persone->country == 'Lebanon'?'selected="selected"':'' }}>Lebanon</option>
+	  <option value="Lesotho" {{ @persone->country == 'Lesotho'?'selected="selected"':'' }}>Lesotho</option>
+	  <option value="Liberia" {{ @persone->country == 'Liberia'?'selected="selected"':'' }}>Liberia</option>
+	  <option value="Libyan Arab Jamahiriya" {{ @persone->country == 'Libyan Arab Jamahiriya'?'selected="selected"':'' }}>Libyan Arab Jamahiriya</option>
+	  <option value="Liechtenstein" {{ @persone->country == 'Liechtenstein'?'selected="selected"':'' }}>Liechtenstein</option>
+	  <option value="Lithuania" {{ @persone->country == 'Lithuania'?'selected="selected"':'' }}>Lithuania</option>
+	  <option value="Luxembourg" {{ @persone->country == 'Luxembourg'?'selected="selected"':'' }}>Luxembourg</option>
+	  <option value="Macau" {{ @persone->country == 'Macau'?'selected="selected"':'' }}>Macau</option>
+	  <option value="Macedonia, The Former Yugoslav Republic of" {{ @persone->country == 'Macedonia, The Former Yugoslav Republic of'?'selected="selected"':'' }}>Macedonia, The Former Yugoslav Republic of</option>
+	  <option value="Madagascar" {{ @persone->country == 'Madagascar'?'selected="selected"':'' }}>Madagascar</option>
+	  <option value="Malawi" {{ @persone->country == 'Malawi'?'selected="selected"':'' }}>Malawi</option>
+	  <option value="Malaysia" {{ @persone->country == 'Malaysia'?'selected="selected"':'' }}>Malaysia</option>
+	  <option value="Maldives" {{ @persone->country == 'Maldives'?'selected="selected"':'' }}>Maldives</option>
+	  <option value="Mali" {{ @persone->country == 'Mali'?'selected="selected"':'' }}>Mali</option>
+	  <option value="Malta" {{ @persone->country == 'Malta'?'selected="selected"':'' }}>Malta</option>
+	  <option value="Marshall Islands" {{ @persone->country == 'Marshall Islands'?'selected="selected"':'' }}>Marshall Islands</option>
+	  <option value="Martinique" {{ @persone->country == 'Martinique'?'selected="selected"':'' }}>Martinique</option>
+	  <option value="Mauritania" {{ @persone->country == 'Mauritania'?'selected="selected"':'' }}>Mauritania</option>
+	  <option value="Mauritius" {{ @persone->country == 'Mauritius'?'selected="selected"':'' }}>Mauritius</option>
+	  <option value="Mayotte" {{ @persone->country == 'Mayotte'?'selected="selected"':'' }}>Mayotte</option>
+	  <option value="Mexico" {{ @persone->country == 'Mexico'?'selected="selected"':'' }}>Mexico</option>
+	  <option value="Micronesia, Federated States of" {{ @persone->country == 'Micronesia, Federated States of'?'selected="selected"':'' }}>Micronesia, Federated States of</option>
+	  <option value="Moldova, Republic of" {{ @persone->country == 'Moldova, Republic of'?'selected="selected"':'' }}>Moldova, Republic of</option>
+	  <option value="Monaco" {{ @persone->country == 'Monaco'?'selected="selected"':'' }}>Monaco</option>
+	  <option value="Mongolia" {{ @persone->country == 'Mongolia'?'selected="selected"':'' }}>Mongolia</option>
+	  <option value="Montenegro" {{ @persone->country == 'Montenegro'?'selected="selected"':'' }}>Montenegro</option>
+	  <option value="Montserrat" {{ @persone->country == 'Montserrat'?'selected="selected"':'' }}>Montserrat</option>
+	  <option value="Morocco" {{ @persone->country == 'Morocco'?'selected="selected"':'' }}>Morocco</option>
+	  <option value="Mozambique" {{ @persone->country == 'Mozambique'?'selected="selected"':'' }}>Mozambique</option>
+	  <option value="Myanmar" {{ @persone->country == 'Myanmar'?'selected="selected"':'' }}>Myanmar</option>
+	  <option value="Namibia" {{ @persone->country == 'Namibia'?'selected="selected"':'' }}>Namibia</option>
+	  <option value="Nauru" {{ @persone->country == 'Nauru'?'selected="selected"':'' }}>Nauru</option>
+	  <option value="Nepal" {{ @persone->country == 'Nepal'?'selected="selected"':'' }}>Nepal</option>
+	  <option value="Netherlands" {{ @persone->country == 'Netherlands'?'selected="selected"':'' }}>Netherlands</option>
+	  <option value="Netherlands Antilles" {{ @persone->country == 'Netherlands Antilles'?'selected="selected"':'' }}>Netherlands Antilles</option>
+	  <option value="New Caledonia" {{ @persone->country == 'New Caledonia'?'selected="selected"':'' }}>New Caledonia</option>
+	  <option value="New Zealand" {{ @persone->country == 'New Zealand'?'selected="selected"':'' }}>New Zealand</option>
+	  <option value="Nicaragua" {{ @persone->country == 'Nicaragua'?'selected="selected"':'' }}>Nicaragua</option>
+	  <option value="Niger" {{ @persone->country == 'Niger'?'selected="selected"':'' }}>Niger</option>
+	  <option value="Nigeria" {{ @persone->country == 'Nigeria'?'selected="selected"':'' }}>Nigeria</option>
+	  <option value="Niue" {{ @persone->country == 'Niue'?'selected="selected"':'' }}>Niue</option>
+	  <option value="Norfolk Island" {{ @persone->country == 'Norfolk Island'?'selected="selected"':'' }}>Norfolk Island</option>
+	  <option value="Northern Mariana Islands" {{ @persone->country == 'Northern Mariana Islands'?'selected="selected"':'' }}>Northern Mariana Islands</option>
+	  <option value="Norway" {{ @persone->country == 'Norway'?'selected="selected"':'' }}>Norway</option>
+	  <option value="Oman" {{ @persone->country == 'Oman'?'selected="selected"':'' }}>Oman</option>
+	  <option value="Pakistan" {{ @persone->country == 'Pakistan'?'selected="selected"':'' }}>Pakistan</option>
+	  <option value="Palau" {{ @persone->country == 'Palau'?'selected="selected"':'' }}>Palau</option>
+	  <option value="Panama" {{ @persone->country == 'Panama'?'selected="selected"':'' }}>Panama</option>
+	  <option value="Papua New Guinea" {{ @persone->country == 'Papua New Guinea'?'selected="selected"':'' }}>Papua New Guinea</option>
+	  <option value="Paraguay" {{ @persone->country == 'Paraguay'?'selected="selected"':'' }}>Paraguay</option>
+	  <option value="Peru" {{ @persone->country == 'Peru'?'selected="selected"':'' }}>Peru</option>
+	  <option value="Philippines" {{ @persone->country == 'Philippines'?'selected="selected"':'' }}>Philippines</option>
+	  <option value="Pitcairn" {{ @persone->country == 'Pitcairn'?'selected="selected"':'' }}>Pitcairn</option>
+	  <option value="Poland" {{ @persone->country == 'Poland'?'selected="selected"':'' }}>Poland</option>
+	  <option value="Portugal" {{ @persone->country == 'Portugal'?'selected="selected"':'' }}>Portugal</option>
+	  <option value="Puerto Rico" {{ @persone->country == 'Puerto Rico'?'selected="selected"':'' }}>Puerto Rico</option>
+	  <option value="Qatar" {{ @persone->country == 'Qatar'?'selected="selected"':'' }}>Qatar</option>
+	  <option value="Reunion" {{ @persone->country == 'Reunion'?'selected="selected"':'' }}>Reunion</option>
+	  <option value="Romania" {{ @persone->country == 'Romania'?'selected="selected"':'' }}>Romania</option>
+	  <option value="Russian Federation" {{ @persone->country == 'Russian Federation'?'selected="selected"':'' }}>Russian Federation</option>
+	  <option value="Rwanda" {{ @persone->country == 'Rwanda'?'selected="selected"':'' }}>Rwanda</option>
+	  <option value="Saint Kitts and Nevis" {{ @persone->country == 'Saint Kitts and Nevis'?'selected="selected"':'' }}>Saint Kitts and Nevis</option>
+	  <option value="Saint Lucia" {{ @persone->country == 'Saint Lucia'?'selected="selected"':'' }}>Saint Lucia</option>
+	  <option value="Saint Vincent and the Grenadines" {{ @persone->country == 'Saint Vincent and the Grenadines'?'selected="selected"':'' }}>Saint Vincent and the Grenadines</option>
+	  <option value="Samoa" {{ @persone->country == 'Samoa'?'selected="selected"':'' }}>Samoa</option>
+	  <option value="San Marino" {{ @persone->country == 'San Marino'?'selected="selected"':'' }}>San Marino</option>
+	  <option value="Sao Tome and Principe" {{ @persone->country == 'Sao Tome and Principe'?'selected="selected"':'' }}>Sao Tome and Principe</option>
+	  <option value="Saudi Arabia" {{ @persone->country == 'Saudi Arabia'?'selected="selected"':'' }}>Saudi Arabia</option>
+	  <option value="Senegal" {{ @persone->country == 'Senegal'?'selected="selected"':'' }}>Senegal</option>
+	  <option value="Serbia" {{ @persone->country == 'Serbia'?'selected="selected"':'' }}>Serbia</option>
+	  <option value="Seychelles" {{ @persone->country == 'Seychelles'?'selected="selected"':'' }}>Seychelles</option>
+	  <option value="Sierra Leone" {{ @persone->country == 'Sierra Leone'?'selected="selected"':'' }}>Sierra Leone</option>
+	  <option value="Singapore" {{ @persone->country == 'Singapore'?'selected="selected"':'' }}>Singapore</option>
+	  <option value="Slovakia (Slovak Republic)" {{ @persone->country == 'Slovakia (Slovak Republic)'?'selected="selected"':'' }}>Slovakia (Slovak Republic)</option>
+	  <option value="Slovenia" {{ @persone->country == 'Slovenia'?'selected="selected"':'' }}>Slovenia</option>
+	  <option value="Solomon Islands" {{ @persone->country == 'Solomon Islands'?'selected="selected"':'' }}>Solomon Islands</option>
+	  <option value="Somalia" {{ @persone->country == 'Somalia'?'selected="selected"':'' }}>Somalia</option>
+	  <option value="South Africa" {{ @persone->country == 'South Africa'?'selected="selected"':'' }}>South Africa</option>
+	  <option value="South Georgia and the South Sandwich Islands" {{ @persone->country == 'South Georgia and the South Sandwich Islands'?'selected="selected"':'' }}>South Georgia and the South Sandwich Islands</option>
+	  <option value="Spain" {{ @persone->country == 'Spain'?'selected="selected"':'' }}>Spain</option>
+	  <option value="Sri Lanka" {{ @persone->country == 'Sri Lanka'?'selected="selected"':'' }}>Sri Lanka</option>
+	  <option value="St. Helena" {{ @persone->country == 'St. Helena'?'selected="selected"':'' }}>St. Helena</option>
+	  <option value="St. Pierre and Miquelon" {{ @persone->country == 'St. Pierre and Miquelon'?'selected="selected"':'' }}>St. Pierre and Miquelon</option>
+	  <option value="Sudan" {{ @persone->country == 'Sudan'?'selected="selected"':'' }}>Sudan</option>
+	  <option value="Suriname" {{ @persone->country == 'Suriname'?'selected="selected"':'' }}>Suriname</option>
+	  <option value="Svalbard and Jan Mayen Islands" {{ @persone->country == 'Svalbard and Jan Mayen Islands'?'selected="selected"':'' }}>Svalbard and Jan Mayen Islands</option>
+	  <option value="Swaziland" {{ @persone->country == 'Swaziland'?'selected="selected"':'' }}>Swaziland</option>
+	  <option value="Sweden" {{ @persone->country == 'Sweden'?'selected="selected"':'' }}>Sweden</option>
+	  <option value="Switzerland" {{ @persone->country == 'Switzerland'?'selected="selected"':'' }}>Switzerland</option>
+	  <option value="Syrian Arab Republic" {{ @persone->country == 'Syrian Arab Republic'?'selected="selected"':'' }}>Syrian Arab Republic</option>
+	  <option value="Taiwan" {{ @persone->country == 'Taiwan'?'selected="selected"':'' }}>Taiwan</option>
+	  <option value="Tajikistan" {{ @persone->country == 'Tajikistan'?'selected="selected"':'' }}>Tajikistan</option>
+	  <option value="Tanzania, United Republic of" {{ @persone->country == 'Tanzania, United Republic of'?'selected="selected"':'' }}>Tanzania, United Republic of</option>
+	  <option value="Thailand" {{ @persone->country == 'Thailand'?'selected="selected"':'' }}>Thailand</option>
+	  <option value="Togo" {{ @persone->country == 'Togo'?'selected="selected"':'' }}>Togo</option>
+	  <option value="Tokelau" {{ @persone->country == 'Tokelau'?'selected="selected"':'' }}>Tokelau</option>
+	  <option value="Tonga" {{ @persone->country == 'Tonga'?'selected="selected"':'' }}>Tonga</option>
+	  <option value="Trinidad and Tobago" {{ @persone->country == 'Trinidad and Tobago'?'selected="selected"':'' }}>Trinidad and Tobago</option>
+	  <option value="Tunisia" {{ @persone->country == 'Tunisia'?'selected="selected"':'' }}>Tunisia</option>
+	  <option value="Turkey" {{ @persone->country == 'Turkey'?'selected="selected"':'' }}>Turkey</option>
+	  <option value="Turkmenistan" {{ @persone->country == 'Turkmenistan'?'selected="selected"':'' }}>Turkmenistan</option>
+	  <option value="Turks and Caicos Islands" {{ @persone->country == 'Turks and Caicos Islands'?'selected="selected"':'' }}>Turks and Caicos Islands</option>
+	  <option value="Tuvalu" {{ @persone->country == 'Tuvalu'?'selected="selected"':'' }}>Tuvalu</option>
+	  <option value="Uganda" {{ @persone->country == 'Uganda'?'selected="selected"':'' }}>Uganda</option>
+	  <option value="Ukraine" {{ @persone->country == 'Ukraine'?'selected="selected"':'' }}>Ukraine</option>
+	  <option value="United Arab Emirates" {{ @persone->country == 'United Arab Emirates'?'selected="selected"':'' }}>United Arab Emirates</option>
+	  <option value="United Kingdom" {{ @persone->country == 'United Kingdom'?'selected="selected"':'' }}>United Kingdom</option>
+	  <option value="United States" {{ @persone->country == 'United States'?'selected="selected"':'' }}>United States</option>
+	  <option value="United States Minor Outlying Islands" {{ @persone->country == 'United States Minor Outlying Islands'?'selected="selected"':'' }}>United States Minor Outlying Islands</option>
+	  <option value="Uruguay" {{ @persone->country == 'Uruguay'?'selected="selected"':'' }}>Uruguay</option>
+	  <option value="Uzbekistan" {{ @persone->country == 'Uzbekistan'?'selected="selected"':'' }}>Uzbekistan</option>
+	  <option value="Vanuatu" {{ @persone->country == 'Vanuatu'?'selected="selected"':'' }}>Vanuatu</option>
+	  <option value="Vatican City State (Holy See)" {{ @persone->country == 'Vatican City State (Holy See)'?'selected="selected"':'' }}>Vatican City State (Holy See)</option>
+	  <option value="Venezuela" {{ @persone->country == 'Venezuela'?'selected="selected"':'' }}>Venezuela</option>
+	  <option value="Viet Nam" {{ @persone->country == 'Viet Nam'?'selected="selected"':'' }}>Viet Nam</option>
+	  <option value="Virgin Islands (British)" {{ @persone->country == 'Virgin Islands (British)'?'selected="selected"':'' }}>Virgin Islands (British)</option>
+	  <option value="Virgin Islands (U.S.)" {{ @persone->country == 'Virgin Islands (U.S.)'?'selected="selected"':'' }}>Virgin Islands (U.S.)</option>
+	  <option value="Wallis and Futuna Islands" {{ @persone->country == 'Wallis and Futuna Islands'?'selected="selected"':'' }}>Wallis and Futuna Islands</option>
+	  <option value="Western Sahara" {{ @persone->country == 'Western Sahara'?'selected="selected"':'' }}>Western Sahara</option>
+	  <option value="Yemen" {{ @persone->country == 'Yemen'?'selected="selected"':'' }}>Yemen</option>
+	  <option value="Zaire" {{ @persone->country == 'Zaire'?'selected="selected"':'' }}>Zaire</option>
+	  <option value="Zambia" {{ @persone->country == 'Zambia'?'selected="selected"':'' }}>Zambia</option>
+	  <option value="Zimbabwe" {{ @persone->country == 'Zimbabwe'?'selected="selected"':'' }}>Zimbabwe</option>
         </select>
       </li>
       <li class="wide">

@@ -52,7 +52,7 @@ class JosProfile extends Profile
 	// @todo create related fields into Joomla
         // Not mapped fields
         $instance->birthday   = '"1988-12-12"';
-        $instance->height     = '120';
+        $instance->height     = '144';
         $instance->weight     = '120';
         $instance->occupation = '"occupation"';
         $instance->education  = '"high school"';
